@@ -1,0 +1,25 @@
+/*Global*/
+
+.qm-c-masthead {
+	display: none !important;
+}
+
+.qm-c-servicenav {
+	height: 2.5em !important;
+}
+
+/*process reporting specifc*/
+
+.reporting-type-menu {
+	font-size: 12px !important;
+}
+
+.reporting-tab .header .reporting_right_side {
+	margin: 0 !important;
+}
+
+/*progamatic*/
+
+.headerShow {
+	display: flex !important;
+}

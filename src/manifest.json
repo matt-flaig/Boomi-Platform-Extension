@@ -1,0 +1,37 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Boomi Platform Enhancer",
+  "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
+  "version": "1.0.0",
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://platform.boomi.com/*"
+      ],
+      "css": [
+        "library/css/boomi.css"
+      ],
+      "js": [
+        "library/jquery/jquery-2.2.3.min.js",
+        "library/boomiapp/boomiglobal.js",
+        "library/boomiapp/boomi.js",
+        "library/boomiapp/boomicomponents.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "*.png",
+    "*.jpg"
+  ],
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
