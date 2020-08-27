@@ -15,4 +15,27 @@ $(document).ready(function () {
             headerVisible = false;
         }
     });
+
+
+
+
+
+
+
+
+    $(document).on("click", "#gwt-uid-84", function () {
+        
+        dashboardDays();
+        
+    });
+
+
+
+
+
+
+
+
+
+
 });
