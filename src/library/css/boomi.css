@@ -27,3 +27,9 @@
 .headerHide {
 	display: none !important;
 }
+
+/*tools*/
+
+.information_label_content{
+	background-color: white !important;
+}

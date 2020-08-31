@@ -1,7 +1,7 @@
-$(document).ready(function () {
+ /* $(document).ready(function () {
     
 
-    headerHome()
+  headerHome()
 
 
 
@@ -29,4 +29,4 @@ $(document).ready(function () {
 
 
   //END
-});
+});*/
