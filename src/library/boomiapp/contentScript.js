@@ -6,7 +6,10 @@ const loadScript = (url) => {
     body.appendChild(script);
 }
 
-loadScript('./library/tool/bt_inPage.js');
+loadScript('./library/boomiapp/initPage.js');
+loadScript('./library/boomiapp/groups.js');
+loadScript('./library/boomiapp/shapes.js');
+loadScript('./library/boomiapp/fullscreen.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');
@@ -50,7 +53,7 @@ let wait_for_load = setInterval(()=>{
 
         updateBoomiPlatformConfig()
         document.getElementById('footer_links').insertAdjacentHTML('afterbegin', `
-            <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-tools/dmdcjdejggikfpfkgknpmcdbcdgalnoj/">BoomiPlatform v${chrome.runtime.getManifest().version} loaded</a></li>
+            <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko/">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a></li>
         `);
     }
 

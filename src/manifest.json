@@ -3,7 +3,7 @@
   "manifest_version": 2,
   "name": "Boomi Platform Enhancer",
   "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-  "version": "1.0.5",
+  "version": "1.5.0",
   "options_ui": {
     "page": "options.html",
     "open_in_tab": false
@@ -20,12 +20,11 @@
       ],
 	  "run_at": "document_end",
       "css": [
-        "library/css/boomi.css",
-		"library/css/bt_style.css"
+        "library/css/boomi.css"
       ],
       "js": [
         "library/jquery/jquery-2.2.3.min.js",
-		"library/tool/bt_contentScript.js",
+		    "library/boomiapp/contentScript.js",
         "library/boomiapp/global.js",
         "library/boomiapp/boomi.js",
         "library/boomiapp/clickComponents.js",
@@ -36,10 +35,13 @@
   "web_accessible_resources": [
     "*.png",
     "*.jpg",
-	"library/tool/bt_inPage.js",
+  "library/boomiapp/initPage.js",
+  "library/boomiapp/groups.js",
+  "library/boomiapp/shapes.js",
+  "library/boomiapp/fullscreen.js",
 	"library/inject/rasterizeHTML.min.js",
 	"library/inject/showdown.min.js",
-	"library/inject/codeflask.min.js"
+  "library/inject/codeflask.min.js"
   ],
   "permissions": [
     "activeTab",
