@@ -78,10 +78,21 @@ The following provides the current abilities of the released extension for use w
 * Capture the entire flow without resize and save to a local image by using the Capture button on process flow header.
 * Hover over flow shape to see the connection points it make.
 * Use notes to group tasks and provide information relating to multiple areas of the flow.
+* Add Markdown in the process description or notes to show better visual formatting
+* When Table i.e. Process Reporting is displayed; Toggle of Line Wrap available to show in single view.
+* Full Screen Button will now work with a single click.
+* Options have been added to set a key for enable full screen, default is ` Key
+* JSON Viewing toggle added to Message and Notify Shape; will both format the json and add the ' quote padding.
+* Capture your process flow easily via the Capture Process Flow Button; will capture the entire flow and save to a local file.
+* Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis. 
+
 
   ![Header](chromewebstore/Image1.png)
   ![](/chromewebstore/Image2.png)
   ![](/chromewebstore/Image3.png)
+  ![](/chromewebstore/Image4.png)
+  ![](/chromewebstore/Image5.png)
+
 
 
 
@@ -122,7 +133,7 @@ Name - [Mitchell Franklin](https://mitchellfranklin.info) - mitchellfranklin@gma
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* Tony Banik - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this Extension.
+* **Tony Banik** - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this Extension.
 * [Baptiste BIEBER](https://github.com/baptistebieber) - Developer of Boomi Extension that provided idea for future enhancements
 * [Boomi](https://boomi.com/)
 * [Boomi Community](https://community.boomi.com/)
