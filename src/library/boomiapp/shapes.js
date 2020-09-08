@@ -72,9 +72,9 @@ const quick_component_select = (panel) => {
 const add_endpoint_listener = (endpoint) => {
 
     if(BoomiPlatform.endpoint_flash == 'testing'){
-        endpoint.classList.add('bt-endpoint-flash-testonly');
+        endpoint.classList.add('bph-endpoint-flash-testonly');
     }else if(BoomiPlatform.endpoint_flash != 'off'){
-        endpoint.classList.add('bt-endpoint-flash');
+        endpoint.classList.add('bph-endpoint-flash');
     }
 
     let endpointmenu_html = `
@@ -83,7 +83,7 @@ const add_endpoint_listener = (endpoint) => {
             <div class="hover-menu-hidden-hotspot">
                 <div class="hover-menu">
                     <ul class="menu-options">
-                        <li><div class="gwt-Label gwt-ClickableLabel bt-stop">Stop</div></li>
+                        <li><div class="gwt-Label gwt-ClickableLabel bph-stop">Stop</div></li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +93,7 @@ const add_endpoint_listener = (endpoint) => {
 
     endpoint.insertAdjacentHTML('beforeend', endpointmenu_html);
 
-    endpoint.querySelector('.bt-stop').addEventListener('mousedown', function(e){
+    endpoint.querySelector('.bph-stop').addEventListener('mousedown', function(e){
 
         let first = [...endpoint.closest('.component_editor_panel').querySelectorAll('.shape_palette_results .shape_palette_widget_container')].find(shape => shape.querySelector('.gwt-Label').innerText.toLowerCase() == "stop");
 

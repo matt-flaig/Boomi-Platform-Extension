@@ -178,12 +178,12 @@ const create_note_group = (el) => {
 
 const render_note_groups = () => {
 
-    let notes_to_render = [...document.querySelectorAll('.note-content')].filter(note => note.innerText.includes('#BoomiPlatform:') && !note.closest('.gwt-ProcessPanel').classList.contains('BT-notes-rendered'));
+    let notes_to_render = [...document.querySelectorAll('.note-content')].filter(note => note.innerText.includes('#BoomiPlatform:') && !note.closest('.gwt-ProcessPanel').classList.contains('bph-notes-rendered'));
     if(!notes_to_render.length) return setTimeout(render_note_groups, 250) //wait for nodes to render
 
     setTimeout(()=>{
         notes_to_render.forEach(note => {create_note_group(note)})
-        notes_to_render[0].closest('.gwt-ProcessPanel').classList.add('BT-notes-rendered')
+        notes_to_render[0].closest('.gwt-ProcessPanel').classList.add('bph-notes-rendered')
     },10)
 
 }

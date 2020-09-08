@@ -35,10 +35,15 @@
   "web_accessible_resources": [
     "*.png",
     "*.jpg",
-  "library/boomiapp/initPage.js",
+  "library/boomiapp/notes.js",
+  "library/boomiapp/imageCapture.js",
+  "library/boomiapp/descriptionMarkdown.js",
   "library/boomiapp/groups.js",
   "library/boomiapp/shapes.js",
   "library/boomiapp/fullscreen.js",
+  "library/boomiapp/tableWrap.js",
+  "library/boomiapp/jsonView.js",
+  "library/boomiapp/listenerGlobal.js",
 	"library/inject/rasterizeHTML.min.js",
 	"library/inject/showdown.min.js",
   "library/inject/codeflask.min.js"

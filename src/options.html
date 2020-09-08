@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>BoomiTools Options</title>
+    <title>Boomi Platform Enhancer Options</title>
     <style>
 
         *{
@@ -82,14 +82,14 @@
     <header id="header">
         <div slot="title">
             <div id="icon-and-name-wrapper">
-                <img id="icon" src="img/BoomiTools_48.png">
-                <span>Boomi Tools</span>
+                <img id="icon" src="">
+                <span>Boomi Platform Enhancer</span>
             </div>
         </div>
     </header>
 
     <section>
-        <span>Endpoint Flash:</span><br>
+        <span>Non Connected Endpoint Notification:</span><br>
         <select name="endpoint_flash" class="option">
             <option value="on" selected>Always ON</option>
             <option value="off">Always OFF</option>
@@ -98,34 +98,24 @@
     </section>
     
     <section>
-        <span>Component Name Notify:</span><br>
-        <select name="component_name_notify" class="option">
-            <option value="on" selected>All Components</option>
-            <option value="type">Same-Type Components</option>
-            <option value="off">OFF</option>
-        </select>
-    </section>
-
-    <section>
-        <span>Path Trace Highlight:</span><br>
+        <span>Trace Path Highlight:</span><br>
         <select name="path_trace_highlight" class="option">
-            <option value="pulse" selected>ON - Pulsing</option>
-            <option value="solid">ON - Solid</option>
-            <option value="off">OFF</option>
+            <option value="pulse" selected>On</option>
+            <option value="off">Off</option>
         </select>
     </section>
 
     <section>
-        <span>Component Description Markdown:</span><br>
+        <span>Process Flow Description Markdown:</span><br>
         <select name="description_markdown" class="option">
-            <option value="on" selected>Render Automatically</option>
-            <option value="manual">Render Manually</option>
-            <option value="off">OFF</option>
+            <option value="on" selected>On Automatically</option>
+            <option value="manual">On Manually</option>
+            <option value="off">Off</option>
         </select>
     </section>
 
     <section>
-        <span>Full Screen Shortcut (<a href="https://keycode.info/" target="_blank">must be a keycode</a>):</span><br>
+        <span>Shortcut key for Full Screen (<a href="https://keycode.info/" target="_blank">must be a keycode</a>):</span><br>
         <input type="number" name="full_screen_shortcut" class="option" value="192">
         
         <label><input type="checkbox" name="full_screen_shortcut_alt" value="ALT" class="option">alt</label>

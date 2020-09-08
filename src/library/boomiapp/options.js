@@ -3,7 +3,7 @@ const save_options = () => {
     const options = Object.assign({},...[...document.querySelectorAll('.option')].map(option => ({[option.name]:option.type=='checkbox'?option.checked:option.value})));
     chrome.storage.sync.set(options, () => {
         let status = document.getElementById('status');
-        status.textContent = 'Options saved!';
+        status.textContent = 'Extenstion Options saved!';
         setTimeout(()=>{status.textContent = ''}, 750);
     });
 }
