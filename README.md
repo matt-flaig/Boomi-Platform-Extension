@@ -80,7 +80,7 @@ The following provides the current abilities of the released extension for use w
 * Use notes to group tasks and provide information relating to multiple areas of the flow.
 * Add Markdown in the process description or notes to show better visual formatting
 * When Table i.e. Process Reporting is displayed; Toggle of Line Wrap available to show in single view.
-* Full Screen Button will now work with a single click.
+* Ability to assign keyboard button to easily go into and out of full screen - default is the `/~ key.
 * Options have been added to set a key for enable full screen, default is ` Key
 * JSON Viewing toggle added to Message and Notify Shape; will both format the json and add the ' quote padding.
 * Capture your process flow easily via the Capture Process Flow Button; will capture the entire flow and save to a local file.
