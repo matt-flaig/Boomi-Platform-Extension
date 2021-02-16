@@ -56,7 +56,7 @@ const BoomiPlatform_Init = () => {
         listenerClass('.gwt-Shape', add_shape_listener);
         listenerClass('.gwt-DialogBox', add_dialog_listener);
         listenerClass('.boomi_standard_table', add_table_listener);
-        listenerClass('button.fullscreen_view_button', add_fullscreen_listener);
+        listenerClass('.build_actionsButton', add_fullscreen_listener);
         listenerClass('.description_panel', add_description_listener);
         listenerClass('.shape_side_panel', add_sidepanel_listener);
         listenerClass('.note-content', add_notecontent_listener);
