@@ -1,6 +1,3 @@
-
-
-
   let boomi_title = document.title;
   let boomiatomLoaded = setInterval(()=>{
   

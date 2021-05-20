@@ -4,55 +4,55 @@ let dragObj = null;
 const create_note_group = (el) => {
 
     let noteForm = el.closest('.note-form');
-    
+
     try {
-        if(!noteForm){
+        if (!noteForm) {
             var node = el.closest('.note-preview').parentElement.parentElement;
             noteForm = [...el.closest('.gwt-ProcessPanel').querySelectorAll(':not([data-notegroup]')].reverse().find(child => {
                 try {
-                    if(parseInt(child.style.top) == parseInt(node.style.top) && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.note-form')) return true;
+                    if (parseInt(child.style.top) == parseInt(node.style.top) && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.note-form')) return true;
                 } catch (error) {}
             }).querySelector('.note-form');
             node = noteForm.parentElement;
-        }else{
+        } else {
             var node = noteForm.parentElement;
         }
     } catch (error) {
         return false
     }
-    
+
 
     let nodeParent = noteForm.closest('.gwt-ProcessPanel');
 
     let colors = {
-        'blue'  : '0  , 100 , 255',
-        'red'   : '255, 0   , 50',
-        'green' : '0  , 255 , 100',
+        'blue': '0  , 100 , 255',
+        'red': '255, 0   , 50',
+        'green': '0  , 255 , 100',
         'purple': '100, 50  , 200',
         'orange': '230, 130 , 30'
     }
 
-    if(!node.hasAttribute('data-notegroup')){
+    if (!node.hasAttribute('data-notegroup')) {
         noteForm.querySelector('.NoteGroupButton').innerText = "Resize";
-        
-        setTimeout(()=>{
+
+        setTimeout(() => {
 
             let matched_node = [...nodeParent.querySelectorAll(':not([data-notegroup]')].reverse().find(child => {
                 try {
-                    if(parseInt(child.style.top) == parseInt(node.style.top) && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.note-content')) return true;
+                    if (parseInt(child.style.top) == parseInt(node.style.top) && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.note-content')) return true;
                 } catch (error) {}
             })
-    
+
             let matched_icon = [...nodeParent.querySelectorAll(':not([data-notegroup]')].reverse().find(child => {
                 try {
-                    if(parseInt(child.style.top) == parseInt(node.style.top)-23 && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.gwt-Image')) return true;
+                    if (parseInt(child.style.top) == parseInt(node.style.top) - 23 && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.gwt-Image')) return true;
                 } catch (error) {}
             })
 
-            if(!matched_node || !matched_icon) return false;
+            if (!matched_node || !matched_icon) return false;
 
-        
-            let group_id = [...Array(8)].map(i=>(~~(Math.random()*10))).join('');
+
+            let group_id = [...Array(8)].map(i => (~~(Math.random() * 10))).join('');
 
             let color_use = Object.keys(colors)[currentColor];
 
@@ -73,7 +73,7 @@ const create_note_group = (el) => {
             matched_node.querySelector('.note-content').style.whiteSpace = 'pre';
             matched_node.classList.add('note-hover');
             matched_node.querySelector('.note-preview-buttons').insertAdjacentHTML('beforeend', selectgroup_html);
-            
+
             node.setAttribute('data-notegroup', group_id);
             node.classList.add('note-editor');
 
@@ -81,30 +81,30 @@ const create_note_group = (el) => {
             matched_icon.setAttribute('data-notegroup', group_id);
             matched_icon.classList.add('note-icon');
 
-            
+
             let note_group = document.querySelector(`.BoomiPlatformNoteGroup[data-notegroup="${group_id}"]`);
-            
-            function rerender_note(){
+
+            function rerender_note() {
                 let match = /\n{0,2}---\n\#BoomiPlatform: \[\"(\d*px)\"\,\"(\d*px)\"\,\"([a-z]*)\"\]/g.exec(noteForm.querySelector('textarea').value)
-                
+
                 note_group.style.background = `rgba(${colors[match[3]]},0.1)`;
                 note_group.style.border = `1px solid rgba(${colors[match[3]]},0.5)`;
                 note_group.style.width = match[1];
                 note_group.style.height = match[2];
             }
-            
-            if(!/\n{0,2}---\n\#BoomiPlatform: \[\"(\d*px)\"\,\"(\d*px)\"\,\"([a-z]*)\"\]/g.test(noteForm.querySelector('textarea').value)){
+
+            if (!/\n{0,2}---\n\#BoomiPlatform: \[\"(\d*px)\"\,\"(\d*px)\"\,\"([a-z]*)\"\]/g.test(noteForm.querySelector('textarea').value)) {
                 noteForm.querySelector('textarea').value += `\n\n---\n#BoomiPlatform: ["60px","40px","${color_use}"]`
-            }else{
+            } else {
                 rerender_note()
             }
 
-            matched_icon.addEventListener('mouseup',function(){
+            matched_icon.addEventListener('mouseup', function () {
                 note_group.style.top = matched_icon.style.top;
                 note_group.style.left = matched_icon.style.left;
             }, false);
 
-            note_group.querySelector('.NoteResize').addEventListener('mousedown',function(e){
+            note_group.querySelector('.NoteResize').addEventListener('mousedown', function (e) {
                 dragObj = {
                     el: note_group,
                     x: e.pageX,
@@ -114,22 +114,22 @@ const create_note_group = (el) => {
                 };
             }, false);
 
-            let check_if_note_exists = setInterval(()=>{
-                if(!nodeParent.querySelector(`.note-icon[data-notegroup="${group_id}"]`)){
+            let check_if_note_exists = setInterval(() => {
+                if (!nodeParent.querySelector(`.note-icon[data-notegroup="${group_id}"]`)) {
                     clearInterval(check_if_note_exists)
                     nodeParent.querySelector(`.BoomiPlatformNoteGroup[data-notegroup="${group_id}"]`).remove()
                 }
-            },1000)
+            }, 1000)
 
-            if(!windowMouseMover){
+            if (!windowMouseMover) {
                 windowMouseMover = true;
 
-                window.addEventListener('mouseup',function(){
-                    if(dragObj){
+                window.addEventListener('mouseup', function () {
+                    if (dragObj) {
 
                         let form_to_use = dragObj.el.closest('.gwt-ProcessPanel').querySelector(`.note-editor[data-notegroup="${dragObj.el.getAttribute('data-notegroup')}"]`)
                         let match = /\n{0,2}---\n\#BoomiPlatform: \[.*(\"[a-z]*\")\]/g.exec(form_to_use.querySelector('textarea').value)
-                        form_to_use.querySelector('textarea').value = form_to_use.querySelector('textarea').value.replace(/\n{0,2}---\n\#BoomiPlatform: \[.*\]/g,`\n\n---\n#BoomiPlatform: ["${dragObj.el.style.width}","${dragObj.el.style.height}",${match[1]}]`)
+                        form_to_use.querySelector('textarea').value = form_to_use.querySelector('textarea').value.replace(/\n{0,2}---\n\#BoomiPlatform: \[.*\]/g, `\n\n---\n#BoomiPlatform: ["${dragObj.el.style.width}","${dragObj.el.style.height}",${match[1]}]`)
 
                         dragObj.el.querySelector('.NoteResize').style.display = 'none';
                         form_to_use.style.display = 'block';
@@ -138,38 +138,39 @@ const create_note_group = (el) => {
                     }
                 }, false);
 
-                window.addEventListener('mousemove',function(e){
-                    let x = e.pageX, y = e.pageY;
-                
-                    if(dragObj == null) return;
+                window.addEventListener('mousemove', function (e) {
+                    let x = e.pageX,
+                        y = e.pageY;
+
+                    if (dragObj == null) return;
 
 
                     try {
                         document.querySelector('.multiSelectPanel').style.cssText = 'display:none;top:0;left:0:width:0;height:0;';
                     } catch (error) {}
 
-                    dragObj.el.style.width = Math.max(60,dragObj.w + ((dragObj.x - x)*-1)) + 'px';
-                    dragObj.el.style.height = Math.max(40,dragObj.h + ((dragObj.y - y)*-1)) + 'px';
+                    dragObj.el.style.width = Math.max(60, dragObj.w + ((dragObj.x - x) * -1)) + 'px';
+                    dragObj.el.style.height = Math.max(40, dragObj.h + ((dragObj.y - y) * -1)) + 'px';
 
                 });
             }
-    
+
             currentColor++
-            if(currentColor >= Object.values(colors).length) currentColor = 0;
+            if (currentColor >= Object.values(colors).length) currentColor = 0;
 
             noteForm.querySelector('button[data-locator="button-save"]').addEventListener('mouseup', rerender_note, false);
-    
-        },10)
 
-    }else{
+        }, 10)
 
-        setTimeout(()=>{
+    } else {
+
+        setTimeout(() => {
 
             let note_group = document.querySelector(`.BoomiPlatformNoteGroup[data-notegroup="${node.getAttribute('data-notegroup')}"]`);
             note_group.querySelector('.NoteResize').style.display = 'block';
             node.style.display = 'none';
 
-        },10)
+        }, 10)
 
     }
 
@@ -179,12 +180,14 @@ const create_note_group = (el) => {
 const render_note_groups = () => {
 
     let notes_to_render = [...document.querySelectorAll('.note-content')].filter(note => note.innerText.includes('#BoomiPlatform:') && !note.closest('.gwt-ProcessPanel').classList.contains('bph-notes-rendered'));
-    if(!notes_to_render.length) return setTimeout(render_note_groups, 250) //wait for nodes to render
+    if (!notes_to_render.length) return setTimeout(render_note_groups, 250) //wait for nodes to render
 
-    setTimeout(()=>{
-        notes_to_render.forEach(note => {create_note_group(note)})
+    setTimeout(() => {
+        notes_to_render.forEach(note => {
+            create_note_group(note)
+        })
         notes_to_render[0].closest('.gwt-ProcessPanel').classList.add('bph-notes-rendered')
-    },10)
+    }, 10)
 
 }
 
@@ -201,13 +204,13 @@ const select_group = (group) => {
     });
 
     var move = new MouseEvent('mousemove', {
-        "clientX": rect.x+rect.width,
-        "clientY": rect.y+rect.height
+        "clientX": rect.x + rect.width,
+        "clientY": rect.y + rect.height
     });
 
     var up = new MouseEvent('mouseup', {
-        "clientX": rect.x+rect.width,
-        "clientY": rect.y+rect.height
+        "clientX": rect.x + rect.width,
+        "clientY": rect.y + rect.height
     });
 
     notegroup.closest('.gwt-ProcessPanel').dispatchEvent(down)

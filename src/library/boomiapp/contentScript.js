@@ -24,9 +24,9 @@ loadScript('./library/inject/codeflask.min.js');
 
 
 let org_title = document.title;
-let wait_for_load = setInterval(()=>{
+let wait_for_load = setInterval(() => {
 
-    if(org_title != document.title){
+    if (org_title != document.title) {
         clearInterval(wait_for_load);
 
         updateBoomiPlatformConfig()
@@ -35,19 +35,21 @@ let wait_for_load = setInterval(()=>{
         `);
     }
 
-},250)
+}, 250)
 
 
 
 //options updated via extension options
 const updateBoomiPlatformConfig = () => {
     chrome.storage.sync.get(null, (config) => {
-        window.postMessage(Object.assign({BoomiPlatformconfig:true},config))
+        window.postMessage(Object.assign({
+            BoomiPlatformconfig: true
+        }, config))
     });
 }
 
-chrome.storage.onChanged.addListener(()=>{
-    
+chrome.storage.onChanged.addListener(() => {
+
     let alert_html = `
     <div class="BoomiPlatformOverlay" style="position:fixed;z-index:9999;display:grid;place-items:center;min-height:100vh;min-width:100vw;background: rgba(0,0,0,0.25);">
     <div class="alert_label_content error_label_content" style="max-height: 600px; max-width: 600px; overflow: auto; padding: 10px; border-radius: 4px; box-shadow: 0 0 20px 0 rgba(0,0,0,0.25); background-color: #ffffff;">
@@ -65,10 +67,10 @@ chrome.storage.onChanged.addListener(()=>{
     </div>
 </div>`;
 
-    
+
 
     let overlay = document.querySelector('.BoomiPlatformOverlay');
-    if(overlay) overlay.remove();
+    if (overlay) overlay.remove();
     document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend', alert_html)
 
     updateBoomiPlatformConfig()

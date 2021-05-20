@@ -88,7 +88,7 @@ const process_to_image = (process) => {
                 stopper.style.visibility = 'hidden';
             });
 
-			//With the change is Portal Design we will remove this so if uses default icons, leaving if at a later date decide to override with something more user friendly
+            //With the change is Portal Design we will remove this so if uses default icons, leaving if at a later date decide to override with something more user friendly
             /*[...process.querySelectorAll('.disconnected')].forEach(point => {
                 if (beta_ui_enabled) {
                     point.style.backgroundImage = "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPjxkZWZzPjxwYXRoIGQ9Ik0xNSA4YTcuMDEgNy4wMSAwIDAgMS03IDcgNy4wMSA3LjAxIDAgMCAxLTctNyA3LjAxIDcuMDEgMCAwIDEgNy03IDcuMDEgNy4wMSAwIDAgMSA3IDd6IiBpZD0iQSIvPjxwYXRoIGQ9Ik0xMS40MyA5Yy4zNy0uMzQuNTYtLjY4LjU3LTFzLS4xNy0uNjctLjUzLTFsLTIuMi0yLjNjLS4zNS0uMzUtLjktLjM1LTEuMjYgMC0uMzUuMzQtLjM1LjkgMCAxLjI2TDkuMDcgNy4xSDQuOWEuODkuODkgMCAxIDAgMCAxLjc4aDQuMThsLTEuMTUgMS4xNGMtLjM1LjM1LS4zNS45LS4wMSAxLjI2LjM1LjM1LjkyLjM1IDEuMjYuMDFMMTEuNDMgOXoiIGlkPSJCIi8+PC9kZWZzPjx1c2UgeGxpbms6aHJlZj0iI0EiIGZpbGw9IiNmZjQyMjIiLz48dXNlIHhsaW5rOmhyZWY9IiNCIiBmaWxsPSIjZmZmIi8+PC9zdmc+')";

@@ -7,11 +7,11 @@ var sPageURL;
 /*-------------Global Calling Functions--------------------*/
 
 //Function to retrieve the current URL parameters and split them into each unique record
-var getUrlpath = function getUrlpath (){
+var getUrlpath = function getUrlpath() {
 
-     sPageURL = $(location).attr('href')
-     return sPageURL
- 
+  sPageURL = $(location).attr('href')
+  return sPageURL
+
 };
 
 

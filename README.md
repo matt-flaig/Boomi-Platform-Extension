@@ -84,7 +84,8 @@ The following provides the current abilities of the released extension for use w
 * Options have been added to set a key for enable full screen, default is ` Key
 * JSON Viewing toggle added to Message and Notify Shape; will both format the json and add the ' quote padding.
 * Capture your process flow easily via the Capture Process Flow Button; will capture the entire flow and save to a local file.
-* Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis. 
+* Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis.
+* Ability to Remove the Canvas Build Background (dots) - works will with dark modes 
 
 
   ![Header](chromewebstore/Image1.png)
