@@ -3,10 +3,10 @@
   "manifest_version": 2,
   "name": "Boomi Platform Enhancer",
   "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-  "version": "1.5.5.1",
+  "version": "1.5.6",
   "options_ui": {
     "page": "options.html",
-    "open_in_tab": false
+    "open_in_tab": true
   },
   "icons": {
     "16": "icon16.png",
@@ -24,31 +24,34 @@
       ],
       "js": [
         "library/jquery/jquery-2.2.3.min.js",
+        "library/inject/shortcut.js",
 		    "library/boomiapp/contentScript.js",
         "library/boomiapp/global.js",
         "library/boomiapp/boomi.js",
         "library/boomiapp/clickComponents.js",
-        "library/boomiapp/dashboard.js"
+        "library/boomiapp/dashboard.js",
+        "library/boomiapp/notes.js",
+        "library/inject/shortcut.js",
+        "library/boomiapp/imageCapture.js",
+        "library/boomiapp/descriptionMarkdown.js",
+        "library/boomiapp/groups.js",
+        "library/boomiapp/shapes.js",
+        "library/boomiapp/fullscreen.js",
+        "library/boomiapp/tableWrap.js",
+        "library/boomiapp/jsonView.js",
+        "library/boomiapp/listenerGlobal.js",
+        "library/boomiapp/canvas.js",
+        "library/boomiapp/saveBuild.js",
+        "library/inject/rasterizeHTML.min.js",
+        "library/inject/showdown.min.js",
+        "library/inject/codeflask.min.js"
       ]
     }
   ],
   "web_accessible_resources": [
     "*.png",
-    "*.jpg",
-  "library/boomiapp/notes.js",
-  "library/boomiapp/imageCapture.js",
-  "library/boomiapp/descriptionMarkdown.js",
-  "library/boomiapp/groups.js",
-  "library/boomiapp/shapes.js",
-  "library/boomiapp/fullscreen.js",
-  "library/boomiapp/tableWrap.js",
-  "library/boomiapp/jsonView.js",
-  "library/boomiapp/listenerGlobal.js",
-  "library/boomiapp/canvas.js",
-	"library/inject/rasterizeHTML.min.js",
-	"library/inject/showdown.min.js",
-  "library/inject/codeflask.min.js"
-  ],
+    "*.jpg"
+    ],
   "permissions": [
     "activeTab",
     "storage"
