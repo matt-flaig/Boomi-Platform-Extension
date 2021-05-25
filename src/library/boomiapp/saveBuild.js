@@ -29,9 +29,9 @@ function runsaveBuild() {
 
       if (tabcheck != null && displayedCheck != 'none') {
         clearInterval(wait_for_build_load);
-        shortcut.remove("Ctrl+Alt+S");
+        shortcut.remove("Shift+S");
 
-        shortcut.add("Ctrl+Alt+S", function () {
+        shortcut.add("Shift+S", function () {
           //alert("Hi there!");
 
           tabcheck.click();
