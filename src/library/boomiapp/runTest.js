@@ -28,8 +28,7 @@ function runTestfunc(){
         shortcut.remove("Shift+R");
 
         shortcut.add("Shift+R", function () {
-          //alert("Hi there!");
-            alert('clicked')
+            //alert('clicked')
           tabtestcheck.click();
 
         });
