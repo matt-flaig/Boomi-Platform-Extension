@@ -91,6 +91,7 @@ The following provides the current abilities of the released extension for use w
 * Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis.
 * Ability to Remove the Canvas Build Background (dots) - works will with dark modes 
 * Schedule Reminder - Once a deployment has occured or been deployed to another environment the notification message will also provide a reminder to setup a schedule if required.
+* Easily copy the current build flows component id using the Copy Coponent ID Button (Next to the Test and Create Package Buttons)
 
 
   ![Header](chromewebstore/Image1.png)
