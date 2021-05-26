@@ -90,6 +90,7 @@ The following provides the current abilities of the released extension for use w
 * Capture your process flow easily via the Capture Process Flow Button; will capture the entire flow and save to a local file.
 * Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis.
 * Ability to Remove the Canvas Build Background (dots) - works will with dark modes 
+* Schedule Reminder - Once a deployment has occured or been deployed to another environment the notification message will also provide a reminder to setup a schedule if required.
 
 
   ![Header](chromewebstore/Image1.png)
