@@ -32,14 +32,14 @@ function runbuildShort() {
       if (savebtnCheck != null && testbtnCheck != null && displayedCheck != 'none') {
         clearInterval(wait_for_build_load);
         
-        shortcut.remove("Shift+R");
-        shortcut.remove("Shift+S");
+        shortcut.remove("Shift+Alt+R");
+        shortcut.remove("Shift+Alt+S");
 
-        shortcut.add("Shift+S", function () {
+        shortcut.add("Shift+Alt+S", function () {
           savebtnCheck.click();
         });
 
-        shortcut.add("Shift+R", function () {
+        shortcut.add("Shift+Alt+R", function () {
           testbtnCheck.click();
 
       });
