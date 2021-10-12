@@ -9,8 +9,10 @@ const quick_component_select = (panel) => {
                 let org_event = e;
 
                 [...document.querySelectorAll('.BoomiPlatformQuickComponent')].forEach(item => item.remove())
+				
+				let testing = [...panel.closest('.component_editor_panel').querySelectorAll('.base_shape_container')].map(shape => `<option>${shape.querySelector('.gwt-Label').innerText}</option>`)
 
-                let shapes_list = [...panel.closest('.component_editor_panel').querySelectorAll('.shape_palette_results .shape_palette_widget_container')].map(shape => `<option>${shape.querySelector('.gwt-Label').innerText}</option>`)
+                let shapes_list = [...panel.closest('.component_editor_panel').querySelectorAll('.base_shape_container')].map(shape => `<option>${shape.querySelector('.gwt-Label').innerText}</option>`)
 
                 let quickinput_html = `
                     <div class="BoomiPlatformQuickComponent" style="position:absolute;top:${e.clientY}px;left:${e.clientX}px;">
@@ -36,7 +38,7 @@ const quick_component_select = (panel) => {
                     document.querySelector('.BoomiPlatformQuickComponent form').addEventListener('submit', function (e) {
                         e.preventDefault();
 
-                        let first = [...panel.closest('.component_editor_panel').querySelectorAll('.shape_palette_results .shape_palette_widget_container')].find(shape => shape.querySelector('.gwt-Label').innerText.toLowerCase() == document.querySelector('.BoomiPlatformQuickComponent input').value.toLowerCase());
+                        let first = [...panel.closest('.component_editor_panel').querySelectorAll('.base_shape_container')].find(shape => shape.querySelector('.gwt-Label').innerText.toLowerCase() == document.querySelector('.BoomiPlatformQuickComponent input').value.toLowerCase());
 
                         if (!first) return false;
 
@@ -95,7 +97,7 @@ const add_endpoint_listener = (endpoint) => {
 
     endpoint.querySelector('.bph-stop').addEventListener('mousedown', function (e) {
 
-        let first = [...endpoint.closest('.component_editor_panel').querySelectorAll('.shape_palette_results .shape_palette_widget_container')].find(shape => shape.querySelector('.gwt-Label').innerText.toLowerCase() == "stop");
+        let first = [...endpoint.closest('.component_editor_panel').querySelectorAll('.base_shape_container')].find(shape => shape.querySelector('.gwt-Label').innerText.toLowerCase() == "stop");
 
         if (!first) return false;
 
