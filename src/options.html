@@ -1,73 +1,144 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <title>Boomi Platform Enhancer Options</title>         
-        <style>* { box-sizing: border-box; } body { padding: 0 20px 20px 20px; margin: 0; min-width: 400px; } #status { color: green; font-weight: bold; } section { margin-bottom: 10px; } section span { display: inline-block; margin-bottom: 3px; } select, input:not([type="checkbox"]) { width: 100%; padding: 5px; border-radius: 3px; border: 1px solid #ccc; } button { padding: 5px; margin-top: 3px; } input[type="checkbox"] { vertical-align: middle; margin: 0 3px 0 0; } section label { display: inline-block; margin: 5px 10px 0 0; } header { display: none; } #icon { height: 32px; margin-inline-end: 10px; width: 32px; } [slot=title] { color: #202124; flex: 1; font-size: 1.4em; line-height: 1; padding-bottom: 16px; padding-top: 20px; } #icon-and-name-wrapper { align-items: center; display: flex; }</style>         
-    </head>     
-    <body> 
-        <header id="header"> 
-            <div slot="title"> 
-                <div id="icon-and-name-wrapper"> 
-                    <img id="icon" src=""> 
-                    <span>Boomi Platform Enhancer</span> 
-                </div>                 
-            </div>             
-        </header>
-        <main>
-            <section> 
-                <span>Non Connected Endpoint Notification:</span>
-                <br> 
-                <select name="endpoint_flash" class="option"> 
-                    <option value="on" selected>Always ON</option>                     
-                    <option value="off">Always OFF</option>                     
-                    <option value="testing">Only when running tests</option>                     
-                </select>                 
-            </section>
-            <section> 
-                <span>Trace Path Highlight:</span>
-                <br> 
-                <select name="path_trace_highlight" class="option"> 
-                    <option value="pulse" selected>On</option>                     
-                    <option value="off">Off</option>                     
-                </select>                 
-            </section>
-            <section> 
-                <span>Process Flow Description Markdown:</span>
-                <br> 
-                <select name="description_markdown" class="option"> 
-                    <option value="on" selected>On Automatically</option>                     
-                    <option value="manual">On Manually</option>                     
-                    <option value="off">Off</option>                     
-                </select>                 
-            </section>
-            <section> 
-                <span>Shortcut key for Full Screen (<a href="https://keycode.info/" target="_blank">must be a keycode</a>):</span>
-                <br> 
-                <input type="number" name="full_screen_shortcut" class="option" value="192"> 
-                <label>
-                    <input type="checkbox" name="full_screen_shortcut_alt" value="ALT" class="option">alt
-                </label>                 
-                <label>
-                    <input type="checkbox" name="full_screen_shortcut_ctrl" value="CTRL" class="option">ctrl
-                </label>                 
-                <label>
-                    <input type="checkbox" name="full_screen_shortcut_shift" value="SHIFT" class="option">shift
-                </label>                 
-                <br> 
-                <small>Shortcut will not override system shortcuts, so be careful with what keys/modifiers you use.</small> 
-            </section>
-            <section> 
-                <span>Show Canvas Grid:</span>
-                <br> 
-                <select name="canvas_grid" class="option"> 
-                    <option value="on" selected>On</option>                     
-                    <option value="off">Off</option>                     
-                </select>                 
-            </section>
-            <hr>
-            <button id="save">Save Options</button>
-            <span id="status"></span>
-        </main>                                                                                 
-        <script src="library/boomiapp/options.js"></script>         
-    </body>     
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Boomi Platform Enhancer Options</title>
+    <style>
+
+        *{
+            box-sizing:border-box;
+        }
+
+        body{
+            padding:0 20px 20px 20px;
+            margin:0;
+            min-width: 400px;
+        }
+
+        #status{
+            color:green;
+            font-weight:bold;
+        }
+
+        section{
+            margin-bottom:10px;
+        }
+
+        section span{
+            display:inline-block;
+            margin-bottom:3px;
+        }
+
+        select, input:not([type="checkbox"]){
+            width:100%;
+            padding:5px;
+            border-radius:3px;
+            border:1px solid #ccc;
+        }
+
+        button{
+            padding:5px;
+            margin-top:3px;
+        }
+
+        input[type="checkbox"]{
+            vertical-align: middle;
+            margin:0 3px 0 0;
+        }
+
+        section label{
+            display:inline-block;
+            margin:5px 10px 0 0;
+        }
+
+        header{
+            display:none;
+        }
+
+        #icon {
+            height: 32px;
+            margin-inline-end: 10px;
+            width: 32px;
+        }
+
+        [slot=title] {
+            color: #202124;
+            flex: 1;
+            font-size: 1.4em;
+            line-height: 1;
+            padding-bottom: 16px;
+            padding-top: 20px;
+        }
+
+        #icon-and-name-wrapper {
+            align-items: center;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div slot="title">
+            <div id="icon-and-name-wrapper">
+                <img id="icon" src="">
+                <span>Boomi Platform Enhancer</span>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <span>Non Connected Endpoint Notification:</span><br>
+        <select name="endpoint_flash" class="option">
+            <option value="on" selected>Always ON</option>
+            <option value="off">Always OFF</option>
+            <option value="testing">Only when running tests</option>
+        </select>
+    </section>
+    
+    <section>
+        <span>Trace Path Highlight:</span><br>
+        <select name="path_trace_highlight" class="option">
+            <option value="pulse" selected>On</option>
+            <option value="off">Off</option>
+        </select>
+    </section>
+
+    <section>
+        <span>Process Flow Description Markdown:</span><br>
+        <select name="description_markdown" class="option">
+            <option value="on" selected>On Automatically</option>
+            <option value="manual">On Manually</option>
+            <option value="off">Off</option>
+        </select>
+    </section>
+
+    <section>
+        <span>Shortcut key for Full Screen (<a href="https://keycode.info/" target="_blank">must be a keycode</a>):</span><br>
+        <input type="number" name="full_screen_shortcut" class="option" value="192">
+        
+        <label><input type="checkbox" name="full_screen_shortcut_alt" value="ALT" class="option">alt</label>
+        <label><input type="checkbox" name="full_screen_shortcut_ctrl" value="CTRL" class="option">ctrl</label>
+        <label><input type="checkbox" name="full_screen_shortcut_shift" value="SHIFT" class="option">shift</label>
+        <br>
+        <small>Shortcut will not override system shortcuts, so be careful with what keys/modifiers you use.</small>
+    </section> 
+
+
+    <section>
+        <span>Show Canvas Grid:</span><br>
+        <select name="canvas_grid" class="option">
+            <option value="on" selected>On</option>
+            <option value="off">Off</option>
+        </select>
+    </section>
+
+    <hr>
+
+    <button id="save">Save Options</button> <span id="status"></span>
+
+    <script src="library/boomiapp/options.js"></script>
+</body>
+
 </html>

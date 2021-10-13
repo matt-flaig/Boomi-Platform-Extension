@@ -1,13 +1,11 @@
-/*const loadScript = (url) => {
+const loadScript = (url) => {
     let body = document.getElementsByTagName('body')[0];
     let script = document.createElement('script');
     script.setAttribute('type', 'text/javascript');
     script.setAttribute('src', chrome.extension.getURL(url));
     body.appendChild(script);
 }
-
 loadScript('./library/boomiapp/notes.js');
-loadScript('./library/inject/shortcut.js');
 loadScript('./library/boomiapp/descriptionMarkdown.js');
 loadScript('./library/boomiapp/groups.js');
 loadScript('./library/boomiapp/shapes.js');
@@ -17,10 +15,11 @@ loadScript('./library/boomiapp/imageCapture.js');
 loadScript('./library/boomiapp/tableWrap.js');
 loadScript('./library/boomiapp/listenerGlobal.js');
 loadScript('./library/boomiapp/canvas.js');
-loadScript('./library/boomiapp/saveBuild.js')
+loadScript('./library/boomiapp/copyComponentid.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
-loadScript('./library/inject/codeflask.min.js');*/
+loadScript('./library/inject/codeflask.min.js');
+
 
 
 

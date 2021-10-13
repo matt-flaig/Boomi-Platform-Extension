@@ -15,6 +15,10 @@ var getUrlpath = function getUrlpath() {
 };
 
 
+
+
+
+
 //Function to adjust the Dashboard Grids from default to 7 days
 function dashboardDays() {
   //Only Actions occur once the screen has been fully loaded
@@ -37,8 +41,3 @@ function dashboardDays() {
   }, 1000);
   //////////
 }
-
-
-
-
-
