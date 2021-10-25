@@ -19,6 +19,7 @@ loadScript('./library/boomiapp/copyComponentid.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');
+loadScript('./library/jquery/jquery-2.2.3.min.js');
 
 
 
