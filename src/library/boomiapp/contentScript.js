@@ -15,7 +15,6 @@ loadScript('./library/boomiapp/imageCapture.js');
 loadScript('./library/boomiapp/tableWrap.js');
 loadScript('./library/boomiapp/listenerGlobal.js');
 loadScript('./library/boomiapp/canvas.js');
-loadScript('./library/boomiapp/copyComponentid.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');
