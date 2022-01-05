@@ -2,7 +2,7 @@ const loadScript = (url) => {
     let body = document.getElementsByTagName('body')[0];
     let script = document.createElement('script');
     script.setAttribute('type', 'text/javascript');
-    script.setAttribute('src', chrome.extension.getURL(url));
+    script.setAttribute('src', chrome.runtime.getURL(url));
     body.appendChild(script);
 }
 loadScript('./library/boomiapp/notes.js');
