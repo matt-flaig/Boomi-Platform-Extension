@@ -34,40 +34,6 @@ $(document).ready(function () {
 
 
 
-    $(document).on("click", ".build_actionsButton", function () {
-
-
-        var ul = document.getElementsByClassName('menu_item_group')[0]
-        $(ul).append('<li id="copyCompId"><a>Copy Current Component ID</a></li>');
-
-
-    });
-
-
-    $(document).on("click", "#copyCompId", function () {
-
-    var currentid = getUrlParameter("componentIdOnFocus");
-    mastfoot
-    $('#mastfoot').append('<input type="text" value="' + currentid + '" id="currentidval">')
-    var currentidval = document.getElementById("currentidval");
-    currentidval.select();
-    currentidval.setSelectionRange(0, 99999)
-    document.execCommand("copy");
-    $('#currentidval').remove()
-
-    alert('Component ID: ' + currentid + " has been copied to your clipboard")
-
-    return false
-    
-
-});
-
-
-
-
-
-
-
 
 
 

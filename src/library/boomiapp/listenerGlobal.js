@@ -51,7 +51,7 @@ const BoomiPlatform_Init = () => {
             }
         }
 
-        listenerClass('.gwt-ProcessPanel', [quick_component_select, process_to_image, check_beta, add_canvase_listener]);
+        listenerClass('.gwt-ProcessPanel', [quick_component_select, process_to_image, check_beta, add_canvase_listener,copy_component_id]);
         listenerClass('.gwt-EndPoint', add_endpoint_listener);
         listenerClass('.gwt-Shape', add_shape_listener);
         listenerClass('.gwt-DialogBox', add_dialog_listener);
@@ -78,3 +78,17 @@ window.addEventListener('message', (e) => {
 }, false);
 
 
+let getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = $(location).attr('href'),
+        sURLVariables = sPageURL.split(';'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
