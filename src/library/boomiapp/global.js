@@ -15,10 +15,6 @@ var getUrlpath = function getUrlpath() {
 };
 
 
-
-
-
-
 //Function to adjust the Dashboard Grids from default to 7 days
 function dashboardDays() {
   //Only Actions occur once the screen has been fully loaded
@@ -46,15 +42,15 @@ function dashboardDays() {
 
 function getUrlParameter(sParam) {
   var sPageURL = $(location).attr('href'),
-      sURLVariables = sPageURL.split(';'),
-      sParameterName,
-      i;
+    sURLVariables = sPageURL.split(';'),
+    sParameterName,
+    i;
 
   for (i = 0; i < sURLVariables.length; i++) {
-      sParameterName = sURLVariables[i].split('=');
+    sParameterName = sURLVariables[i].split('=');
 
-      if (sParameterName[0] === sParam) {
-          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-      }
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+    }
   }
 };

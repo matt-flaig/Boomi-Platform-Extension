@@ -17,21 +17,11 @@ $(document).ready(function () {
         }
     });
 
-
-
-
-
-
-
-
     $(document).on("click", "#gwt-uid-84", function () {
 
         dashboardDays();
 
     });
-
-
-
 
     $(document).on("click", ".build_actionsButton", function () {
 
@@ -45,24 +35,21 @@ $(document).ready(function () {
 
     $(document).on("click", "#copyCompId", function () {
 
-    var currentid = getUrlParameter("componentIdOnFocus");
-    mastfoot
-    $('#mastfoot').append('<input type="text" value="' + currentid + '" id="currentidval">')
-    var currentidval = document.getElementById("currentidval");
-    currentidval.select();
-    currentidval.setSelectionRange(0, 99999)
-    document.execCommand("copy");
-    $('#currentidval').remove()
+        var currentid = getUrlParameter("componentIdOnFocus");
+        mastfoot
+        $('#mastfoot').append('<input type="text" value="' + currentid + '" id="currentidval">')
+        var currentidval = document.getElementById("currentidval");
+        currentidval.select();
+        currentidval.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        $('#currentidval').remove()
 
-    alert('Component ID: ' + currentid + " has been copied to your clipboard")
+        alert('Component ID: ' + currentid + " has been copied to your clipboard")
 
-    return false
-    
-
-});
+        return false
 
 
-
+    });
 
 
 });

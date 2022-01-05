@@ -1,8 +1,6 @@
 const add_buildShort_listener = (buildshort) => {
 
   runbuildShort()
-
-
 }
 
 
@@ -11,11 +9,6 @@ $(document).on("click", ".gwt-TabLayoutPanelTab", function (tab) {
   runbuildShort()
 
 });
-
-
-
-
-
 
 function runbuildShort() {
 
@@ -31,7 +24,7 @@ function runbuildShort() {
 
       if (savebtnCheck != null && testbtnCheck != null && displayedCheck != 'none') {
         clearInterval(wait_for_build_load);
-        
+
         shortcut.remove("Alt+Ctrl+R");
         shortcut.remove("Alt+Ctrl+S");
 
@@ -42,9 +35,9 @@ function runbuildShort() {
         shortcut.add("Alt+Ctrl+R", function () {
           testbtnCheck.click();
 
-      });
+        });
 
-      break;
+        break;
 
       }
 

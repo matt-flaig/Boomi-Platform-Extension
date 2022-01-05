@@ -5,9 +5,7 @@ const add_dialog_listener = (dialog) => {
     let rect = dialog.getBoundingClientRect();
     let children = [...dialog.getElementsByTagName('*')];
 
-
 }
-
 
 let bt_init = false;
 const BoomiPlatform_Init = () => {
@@ -62,8 +60,6 @@ const BoomiPlatform_Init = () => {
         listenerClass('.note-content', add_notecontent_listener);
 
     }, 1000)
-
-
 
 }
 

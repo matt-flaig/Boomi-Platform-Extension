@@ -21,7 +21,7 @@ const copy_component_id = (componentid) => {
                 navcomponent.insertAdjacentHTML('beforebegin', componentidLink);
 
                 navcomponent.previousElementSibling.addEventListener('click', event => {
-                    
+
                     var currentid = getUrlParameter("componentIdOnFocus");
                     mastfoot
                     $('#mastfoot').append('<input type="text" value="' + currentid + '" id="currentidval">')
@@ -30,7 +30,7 @@ const copy_component_id = (componentid) => {
                     currentidval.setSelectionRange(0, 99999)
                     document.execCommand("copy");
                     $('#currentidval').remove()
-                
+
                     alert('Component ID: ' + currentid + " has been copied to your clipboard")
 
                 })
@@ -48,4 +48,3 @@ const copy_component_id = (componentid) => {
     }, 250)
 
 };
-

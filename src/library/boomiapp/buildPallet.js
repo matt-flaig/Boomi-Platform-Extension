@@ -1,3 +1,7 @@
+// @author   Noah Skelton
+// @description Reverts to older shape sizes on palette and changes the default expand / collapse width.
+
+
 var psc = 0;
 var DefaultPaletteWidth = 250;
  

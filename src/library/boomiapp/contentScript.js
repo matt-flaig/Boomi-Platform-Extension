@@ -21,10 +21,6 @@ loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');
 loadScript('./library/jquery/jquery-2.2.3.min.js');
 
-
-
-
-
 let org_title = document.title;
 let wait_for_load = setInterval(() => {
 
@@ -38,7 +34,6 @@ let wait_for_load = setInterval(() => {
     }
 
 }, 250)
-
 
 
 //options updated via extension options
@@ -68,8 +63,6 @@ chrome.storage.onChanged.addListener(() => {
         </div>
     </div>
 </div>`;
-
-
 
     let overlay = document.querySelector('.BoomiPlatformOverlay');
     if (overlay) overlay.remove();

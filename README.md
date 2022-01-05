@@ -91,7 +91,8 @@ The following provides the current abilities of the released extension for use w
 * Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis.
 * Ability to Remove the Canvas Build Background (dots) - works will with dark modes 
 * Schedule Reminder - Once a deployment has occured or been deployed to another environment the notification message will also provide a reminder to setup a schedule if required.
-* Easily copy the current build flows component id using the Copy Coponent ID Button (Next to the Test and Create Package Buttons)
+* Easily copy the current component id using the Copy Coponent ID Button (In the action button - enter full screen etc.)
+* Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unsuable
 
 
   ![Header](chromewebstore/Image1.png)
@@ -146,3 +147,4 @@ Name - [Mitchell Franklin](https://mitchellfranklin.info) - mitchellfranklin@gma
 * [Boomi Community](https://community.boomi.com/)
 * [Choose an Open Source License](https://choosealicense.com)
 * [Visual Studio Code](https://code.visualstudio.com/)
+* **Noah Skelton** - Developer of the Build Pallet Fix Script used to return the UX for Shapes back to what it was
