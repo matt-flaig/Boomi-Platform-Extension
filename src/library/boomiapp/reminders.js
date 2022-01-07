@@ -1,0 +1,1 @@
+wizard_buttons css class when visbile we want to add in the text

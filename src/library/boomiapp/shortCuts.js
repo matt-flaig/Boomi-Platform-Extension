@@ -5,8 +5,6 @@ $(document).ready(function () {
         var x = document.querySelectorAll('[data-locator="button-save"]')
         $(x).each(function () {
 
-            var kk = $(this).is(':visible')
-
             if ($(this).is(':visible')) {
 
                 $(this).click();
@@ -19,8 +17,6 @@ $(document).ready(function () {
 
         var x = document.querySelectorAll('[data-locator="button-test"]')
         $(x).each(function () {
-
-            var kk = $(this).is(':visible')
 
             if ($(this).is(':visible')) {
 
