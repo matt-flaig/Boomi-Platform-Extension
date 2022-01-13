@@ -71,8 +71,8 @@ To get started simply visit the [Chrome WebStore](https://chrome.google.com/webs
 The following provides the current abilities of the released extension for use within the Boomi Web Platform.
 
 * Keyboard Short Cuts
-  * Shift + S = Save Current Flow
-  * Shift + R = Test Current Flow
+  * ~~Ctril+Alt + S = Save Current Flow~~
+  * ~~Ctril+Alt = Test Current Flow~~
   * ~ = Full Screen - On/Off
 * Adjustments to the portal for integration around font sizing, header and menu sizing to provide more build and processing space within the default view.
 * Account dashboard now defaults to 7 days instead of the maximum value.
