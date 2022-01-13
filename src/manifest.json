@@ -6,7 +6,7 @@
     "version": "1.6.2",
     "options_ui": {
         "page": "options.html",
-        "open_in_tab": false,
+        "open_in_tab": true,
         "browser_style": true
     },
     "icons": {
@@ -53,6 +53,7 @@
                 "library/boomiapp/jsonView.js",
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
+                "library/boomiapp/reminders.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"
