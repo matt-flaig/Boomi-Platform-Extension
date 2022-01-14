@@ -71,8 +71,8 @@ To get started simply visit the [Chrome WebStore](https://chrome.google.com/webs
 The following provides the current abilities of the released extension for use within the Boomi Web Platform.
 
 * Keyboard Short Cuts
-  * ~~Ctril+Alt + S = Save Current Flow~~
-  * ~~Ctril+Alt = Test Current Flow~~
+  * Ctrl+Alt + S = Save Current Flow
+  * Ctrl+Alt = Test Current Flow
   * ~ = Full Screen - On/Off
 * Adjustments to the portal for integration around font sizing, header and menu sizing to provide more build and processing space within the default view.
 * Account dashboard now defaults to 7 days instead of the maximum value.
@@ -90,9 +90,14 @@ The following provides the current abilities of the released extension for use w
 * Capture your process flow easily via the Capture Process Flow Button; will capture the entire flow and save to a local file.
 * Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis.
 * Ability to Remove the Canvas Build Background (dots) - works will with dark modes 
-* Schedule Reminder - Once a deployment has occured or been deployed to another environment the notification message will also provide a reminder to setup a schedule if required.
-* Easily copy the current Component id using the Copy Coponent ID Button (In the action button - enter full screen etc.)
+* Schedule Reminder - Once a deployment has occurred or been deployed to another environment the notification message will also provide a reminder to setup a schedule if required.
+* Easily copy the current Component id using the Copy Component ID Button (In the action button - enter full screen etc.)
 * Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unusable
+* Reminders
+  * Save Reminder when Creating a Package, Boomi by default does not save any changes since last save when Create Package is selected.
+  * Upon successful deployment a reminder will appear that if new it may require to be scheduled.
+
+<br><br>
 
 
   ![Header](chromewebstore/Image1.png)

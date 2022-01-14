@@ -3,7 +3,7 @@
     "manifest_version": 3,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.6.1",
+    "version": "1.6.2",
     "options_ui": {
         "page": "options.html",
         "open_in_tab": false,
@@ -30,7 +30,11 @@
                 "library/boomiapp/boomi.js",
                 "library/boomiapp/clickComponents.js",
                 "library/boomiapp/dashboard.js",
-                "library/boomiapp/buildPallet.js"
+                "library/boomiapp/buildPallet.js",
+                "library/boomiapp/shortCuts.js",
+                "library/boomiapp/updateNotification.js",
+                "library/inject/shortcut.js"
+
             ]
         }
     ],
@@ -50,7 +54,7 @@
                 "library/boomiapp/jsonView.js",
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
-                "library/boomiapp/copyComponentid.js",
+                "library/boomiapp/reminders.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"

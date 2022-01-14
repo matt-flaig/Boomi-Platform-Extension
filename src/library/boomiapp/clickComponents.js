@@ -25,10 +25,8 @@ $(document).ready(function () {
 
     $(document).on("click", ".build_actionsButton", function () {
 
-
         var ul = document.getElementsByClassName('menu_item_group')[0]
         $(ul).append('<li id="copyCompId"><a>Copy Current Component ID</a></li>');
-
 
     });
 
@@ -48,8 +46,19 @@ $(document).ready(function () {
 
         return false
 
+    });
+    
 
+    $(document).on("click", ".hover_bkgr_fricc", function () {
+        $('.hover_bkgr_fricc').hide();
+    });
+
+    $(document).on("click", ".popupCloseButton", function () {
+        $('.hover_bkgr_fricc').hide();
     });
 
 
+
+
+//////////
 });

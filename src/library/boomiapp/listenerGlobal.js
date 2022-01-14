@@ -58,6 +58,8 @@ const BoomiPlatform_Init = () => {
         listenerClass('.description_panel', add_description_listener);
         listenerClass('.shape_side_panel', add_sidepanel_listener);
         listenerClass('.note-content', add_notecontent_listener);
+        listenerClass('.packaged_components_wizard',reminder_save);
+        listenerClass('.popupContent',reminder_schedule);
 
     }, 1000)
 
