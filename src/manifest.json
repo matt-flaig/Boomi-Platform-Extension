@@ -3,10 +3,10 @@
     "manifest_version": 3,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.6.2",
+    "version": "1.6.3",
     "options_ui": {
         "page": "options.html",
-        "open_in_tab": false,
+        "open_in_tab": true,
         "browser_style": true
     },
     "icons": {
@@ -57,7 +57,9 @@
                 "library/boomiapp/reminders.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
-                "library/inject/codeflask.min.js"
+                "library/inject/codeflask.min.js",
+                "assets/js/popper.min.js",
+                "bootstrap/js/bootstrap.min.js"
             ],
             "matches": [
                 "https://platform.boomi.com/*"

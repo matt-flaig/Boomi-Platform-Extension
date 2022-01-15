@@ -4,11 +4,13 @@ const save_options = () => {
         [option.name]: option.type == 'checkbox' ? option.checked : option.value
     })));
     chrome.storage.sync.set(options, () => {
+        
         let status = document.getElementById('status');
-        status.textContent = 'Extenstion Options saved!';
+        status.style.display = null
         setTimeout(() => {
-            status.textContent = ''
-        }, 750);
+            status.style.display = 'none'
+        }, 750);   
+        
     });
 }
 
@@ -30,6 +32,7 @@ const restore_options = () => {
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click', save_options);
 
-if (window.screenX != 0 && window.screenY != 0) {
+/*if (window.screenX != 0 && window.screenY != 0) {
     document.getElementById('header').style.display = 'block';
-}
+}*/
+

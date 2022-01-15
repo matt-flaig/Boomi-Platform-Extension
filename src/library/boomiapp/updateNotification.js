@@ -26,7 +26,7 @@ function updateNotificationfun() {
             <div style="text-align: left">
     <h4>Latest Updates now live for the Boomi Platform Enhancer</h4>
     <ul>
-        <li>- <b style="color: green">Feature: </b> Short Cut to Save Current Process - Ctrl+Alt+S</li>
+        <li>- <b style="color: blue">Change: </b> Extension Options Page Redesigned</li>
         <li>- <b style="color: green">Feature: </b> Short Cut to Run/Test Current Process - Ctrl+Alt+T</li>
         <li>- <b style="color: green">Feature: </b> Reminder - When Creating Package that changes do not get saved; Option in Settings.</li>
         <li>- <b style="color: green">Feature: </b> Reminder - When Package Deployed to Schedule if required; Option in Settings.</li>
