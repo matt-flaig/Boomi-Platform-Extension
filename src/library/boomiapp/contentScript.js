@@ -19,7 +19,7 @@ loadScript('./library/boomiapp/reminders.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');
-loadScript('./library/jquery/jquery-2.2.3.min.js');
+loadScript('./library/jquery/jquery-3.6.min.js');
 
 let org_title = document.title;
 let wait_for_load = setInterval(() => {

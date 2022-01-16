@@ -21,10 +21,12 @@
             ],
             "run_at": "document_end",
             "css": [
-                "library/css/boomi.css"
+                "library/css/boomi.css",
+                "library/css/jquery-modal.css"
             ],
             "js": [
-                "library/jquery/jquery-2.2.3.min.js",
+                "library/jquery/jquery-3.6.min.js",
+                "library/inject/jquery-modal.js",
                 "library/boomiapp/contentScript.js",
                 "library/boomiapp/global.js",
                 "library/boomiapp/boomi.js",
@@ -43,7 +45,7 @@
             "resources": [
                 "*.png",
                 "*.jpg",
-                "library/jquery/jquery-2.2.3.min.js",
+                "library/jquery/jquery-3.6.min.js",
                 "library/boomiapp/notes.js",
                 "library/boomiapp/imageCapture.js",
                 "library/boomiapp/descriptionMarkdown.js",
@@ -57,9 +59,7 @@
                 "library/boomiapp/reminders.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
-                "library/inject/codeflask.min.js",
-                "assets/js/popper.min.js",
-                "bootstrap/js/bootstrap.min.js"
+                "library/inject/codeflask.min.js"
             ],
             "matches": [
                 "https://platform.boomi.com/*"
