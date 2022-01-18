@@ -19,12 +19,13 @@ function updatenotificationCheck() {
 
 function updateNotificationfun() {
 
-  let htmlUpdateContents = `<ul>
+  let htmlUpdateContents = `
+  <ul>
   <li>
-      <p><strong>Change:</strong> Extension Options Page Redesigned</li></p>
+      <p><strong>Change:</strong> Existing Modals and Alerts leverage Platform styling  - Updates, Image Capture, Settings Refresh and Copy Current Component ID.</li></p>
   </li>
   <li>
-      <p><strong>Docker Runtime Images:</strong> Newly available</p>
+     <p><strong>Change:</strong> Extension Options Page Redesigned.</li></p>
   </li>
   <li>
       <p><strong>Amazon SNS Connectivity:</strong> Deliver message attributes via

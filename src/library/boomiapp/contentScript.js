@@ -48,21 +48,55 @@ const updateBoomiPlatformConfig = () => {
 chrome.storage.onChanged.addListener(() => {
 
     let alert_html = `
-    <div class="BoomiPlatformOverlay" style="position:fixed;z-index:9999;display:grid;place-items:center;min-height:100vh;min-width:100vw;background: rgba(0,0,0,0.25);">
-    <div class="alert_label_content error_label_content" style="max-height: 600px; max-width: 600px; overflow: auto; padding: 10px; border-radius: 4px; box-shadow: 0 0 20px 0 rgba(0,0,0,0.25); background-color: #ffffff;">
-        <div>
-            <span class="alert_dismiss" style="float: right;"> <a class="gwt-Anchor" data-locator="link-cancel" href="javascript:document.querySelector('.BoomiPlatformOverlay').remove();"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 16 16" style="width: 14px; height: 14px;">
-                        <title>Close</title>
-                        <path class="svg-foreground" d="M14.284,12.546c0.348,0.348,0.521,0.764,0.521,1.246s-0.174,0.888-0.521,1.216c-0.348,0.328-0.763,0.493-1.245,0.493 c-0.483,0-0.898-0.155-1.245-0.463l-3.822-4.402l-3.822,4.402C3.801,15.345,3.386,15.5,2.904,15.5c-0.483,0-0.898-0.155-1.245-0.463 c-0.309-0.348-0.463-0.763-0.463-1.245s0.154-0.898,0.463-1.246l3.996-4.517L1.659,3.453C1.35,3.106,1.195,2.692,1.195,2.208 c0-0.482,0.154-0.898,0.463-1.245C2.006,0.655,2.421,0.5,2.904,0.5c0.482,0,0.898,0.155,1.245,0.463l3.822,4.401l3.822-4.401 C12.141,0.655,12.556,0.5,13.039,0.5c0.482,0,0.897,0.164,1.245,0.493s0.521,0.734,0.521,1.216c0,0.483-0.174,0.898-0.521,1.245 l-3.996,4.576L14.284,12.546z"></path>
-                    </svg> </a> </span>
-        </div>
-        <span class="alert_icon" style="padding-top:0;vertical-align: middle;"><img style="width: 24px; height: 24px; background-color: #ffab00;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMTYgMTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2IDE2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+Cgk8ZGVmcz48c3R5bGU+LmQge2ZpbGw6I2ZmZmZmZn08L3N0eWxlPjwvZGVmcz4KPHBhdGggY2xhc3M9ImQiIGQ9Ik04LjksMS42bDYuNCwxMS44YzAuMiwwLjMsMC4yLDAuNywwLDFjLTAuMSwwLjItMC4yLDAuMy0wLjQsMC40Yy0wLjIsMC4xLTAuMywwLjEtMC41LDAuMUgxLjZjLTAuMiwwLTAuNC0wLjEtMC41LTAuMQoJYy0wLjItMC4xLTAuMy0wLjItMC40LTAuNGMtMC4yLTAuMy0wLjItMC43LDAtMUw3LjEsMS42YzAuMS0wLjIsMC4yLTAuMywwLjQtMC40UzcuOCwxLDgsMXMwLjQsMCwwLjUsMC4xQzguNywxLjMsOC44LDEuNCw4LjksMS42egoJIE05LDkuNGwwLjEtMy44YzAtMC4xLDAtMC4xLTAuMS0wLjJDOS4xLDUuNCw5LDUuMyw4LjksNS4zSDcuMWMtMC4xLDAtMC4xLDAtMC4yLDAuMWMtMC4xLDAtMC4xLDAuMS0wLjEsMC4ybDAuMSwzLjgKCWMwLDAuMSwwLDAuMSwwLjEsMC4xYzAuMSwwLDAuMSwwLjEsMC4yLDBoMS41YzAuMSwwLDAuMSwwLDAuMiwwQzksOS41LDksOS41LDksOS40eiBNOS4xLDEyLjV2LTEuNmMwLTAuMSwwLTAuMS0wLjEtMC4yCgljLTAuMS0wLjEtMC4xLTAuMS0wLjItMC4xSDcuMmMtMC4xLDAtMC4xLDAtMC4yLDAuMWMtMC4xLDAuMS0wLjEsMC4xLTAuMSwwLjJ2MS42YzAsMC4xLDAsMC4xLDAuMSwwLjJjMC4xLDAuMSwwLjEsMC4xLDAuMiwwLjFoMS42CgljMC4xLDAsMC4xLDAsMC4yLTAuMUM5LDEyLjcsOS4xLDEyLjYsOS4xLDEyLjV6Ii8+Cjwvc3ZnPgo=" alt="Warning"></span>
-        <div class="alert_text">
-            <b>Boomi Platform Enhancer:</b> Settings have been adjusted.
-            <p>Reload the page to apply the new adjustments.</p>
+    <div style="left: 618px; top: 139px; visibility: visible; position: absolute; overflow: visible;" class="center_panel BoomiUpdateOverlay"
+    id="popup_on_popup_content" role="dialog" aria-modal="true">
+    <div class="popupContent">
+        <div class="modal modal_top">
+            <div class="modal_contents">
+                <div class="margin_popup_contents notification_min_width" style="width: 440px;">
+                    <div class="form_header" style="display: none;" aria-hidden="true">
+                        <div class="form_title no_required">
+                            <div class="form_title_top"><svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"
+                                        class="svg-infoicon size16x16" style="width: 16px; height: 16px;">
+                                        <title>Extension Update Information</title>
+                                        <path class="svg-background-invert"
+                                            d="M7.92.5a7.24,7.24,0,0,1,5.31,2.12A7.22,7.22,0,0,1,15.5,7.88a7.23,7.23,0,0,1-2.12,5.34A7.23,7.23,0,0,1,8.11,15.5a7.21,7.21,0,0,1-5.33-2.12A7.24,7.24,0,0,1,.5,8.11,7.2,7.2,0,0,1,2.64,2.77,7.23,7.23,0,0,1,7.92.5Z"
+                                            transform="translate(-0.5 -0.5)"></path>
+                                        <path class="svg-foreground"
+                                            d="M8,1.07a6.81,6.81,0,0,1,6.88,6.84A6.81,6.81,0,0,1,8,14.84H8A6.81,6.81,0,0,1,1.07,8,6.89,6.89,0,0,1,8,1.07H8M8.09.5h0A7.56,7.56,0,0,0,.5,8.09,7.38,7.38,0,0,0,8,15.5h.09A7.38,7.38,0,0,0,15.5,8,7.38,7.38,0,0,0,8.09.5Z"
+                                            transform="translate(-0.5 -0.5)"></path>
+                                        <path class="svg-foreground-invert"
+                                            d="M6.9,12.55a2.84,2.84,0,0,0,1.3-.4A6.57,6.57,0,0,0,9.9,11l-.3-.4a2.38,2.38,0,0,1-1.1.6c-.1,0-.2-.2-.1-.6l.7-2.6c.3-1,.2-1.5-.4-1.5a3.36,3.36,0,0,0-1.4.5,5.67,5.67,0,0,0-1.8,1.2l.3.4A1.66,1.66,0,0,1,7,8c.1,0,.1.2,0,.5l-.6,2.4C6,12,6.2,12.55,6.9,12.55Z"
+                                            transform="translate(-0.5 -0.5)"></path>
+                                        <path class="svg-foreground-invert"
+                                            d="M8.8,3a1.28,1.28,0,0,0-1,.4,1.23,1.23,0,0,0-.4.8,1.45,1.45,0,0,0,.2.7,1.14,1.14,0,0,0,.8.3,1.28,1.28,0,0,0,1-.4,1.27,1.27,0,0,0,.4-.9A.7.7,0,0,0,9.1,3Z"
+                                            transform="translate(-0.5 -0.5)"></path>
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qm-c-alert qm-c-alert--info" style="max-height: 600px; overflow: auto;"><span
+                            class="qm-c-alert__icon"><img
+                                src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGRlZnM+PC9kZWZzPjx0aXRsZT5BbGVydC1JY29uczwvdGl0bGU+PHBhdGggZmlsbD0iIzMzMzMzMyIgZD0iTTEwLjgxLDE5LjA5YTQuMjMsNC4yMywwLDAsMCwxLjkzLS41OSw5Ljg5LDkuODksMCwwLDAsMi41My0xLjcxbC0uNDUtLjU5YTMuNjMsMy42MywwLDAsMS0xLjYzLjg5Yy0uMTUsMC0uMy0uMy0uMTUtLjg5bDEtMy44NmMuNDQtMS40OS4zLTIuMjMtLjYtMi4yM2E1LDUsMCwwLDAtMi4wNy43NCw4LjQ4LDguNDgsMCwwLDAtMi42OCwxLjc4bC40NS42QTIuNDMsMi40MywwLDAsMSwxMSwxMi4zNGMuMTUsMCwuMTUuMjksMCwuNzRsLS44OSwzLjU2QzkuNDgsMTguMjcsOS43NywxOS4wOSwxMC44MSwxOS4wOVoiLz48cGF0aCBmaWxsPSIjMzMzMzMzIiBkPSJNMTMuNjMsNC45MWExLjg5LDEuODksMCwwLDAtMS40OC42LDEuODUsMS44NSwwLDAsMC0uNiwxLjE4LDIuMiwyLjIsMCwwLDAsLjMsMUExLjY5LDEuNjksMCwwLDAsMTMsOC4xOGExLjg4LDEuODgsMCwwLDAsMS40OC0uNiwxLjg2LDEuODYsMCwwLDAsLjYtMS4zMywxLDEsMCwwLDAtMS0xLjM0WiIvPjxwYXRoIGZpbGw9IiMzMzMzMzMiIGQ9Ik0xMiwxLjA5QTEwLjkxLDEwLjkxLDAsMSwxLDEuMDksMTIsMTAuOTIsMTAuOTIsMCwwLDEsMTIsMS4wOU0xMiwwQTEyLDEyLDAsMSwwLDI0LDEyLDEyLDEyLDAsMCwwLDEyLDBaIi8+PC9zdmc+"
+                                alt="Information"></span>
+                        <div class="qm-c-alert__text">
+                            <div class="updated_typography c-whats-new">
+                                <h1>Settings Changed.</h1>
+                                <p>The Boomi Platform Enhancer Extension options have been adjusted, for these to take affect please reload the page to apply.</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="button_set">
+                <div class="button_spinner_panel no_display"> <i
+                        class="font_icon icon-spinner before-animate-spin spinner"></i> </div><button id="closeUpdate" type="button" class="gwt-Button"
+                    >Close</button>
+            </div>
         </div>
     </div>
-</div>`;
+    </div>`;
 
     let overlay = document.querySelector('.BoomiPlatformOverlay');
     if (overlay) overlay.remove();
