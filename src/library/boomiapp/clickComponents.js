@@ -42,20 +42,18 @@ $(document).ready(function () {
         document.execCommand("copy");
         $('#currentidval').remove()
 
-        alert('Component ID: ' + currentid + " has been copied to your clipboard")
-
+        //alert('Component ID: ' + currentid + " has been copied to your clipboard")
+        componentCopyalert(currentid)
         return false
 
     });
     
 
-    $(document).on("click", ".hover_bkgr_fricc", function () {
-        $('.hover_bkgr_fricc').hide();
+    $(document).on("click", "#closeUpdate", function () {
+        $('.BoomiUpdateOverlay').remove();
     });
 
-    $(document).on("click", ".popupCloseButton", function () {
-        $('.hover_bkgr_fricc').hide();
-    });
+
 
 
 

@@ -21,12 +21,10 @@
             ],
             "run_at": "document_end",
             "css": [
-                "library/css/boomi.css",
-                "library/css/jquery-modal.css"
+                "library/css/boomi.css"
             ],
             "js": [
                 "library/jquery/jquery-3.6.min.js",
-                "library/inject/jquery-modal.js",
                 "library/boomiapp/contentScript.js",
                 "library/boomiapp/global.js",
                 "library/boomiapp/boomi.js",
