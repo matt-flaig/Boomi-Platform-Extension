@@ -28,17 +28,13 @@ function updateNotificationfun() {
      <p><strong>Change:</strong> Extension Options Page Redesigned.</li></p>
   </li>
   <li>
-      <p><strong>Amazon SNS Connectivity:</strong> Deliver message attributes via
-          Create and Execute operations.</p>
+      <p><strong>Bug Fix:</strong> Fix Capture Process Button Replication after running process in test mode.</p>
   </li>
   <li>
-      <p><strong>API Authentication:</strong> Quickly and easily convert existing
-          Authentication Broker-based Basic Authentication to Basic Authentication on
-          the API Gateway.</p>
+      <p><strong>Note of Failed Fix:</strong> Unable to resolve issue with Adding of Shape via Double Click for certain connectors moving to bottom right.
+       appears boomi fix for pallet enforces an override for shapes not in Connect Path - If community has an idea on how to resolve please comment on Gitlab issue.</p>
   </li>
-  <li>
-      <p><strong>Boomi Flow:</strong> Manage your page layouts with greater ease.</p>
-  </li>
+
 </ul>
 `
 
@@ -86,7 +82,7 @@ id="popup_on_popup_content" role="dialog" aria-modal="true">
 ` + htmlUpdateContents + `
                             <p>For more detail on what each feature does and how to use it visit the <a
                                     href="https://boomiplatformenhancer.blogspot.com"
-                                    target="_blank">Boomi Platform Enhancer Blog Page</a> .</p>
+                                    target="_blank">Boomi Platform Enhancer Blog Page</a> - It is still in progress.</p>
                         </div>
                     </div> 
                 </div>
