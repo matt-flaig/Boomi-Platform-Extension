@@ -11,6 +11,9 @@ const check_beta = (process) => {
 const process_to_image = (process) => {
 
     let nav = process.closest('.component_editor_panel').querySelector('.component_nav');
+    let executeCheck = nav.innerText
+    let executeLink = executeCheck.includes("Capture Process Flow");
+    if (executeLink != true){
     let newLink = `<li> <a class="gwt-Anchor bph-capture-process">Capture Process Flow</a> </li>`
     nav.insertAdjacentHTML('beforeend', newLink);
 
@@ -152,5 +155,5 @@ const process_to_image = (process) => {
             }, 200)
         });
     });
-
+}
 }
