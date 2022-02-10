@@ -258,4 +258,7 @@ span.ignoreBreaks {
 }
 
 
-
+.component_header .name_label>.gwt-Label {
+    max-width: 950px !important;
+    width: fit-content !important;
+}
