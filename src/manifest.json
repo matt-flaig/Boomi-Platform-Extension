@@ -56,7 +56,7 @@
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
                 "library/boomiapp/reminders.js",
-                
+                "library/boomiapp/doubleClick.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"
