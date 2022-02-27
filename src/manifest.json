@@ -33,8 +33,7 @@
                 "library/boomiapp/buildPallet.js",
                 "library/boomiapp/shortCuts.js",
                 "library/boomiapp/updateNotification.js",
-                "library/inject/shortcut.js",
-                "library/boomiapp/doubleClick.js"
+                "library/inject/shortcut.js"
 
             ]
         }
