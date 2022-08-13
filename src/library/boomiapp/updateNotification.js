@@ -22,19 +22,11 @@ function updateNotificationfun() {
   let htmlUpdateContents = `
   <ul>
   <li>
-      <p><strong>Change:</strong> Existing Modals and Alerts leverage Platform styling  - Updates, Image Capture, Settings Refresh and Copy Current Component ID.</li></p>
+      <p><strong>Change:</strong> Extended Tab Description Lenght so not to cut off long process descriptions when so much room is available.</li></p>
   </li>
   <li>
-     <p><strong>Change:</strong> Extension Options Page Redesigned.</li></p>
+      <p><strong>Code Fix:</strong> Code Improvements applied from boomiman.</p>
   </li>
-  <li>
-      <p><strong>Bug Fix:</strong> Fix Capture Process Button Replication after running process in test mode.</p>
-  </li>
-  <li>
-      <p><strong>Note of Failed Fix:</strong> Unable to resolve issue with Adding of Shape via Double Click for certain connectors moving to bottom right.
-       appears boomi fix for pallet enforces an override for shapes not in Connect Path - If community has an idea on how to resolve please comment on Gitlab issue.</p>
-  </li>
-
 </ul>
 `
 
