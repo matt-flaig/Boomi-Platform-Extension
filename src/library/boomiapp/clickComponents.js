@@ -26,24 +26,43 @@ $(document).ready(function () {
     $(document).on("click", ".build_actionsButton", function () {
 
         var ul = document.getElementsByClassName('menu_item_group')[0]
-        $(ul).append('<li id="copyCompId"><a>Copy Current Component ID</a></li>');
+        $(ul).append('<li id="copyCompURL"><a>Copy Current Component URL</a></li>');
 
     });
 
 
     $(document).on("click", "#copyCompId", function () {
 
-        var currentid = getUrlParameter("componentIdOnFocus");
+        var currentId = getUrlParameter("componentIdOnFocus");
         mastfoot
-        $('#mastfoot').append('<input type="text" value="' + currentid + '" id="currentidval">')
+        $('#mastfoot').append('<input type="text" value="' + currentId + '" id="currentidval">')
         var currentidval = document.getElementById("currentidval");
         currentidval.select();
         currentidval.setSelectionRange(0, 99999)
         document.execCommand("copy");
-        $('#currentidval').remove()
+        $('#currentidval').remove();
 
         //alert('Component ID: ' + currentid + " has been copied to your clipboard")
-        componentCopyalert(currentid)
+        showInformationAlertDialog('Current ID ' + currentId + ' Copied to Clipboard.');
+        return false
+
+    });
+
+    $(document).on("click", "#copyCompURL", function () {
+
+        var currentId = getUrlParameter("componentIdOnFocus");
+        var accountId = getUrlParameter("accountId") || document.querySelector('[data-locator="link-process-reporting"]').href.split("=").pop().split(';')[0];
+        mastfoot
+        $('#mastfoot').append('<input type="text" value="https://platform.boomi.com/AtomSphere.html#build;accountId=' + accountId + ';components=' + currentId + '" id="currentidval">')
+        var currentidval = document.getElementById("currentidval");
+        currentidval.select();
+        currentidval.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        $('#currentidval').remove();
+
+        showInformationAlertDialog('Current Component URL Copied to Clipboard. (' + currentId + ')');
+
+
         return false
 
     });
