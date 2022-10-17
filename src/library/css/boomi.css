@@ -212,8 +212,8 @@ span.ignoreBreaks {
 }
 
 .shape_palette_widget .gwt-Image[title]:not([title="Note"]) {
-    width: 32px !important;
-    height: 32px !important;
+    width: 24px !important;
+    height: 24px !important;
 }
 
 .bph-thead-menu {
