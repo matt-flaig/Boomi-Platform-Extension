@@ -143,7 +143,7 @@ const add_endpoint_listener = (endpoint) => {
 const add_shape_listener = (shape) => {
     if (BoomiPlatform.path_trace_highlight == 'off') return false;
     let rect = shape.getBoundingClientRect();
-    if (![24,32,34].includes(rect.width) && ![24,32,34].includes(rect.height)) return false;
+    if (!([24,32,34].includes(rect.width) && [24,32,34].includes(rect.height))) return false;
 
     let iconTitle = shape.querySelector('.gwt-Image:not([title])');
     let iconTitle2 = shape.querySelector('.gwt-Image[title="Note"]');
