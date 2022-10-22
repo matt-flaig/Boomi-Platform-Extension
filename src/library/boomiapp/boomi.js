@@ -1,42 +1,44 @@
-  let boomi_title = document.title;
-  let boomiatomLoaded = setInterval(()=>{
-  
-      if(boomi_title != document.title){
+let boomi_title = document.title;
+let boomiatomLoaded = setInterval(()=>{
 
-          var headerAdd = document.getElementsByClassName('qm-c-servicenav__navbar')[0];
+    if(boomi_title != document.title){
 
-          // add the header if we can find it, if not keep polling
-          if(headerAdd){
+      var subHeaderContainerNav = document.getElementsByClassName('qm-c-servicenav')[0];
+      var headerAdd = document.getElementsByClassName('qm-c-servicenav__navbar')[0];
+
+        // this covers about 90% of the use cases where the header should / shouldn't be hidden.
+        
+        /* Only hide the header if
+            1) The "Show Header" button can be injected
+            2) The nav-bar in which the show header button option is visible
+            3) The localstorage/chromestorage "headerVisibile" value is set to false
+
+            This doesn't cover two cases:
+            1) The user navigated (with header hidden) to another page (such as settings) without the page reloading.
+            2) The user changed to another Boomi platform account, which reloads the DOM but this code is never re-executed because the page didn't reload
+        */
+
+        if(headerAdd && subHeaderContainerNav.style.display != "none" && !subHeaderContainerNav.classList.contains("no_display")){
+          chrome.storage.local.get(["headerVisible"], function(e) {
+            if(e.headerVisible == false){
+              document.getElementsByClassName("qm-c-masthead")[0].classList.add("headerHide");
+            }
+            var headerVisibilityState = e.headerVisible ? "Hide" : "Show";
             $('#'+headerAdd.id).append(
-              '<li id="showHeaderbtn" class="qm-c-servicenav__nav-item"><a class="gwt-Anchor qm-c-servicenav__nav-link qm-a--alternate"><span id="showHeaderspan" class="">Show Header</span></a></li>'
+              '<li id="showHeaderbtn" class="qm-c-servicenav__nav-item"><a class="gwt-Anchor qm-c-servicenav__nav-link qm-a--alternate"><span id="showHeaderspan" class="">' + headerVisibilityState + ' Header</span></a></li>'
             );
-            // clear the setInterval timer to poll for injecting the Show Header Button
-            clearInterval(boomiatomLoaded);
-          }
-          
-  updatenotificationCheck();
-      }
-  
-  },250)
+          });
+          // clear the setInterval timer to poll for injecting the Show Header Button
+          clearInterval(boomiatomLoaded);
+        }
+
+      updatenotificationCheck();
+    }
+
+}, 250);
     
   function onNavigationChange(){
     var urlPath = getUrlpath();
-
-    // Show Homepage Header
-    if(urlPath.includes("home")){
-      headerVisible = true;
-      let waitToShowHomepageHeader = setInterval(function(){
-        var x = document.getElementsByClassName("qm-c-masthead");
-        if(x){
-          x[0].classList.add("headerShow");
-          $("#showHeaderspan").text("Hide Header");
-          headerVisible = true;
-          clearInterval(waitToShowHomepageHeader);
-        }
-    }, 250);
-    }else{
-      clearInterval(waitToShowHomepageHeader);
-    }
     
     // Process Reporting Page
     if(document.getElementsByTagName("title")[0].innerHTML.includes("Process Reporting") || urlPath.includes('reporting')){

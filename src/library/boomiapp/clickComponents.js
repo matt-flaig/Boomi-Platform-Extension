@@ -6,15 +6,21 @@ $(document).ready(function () {
     $(document).on("click", "#showHeaderbtn", function () {
         var x = document.getElementsByClassName("qm-c-masthead");
 
-        if (headerVisible == false) {
-            x[0].classList.add("headerShow");
-            $("#showHeaderspan").text("Hide Header");
-            headerVisible = true;
-        } else {
-            x[0].classList.remove("headerShow");
-            $("#showHeaderspan").text("Show Header");
-            headerVisible = false;
-        }
+        chrome.storage.local.get(["headerVisible"], function(e) {
+            var headerVisible = e.headerVisible || false;
+            if (headerVisible == true) {
+                x[0].classList.add("headerHide");
+                $("#showHeaderspan").text("Show Header");
+                headerVisible = false;             
+            } else {
+                x[0].classList.remove("headerHide");
+                $("#showHeaderspan").text("Hide Header");
+                headerVisible = true;
+            }
+            chrome.storage.local.set({"headerVisible": headerVisible}, function() {
+                //console.log('Header visibility has been set to ' + headerVisible);
+            }); 
+        }); 
     });
 
     $(document).on("click", "#gwt-uid-84", function () {

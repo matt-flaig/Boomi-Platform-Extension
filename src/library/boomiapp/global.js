@@ -1,6 +1,5 @@
 /*------Global------*/
 //Variables
-var headerVisible = false;
 var sPageURL;
 
 
