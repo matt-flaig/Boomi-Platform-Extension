@@ -18,6 +18,31 @@
       }
   
   },250)
+    
+  function onNavigationChange(){
+    var urlPath = getUrlpath();
 
+    // Show Homepage Header
+    if(urlPath.includes("home")){
+      headerVisible = true;
+      let waitToShowHomepageHeader = setInterval(function(){
+        var x = document.getElementsByClassName("qm-c-masthead");
+        if(x){
+          x[0].classList.add("headerShow");
+          $("#showHeaderspan").text("Hide Header");
+          headerVisible = true;
+          clearInterval(waitToShowHomepageHeader);
+        }
+    }, 250);
+    }else{
+      clearInterval(waitToShowHomepageHeader);
+    }
+    
+  }
 
-  
+  // run on inital load
+  onNavigationChange()
+
+  // run on window change states
+  window.addEventListener('popstate', onNavigationChange);
+  window.addEventListener('onhashchange', onNavigationChange);
