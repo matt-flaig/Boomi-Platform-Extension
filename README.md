@@ -96,7 +96,6 @@ The following provides the current abilities of the released extension for use w
 * Reminders
 * Upon successful deployment a reminder will appear that if new it may require to be scheduled.
 * Enable the selection of Icon Sets within the Options to define user experience instead of default Boomi UX
-* 
 
 <br><br>
 
