@@ -12,8 +12,8 @@
             );
             // clear the setInterval timer to poll for injecting the Show Header Button
             clearInterval(boomiatomLoaded);
-          }
-  );
+          };
+ 
   updatenotificationCheck();
       }
   

@@ -22,13 +22,31 @@ function updateNotificationfun() {
   let htmlUpdateContents = `
   <ul>
   <li>
-      <p><strong>Change:</strong> Extended Tab Description Lenght so not to cut off long process descriptions when so much room is available.</li></p>
+  <p><strong>Feature:</strong> Icon Style Options. New Extension Option to Adjust the Icon Styles in the new GUI - <i>thank you boomiman.</i></p>
+ </li>
+ <li>
+ <p><strong>Feature:</strong> Show Process Execution duration for active processes.</p>
+</li>
+ <li>
+ <p><strong>Change:</strong> Show Header no longer removes the head from the Main Boomi Page.</li></p>
+ </li>
+  <li>
+  <p><strong>Code Fix:</strong> Resolved issue in which Show Head would not always be visible.</li></p>
   </li>
   <li>
-      <p><strong>Code Fix:</strong> Code Improvements applied from boomiman.</p>
+  <p><strong>Code Fix:</strong> Shape Path Highlight update to work with new UI changes.</p>
+ </li>
+ <li>
+  <p><strong>Code Fix:</strong> Shape Re-size and centre in new UI.</p>
   </li>
-</ul>
-`
+  <li>
+  <p><strong>Code Fix:</strong> Icon Size in side menu due to new UI changes.</p>
+  </li>
+  <li>
+  <p><strong>Code Fix:</strong> Icon Size in side menu due to new UI changes.</p>
+  </li>
+ </ul>
+`;
 
 let updateHtml= `<div style="left: 618px; top: 139px; visibility: visible; position: absolute; overflow: visible;" class="center_panel BoomiUpdateOverlay"
 id="popup_on_popup_content" role="dialog" aria-modal="true">
