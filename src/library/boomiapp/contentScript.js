@@ -45,7 +45,12 @@ const updateBoomiPlatformConfig = () => {
     });
 }
 
-chrome.storage.onChanged.addListener(() => {
+chrome.storage.onChanged.addListener((e) => {
+
+    // don't alert about preference changes if it was saving the header visibility state
+    if(e.headerVisible || e.headerVisible === "false"){
+        return;
+    }
 
     let alert_html = `
     <div style="left: 618px; top: 139px; visibility: visible; position: absolute; overflow: visible;" class="center_panel BoomiUpdateOverlay"
