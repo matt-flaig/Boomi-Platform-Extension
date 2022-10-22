@@ -144,11 +144,11 @@
 }
 
 .BoomiPlatformEndpointMenu .gwt-ClickableLabel {
-    background: #007db8;
+    background: #808080;
 }
 
 .BoomiPlatformEndpointMenu .gwt-ClickableLabel:hover {
-    background: #007db8 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAASCAYAAACaV7S8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAC5JREFUeNpi0rDP/8/EAAS4iC8g4gOIeAsiXoOIlyDiBYh4Dme9hMuC1X0ACDAA4fQNB2Q26qAAAAAASUVORK5CYII=') top left repeat-x !important;
+    background: #d6d4d4 !important
 }
 
 .mastfoot .footer_msg {

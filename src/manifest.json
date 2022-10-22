@@ -52,6 +52,7 @@
                 "library/boomiapp/fullscreen.js",
                 "library/boomiapp/tableWrap.js",
                 "library/boomiapp/jsonView.js",
+                "library/boomiapp/iconSets.js",
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
                 "library/boomiapp/reminders.js",

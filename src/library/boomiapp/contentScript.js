@@ -13,6 +13,7 @@ loadScript('./library/boomiapp/fullscreen.js');
 loadScript('./library/boomiapp/jsonView.js');
 loadScript('./library/boomiapp/imageCapture.js');
 loadScript('./library/boomiapp/tableWrap.js');
+loadScript('./library/boomiapp/iconSets.js');
 loadScript('./library/boomiapp/listenerGlobal.js');
 loadScript('./library/boomiapp/canvas.js');
 loadScript('./library/boomiapp/reminders.js');
