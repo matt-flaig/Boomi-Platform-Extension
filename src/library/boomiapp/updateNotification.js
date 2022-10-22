@@ -25,7 +25,7 @@ function updateNotificationfun() {
   <p><strong>Feature:</strong> Icon Style Options. New Extension Option to Adjust the Icon Styles in the new GUI - <i>thank you boomiman.</i></p>
  </li>
  <li>
- <p><strong>Feature:</strong> Show Process Execution duration for active processes.</p>
+ <p><strong>Feature:</strong> Show Process Execution duration for active processes - Note Auto Refresh must be turned on.</p>
 </li>
  <li>
  <p><strong>Change:</strong> Show Header no longer removes the head from the Main Boomi Page.</li></p>
