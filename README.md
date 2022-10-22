@@ -56,14 +56,13 @@ The main frameworks of this extension are the following + the ide used.
 
 ## Getting Started
 
-To get started simply visit the [Chrome WebStore](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko") and install the addon; once done it will auto-enable when on the Boomi Web Platform.
+To get started simply visit the [Chrome Web Store](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko) or [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/lpepdgcihicbcmkpfochhlgploogklgp) and install the addon; once done it will auto-enable when on the Boomi Web Platform.
 
 
 ### Installation
 
-1. [Visit the Chrome WebStore](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko")
+1. Visit the [Chrome Web Store](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko) or [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/lpepdgcihicbcmkpfochhlgploogklgp).
 2. Click Install
-
 
 
 ## Usage
