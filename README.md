@@ -105,7 +105,6 @@ The following provides the current abilities of the released extension for use w
   ![](/chromewebstore/Image2.png)
   ![](/chromewebstore/Image3.png)
   ![](/chromewebstore/Image4.png)
-  ![](/chromewebstore/Image5.png)
 
 
 
