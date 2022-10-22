@@ -143,12 +143,11 @@ const add_endpoint_listener = (endpoint) => {
 const add_shape_listener = (shape) => {
     if (BoomiPlatform.path_trace_highlight == 'off') return false;
     let rect = shape.getBoundingClientRect();
-    if (rect.width != 34 && rect.height != 34) return false;
+    if (!([24,32,34].includes(rect.width) && [24,32,34].includes(rect.height))) return false;
 
     let iconTitle = shape.querySelector('.gwt-Image:not([title])');
     let iconTitle2 = shape.querySelector('.gwt-Image[title="Note"]');
     if (iconTitle || iconTitle2) return false;
-
     let timer = null;
 
     setTimeout(() => {
@@ -156,7 +155,7 @@ const add_shape_listener = (shape) => {
         shape.addEventListener('mouseover', function (e) {
 
             timer = setTimeout(() => {
-                [...document.querySelectorAll(`.gwt-connectors-line`)].forEach(line => {
+                [...document.querySelectorAll(`.gwt-connectors-line-connected`)].forEach(line => {
                     line.classList.add('BoomiPlatform-linetrace')
                 });
 
@@ -177,7 +176,7 @@ const add_shape_listener = (shape) => {
                 document.querySelector('body > div[tabindex="0"]').dispatchEvent(up);
 
                 setTimeout(() => {
-                    [...document.querySelectorAll(`.gwt-connectors-line:not(.BoomiPlatform-linetrace)`)].forEach(line => {
+                    [...document.querySelectorAll(`.gwt-connectors-line-connected:not(.BoomiPlatform-linetrace)`)].forEach(line => {
                         line.parentNode.classList.add('BoomiPlatform-lineparent')
 
                         line.classList.add(BoomiPlatform.path_trace_highlight == 'solid' ? 'BoomiPlatform-linetrace-active-solid' : 'BoomiPlatform-linetrace-active-pulse')
@@ -189,7 +188,7 @@ const add_shape_listener = (shape) => {
         shape.addEventListener('mouseout', function (e) {
             clearTimeout(timer);
 
-            [...document.querySelectorAll(`.gwt-connectors-line`)].forEach(line => {
+            [...document.querySelectorAll(`.gwt-connectors-line-connected`)].forEach(line => {
                 line.classList.remove('BoomiPlatform-linetrace')
                 line.parentNode.classList.remove('BoomiPlatform-lineparent')
                 line.classList.remove('BoomiPlatform-linetrace-active')
@@ -200,7 +199,7 @@ const add_shape_listener = (shape) => {
         shape.addEventListener('mousedown', function (e) {
             clearTimeout(timer);
 
-            [...document.querySelectorAll(`.gwt-connectors-line`)].forEach(line => {
+            [...document.querySelectorAll(`.gwt-connectors-line-connected`)].forEach(line => {
                 line.classList.remove('BoomiPlatform-linetrace')
                 line.parentNode.classList.remove('BoomiPlatform-lineparent')
                 line.classList.remove('BoomiPlatform-linetrace-active')
