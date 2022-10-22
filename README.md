@@ -94,8 +94,9 @@ The following provides the current abilities of the released extension for use w
 * Easily copy the current Component id using the Copy Component ID Button (In the action button - enter full screen etc.)
 * Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unusable
 * Reminders
-  * Save Reminder when Creating a Package, Boomi by default does not save any changes since last save when Create Package is selected.
-  * Upon successful deployment a reminder will appear that if new it may require to be scheduled.
+* Upon successful deployment a reminder will appear that if new it may require to be scheduled.
+* Enable the selection of Icon Sets within the Options to define user experience instead of default Boomi UX
+* 
 
 <br><br>
 
@@ -148,8 +149,10 @@ Name - [Mitchell Franklin](https://mitchellfranklin.info) - mitchellfranklin@gma
 ## Acknowledgements
 * **Tony Banik** - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this Extension.
 * [Baptiste BIEBER](https://github.com/baptistebieber) - Developer of Boomi Extension that provided idea for future enhancements
+* **Noah Skelton** - Developer of the Build Pallet Fix Script used to return the UX for Shapes back to what it was
+* [Boomi Developer (Boomian)](https://gitlab.com/boomian) - Providing script and feature enhancements to the project
 * [Boomi](https://boomi.com/)
 * [Boomi Community](https://community.boomi.com/)
 * [Choose an Open Source License](https://choosealicense.com)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* **Noah Skelton** - Developer of the Build Pallet Fix Script used to return the UX for Shapes back to what it was
+

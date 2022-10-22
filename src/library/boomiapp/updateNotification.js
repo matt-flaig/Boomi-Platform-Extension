@@ -30,6 +30,9 @@ function updateNotificationfun() {
  <li>
  <p><strong>Change:</strong> Show Header no longer removes the head from the Main Boomi Page.</li></p>
  </li>
+ <li>
+ <p><strong>Change:</strong> Removed Package Creation Save Reminder as now implemented by Boomi.</li></p>
+ </li>
   <li>
   <p><strong>Code Fix:</strong> Resolved issue in which Show Head would not always be visible.</li></p>
   </li>
