@@ -7,7 +7,10 @@ $(document).ready(function () {
         var x = document.getElementsByClassName("qm-c-masthead");
 
         chrome.storage.local.get(["headerVisible"], function(e) {
-            var headerVisible = e.headerVisible || false;
+            var headerVisible = e.headerVisible;
+            if(typeof headerVisible == "undefined"){
+                headerVisible = true;
+            }
             if (headerVisible == true) {
                 x[0].classList.add("headerHide");
                 $("#showHeaderspan").text("Show Header");
