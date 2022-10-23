@@ -31,47 +31,45 @@ let boomiatomLoaded = setInterval(()=>{
           // clear the setInterval timer to poll for injecting the Show Header Button
           clearInterval(boomiatomLoaded);
         }
-
+      onNavigationChange();
       updatenotificationCheck();
     }
 
 }, 250);
     
-  function onNavigationChange(){
-    var urlPath = getUrlpath();
-    
-    // Process Reporting Page
-    if(document.getElementsByTagName("title")[0].innerHTML.includes("Process Reporting") || urlPath.includes('reporting')){
-        const processExecutionDurationReporting = setInterval(function(){
-            if(Array.from(document.querySelectorAll('label')).find(el => el.textContent.includes('Auto Refresh')).innerHTML != "Auto Refresh is On"){
-                clearInterval("processExecutionDurationReporting");
-                return false;
-            }
-            // get any row that's in-process
-            document.querySelectorAll('img[title*="In Process"]').forEach(function(element){
-        
-                // get div containing entire row
-                var inProgressRow = element.parentElement.parentElement.parentElement;
-        
-                var processExecutionTime = inProgressRow.getElementsByClassName('link_action')[0].innerHTML;
-                
-                const diffTime = Math.abs(new Date() - new Date(processExecutionTime));
-                
-                var processElapsedTime = inProgressRow.querySelectorAll('div')[11];
-                processElapsedTime.innerHTML = fancyTimeFormat(diffTime/1000);
-                processElapsedTime.style.color = "red";
-            })
-        }, 1000);
-    }else{
-      if(typeof processExecutionDurationReporting !== 'undefined'){
-        clearInterval(processExecutionDurationReporting);
-      }
+function onNavigationChange(){
+  var urlPath = getUrlpath();
+  
+  // Process Reporting Page
+  if(document.getElementsByTagName("title")[0].innerHTML.includes("Process Reporting") || urlPath.includes('reporting')){
+      const processExecutionDurationReporting = setInterval(function(){
+        var autoRefreshElement = Array.from(document.querySelectorAll('label')).find(el => el.textContent.includes('Auto Refresh'));
+          if(!autoRefreshElement || (autoRefreshElement && autoRefreshElement.innerHTML != "Auto Refresh is On")){
+              clearInterval(processExecutionDurationReporting);
+              return false;
+          }
+          // get any row that's in-process
+          document.querySelectorAll('img[title*="In Process"]').forEach(function(element){
+      
+              // get div containing entire row
+              var inProgressRow = element.parentElement.parentElement.parentElement;
+      
+              var processExecutionTime = inProgressRow.getElementsByClassName('link_action')[0].innerHTML;
+              
+              const diffTime = Math.abs(new Date() - new Date(processExecutionTime));
+              
+              var processElapsedTime = inProgressRow.querySelectorAll('div')[11];
+              processElapsedTime.innerHTML = fancyTimeFormat(diffTime/1000);
+              processElapsedTime.style.color = "red";
+          })
+      }, 1000);
+  }else{
+    if(typeof processExecutionDurationReporting !== 'undefined'){
+      clearInterval(processExecutionDurationReporting);
     }
   }
+}
 
-  // run on inital load
-  onNavigationChange()
-
-  // run on window change states
-  window.addEventListener('popstate', onNavigationChange);
-  window.addEventListener('onhashchange', onNavigationChange);
+// run on window change states
+window.addEventListener('popstate', onNavigationChange);
+window.addEventListener('onhashchange', onNavigationChange);
