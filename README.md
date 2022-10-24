@@ -12,6 +12,10 @@
     <br />
     <a href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko">View Chrome Store</a>
     ·
+        <a href="https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/lpepdgcihicbcmkpfochhlgploogklgp">View Microsoft Edge Store</a>
+    ·
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer">View Firefox Store</a>
+    ·
     <a href="https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/boards/1957917">Request a feature</a>
   </p>
 </p>
@@ -47,7 +51,7 @@ Here's why:
 
 
 ### Built With
-The main frameworks of this extension are the following + the ide used.
+The main frameworks of this extension and IDE used to build this extension.
 * [JQuery](https://jquery.com)
 * [JavaScript](https://www.javascript.com/)
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -56,56 +60,60 @@ The main frameworks of this extension are the following + the ide used.
 
 ## Getting Started
 
-To get started simply visit the [Chrome WebStore](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko") and install the addon; once done it will auto-enable when on the Boomi Web Platform.
+To get started simply visit one of the following Browser App Stores:
+* [Chrome Web Store](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko) 
+* [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/lpepdgcihicbcmkpfochhlgploogklgp)
+* [Firefox Browser Add-ons](https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer/)
+
+and install the addon; once done it will auto-enable when on the Boomi Web Platform.
 
 
 ### Installation
 
-1. [Visit the Chrome WebStore](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko")
+1. Visit one of the following Browser App Stores:
+   * [Chrome Web Store](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko).
+   * [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/lpepdgcihicbcmkpfochhlgploogklgp).
+   * [Firefox Browser Add-ons](https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer/)
 2. Click Install
-
 
 
 ## Usage
 
-The following provides the current abilities of the released extension for use within the Boomi Web Platform.
+The following provides the current abilities of the released extension for use within the Boomi Web Platform:
 
-* Keyboard Short Cuts
+* Keyboard Shortcuts
   * Ctrl+Alt + S = Save Current Flow
   * Ctrl+Alt = Test Current Flow
-  * ~ = Full Screen - On/Off
+  * ~ = Toggle Full Screen - On/Off
 * Adjustments to the portal for integration around font sizing, header and menu sizing to provide more build and processing space within the default view.
 * Account dashboard now defaults to 7 days instead of the maximum value.
 * Shapes that don't have a end connection will glow.
 * Quickly add stop shape to flow by hovering over end arrow and clicking stop.
 * Add components directly within the build tab by double clicking the flow and selecting from a drop down.
-* Capture the entire flow without resize and save to a local image by using the Capture button on process flow header.
+* Capture the entire flow without resize and save to a local image by using the "Capture Process Flow" button above the build canvas.
 * Hover over flow shape to see the connection points it make.
 * Use notes to group tasks and provide information relating to multiple areas of the flow.
-* Add Markdown in the process description or notes to show better visual formatting
-* When Table i.e. Process Reporting is displayed; Toggle of Line Wrap available to show in single view.
-* Ability to assign keyboard button to easily go into and out of full screen - default is the `/~ key.
-* Options have been added to set a key for enable full screen, default is ` Key
-* JSON Viewing toggle added to Message and Notify Shape; will both format the json and add the ' quote padding.
-* Capture your process flow easily via the Capture Process Flow Button; will capture the entire flow and save to a local file.
-* Debug has been enhanced to provide more robust coloring, this includes flashing colors, item selection and error emphasis.
-* Ability to Remove the Canvas Build Background (dots) - works will with dark modes 
-* Schedule Reminder - Once a deployment has occurred or been deployed to another environment the notification message will also provide a reminder to setup a schedule if required.
-* Easily copy the current Component id using the Copy Component ID Button (In the action button - enter full screen etc.)
-* Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unusable
-* Reminders
-* Upon successful deployment a reminder will appear that if new it may require to be scheduled.
-* Enable the selection of Icon Sets within the Options to define user experience instead of default Boomi UX
-* In Process Reporting, Pending Executions runtime now auto updates - Note that Auto Refresh must be turned on for this to work
+* Add Markdown in the process description or notes to show better visual formatting.
+* When tables (for example Process Reporting list view) is displayed there's an option to "Toggle Line Wrapping" available to maximize screen real estate.
+* Ability to assign keyboard button to easily go into and out of Full Screen Mode - default is the `~` key.
+* JSON Viewing toggle added to Message and Notify Shape; will both format the JSON and add the ' quote padding, automatically.
+* Capture a diagram of your process flow easily via the "Capture Process Flow" button; will capture the entire flow and save an image to a local file.
+* Debug has been enhanced to provide more robust coloring, this includes glowing colors, item selection and error emphasis.
+* Ability to Remove the Canvas Build Background (dots) which works well with dark modes.
+* Save Reminder – When packaging a component you will be reminded to save the process as Boomi doesn't save automatically when packaging.
+* Schedule Reminder - Once a deployment has occurred or been deployed to another environment the notification message will also provide a reminder to setup a schedule (if enabled).
+* Easily copy the current Component URL/ID using the Copy Component ID Button (In the ⚙️ action button above the build canvas).
+* Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unusable.
+* Enable the selection of Icon Sets within the option to define user experience instead of default Boomi UX.
+* In Process Reporting, Pending Executions runtime clock/timer now auto-updates - Note: Auto Refresh must be turned on for this to work.
 
 <br><br>
 
 
-  ![Header](chromewebstore/Image1.png)
-  ![](/chromewebstore/Image2.png)
-  ![](/chromewebstore/Image3.png)
-  ![](/chromewebstore/Image4.png)
-  ![](/chromewebstore/Image5.png)
+  ![](/WebStore%20images/Image1.png)
+  ![](/WebStore%20images/Image2.png)
+  ![](/WebStore%20images/Image3.png)
+  ![](/WebStore%20images/Image4.png)
 
 
 
@@ -147,7 +155,7 @@ Name - [Mitchell Franklin](https://mitchellfranklin.info) - mitchellfranklin@gma
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* **Tony Banik** - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this Extension.
+* **Tony Banik** - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this extension.
 * [Baptiste BIEBER](https://github.com/baptistebieber) - Developer of Boomi Extension that provided idea for future enhancements
 * **Noah Skelton** - Developer of the Build Pallet Fix Script used to return the UX for Shapes back to what it was
 * [Boomi Developer (Boomian)](https://gitlab.com/boomian) - Providing script and feature enhancements to the project
