@@ -35,56 +35,43 @@ $(document).ready(function () {
     $(document).on("click", ".build_actionsButton", function () {
 
         var ul = document.getElementsByClassName('menu_item_group')[0]
-        $(ul).append('<li id="copyCompID"><a>Copy Current Component ID</a></li>');
-
+        $(ul).append('<li id="copyCompID"><a class="gwt-Anchor">Copy Current Component ID</a></li>');
+        $(ul).append('<li id="copyCompURL"><a class="gwt-Anchor">Copy Current Component URL</a></li>');
     });
 
-
-    // $(document).on("click", "#copyCompId", function () {
-
-    //     var currentId = getUrlParameter("componentIdOnFocus");
-    //     mastfoot
-    //     $('#mastfoot').append('<input type="text" value="' + currentId + '" id="currentidval">')
-    //     var currentidval = document.getElementById("currentidval");
-    //     currentidval.select();
-    //     currentidval.setSelectionRange(0, 99999)
-    //     document.execCommand("copy");
-    //     $('#currentidval').remove();
-
-    //     //alert('Component ID: ' + currentid + " has been copied to your clipboard")
-    //     showInformationAlertDialog('Current ID ' + currentId + ' Copied to Clipboard.');
-    //     return false
-
-    // });
 
     $(document).on("click", "#copyCompID", function () {
 
-        var currentId = getUrlParameter("componentIdOnFocus");
-        var accountId = getUrlParameter("accountId") || document.querySelector('[data-locator="link-process-reporting"]').href.split("=").pop().split(';')[0];
-        mastfoot
-        $('#mastfoot').append('<input type="text" value="https://platform.boomi.com/AtomSphere.html#build;accountId=' + accountId + ';components=' + currentId + '" id="currentidval">')
-        var currentidval = document.getElementById("currentidval");
-        currentidval.select();
-        currentidval.setSelectionRange(0, 99999)
-        document.execCommand("copy");
-        $('#currentidval').remove();
+         var currentId = getUrlParameter("componentIdOnFocus");
+         $('#mastfoot').append('<input type="text" value="' + currentId + '" id="currentidval">')
+         var currentidval = document.getElementById("currentidval");
+         currentidval.select();
+         currentidval.setSelectionRange(0, 99999);
+         document.execCommand("copy");
+         $('#currentidval').remove();
 
-        showInformationAlertDialog('Current Component ID Copied to Clipboard. (' + currentId + ')');
-
-
-        return false
+         showInformationAlertDialog('Current ID ' + currentId + ' Copied to Clipboard.');
+         return false;
 
     });
-    
+
+    $(document).on("click", "#copyCompURL", function () {
+
+        var currentId = getUrlParameter("componentIdOnFocus");
+        var accountId = getUrlParameter("accountId") || document.querySelector('[data-locator="link-process-reporting"]').href.split("=").pop().split(';')[0];
+        $('#mastfoot').append('<input type="text" value="https://platform.boomi.com/AtomSphere.html#build;accountId=' + accountId + ';components=' + currentId + '" id="currenturlval">');
+        var currentidval = document.getElementById("currenturlval");
+        currentidval.select();
+        currentidval.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        $('#currenturlval').remove();
+
+        showInformationAlertDialog('Current Component URL Copied to Clipboard. (' + currentId + ')');
+        return false;
+    });
 
     $(document).on("click", "#closeUpdate", function () {
         $('.BoomiUpdateOverlay').remove();
     });
 
-
-
-
-
-
-//////////
 });
