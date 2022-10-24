@@ -14,9 +14,9 @@
     ·
         <a href="https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/lpepdgcihicbcmkpfochhlgploogklgp">View Microsoft Edge Store</a>
     ·
-        <a href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko">View Firefox Store</a>
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer">View Firefox Store</a>
     ·
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer">Request a feature</a>
+    <a href="https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/boards/1957917">Request a feature</a>
   </p>
 </p>
 
