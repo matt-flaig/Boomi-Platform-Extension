@@ -22,31 +22,7 @@ function updateNotificationfun() {
   let htmlUpdateContents = `
   <ul>
   <li>
-  <p><strong>Feature:</strong> Icon Style Options. New Extension Option to Adjust the Icon Styles in the new GUI - <i>thank you boomiman.</i></p>
- </li>
- <li>
- <p><strong>Feature:</strong> Show Process Execution duration for active processes - Note Auto Refresh must be turned on.</p>
-</li>
- <li>
- <p><strong>Change:</strong> Show Header no longer removes the head from the Main Boomi Page.</li></p>
- </li>
- <li>
- <p><strong>Change:</strong> Removed Package Creation Save Reminder as now implemented by Boomi.</li></p>
- </li>
-  <li>
-  <p><strong>Code Fix:</strong> Resolved issue in which Show Head would not always be visible.</li></p>
-  </li>
-  <li>
-  <p><strong>Code Fix:</strong> Shape Path Highlight update to work with new UI changes.</p>
- </li>
- <li>
-  <p><strong>Code Fix:</strong> Shape Re-size and centre in new UI.</p>
-  </li>
-  <li>
-  <p><strong>Code Fix:</strong> Icon Size in side menu due to new UI changes.</p>
-  </li>
-  <li>
-  <p><strong>Code Fix:</strong> Icon Size in side menu due to new UI changes.</p>
+  <p><strong>Code Fix:</strong> Mix Up of Copy ID and Copy URL Code, Now both options are available. ID copys the ID only while URL copys the total URL for Support Cases.</p>
   </li>
  </ul>
 `;
