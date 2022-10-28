@@ -27,11 +27,16 @@ function updateNotificationfun() {
   let htmlUpdateContents = `
   <ul>
   <li>
-  <p><strong>Feature:</strong> Icon Style Options. New Extension Option to Adjust the Icon Styles in the new GUI - <i>thank you boomiman.</i></p>
+  <p><strong>Feature:</strong> Process reporting refresh, set the seconds in options and use the new refresh button to control the interval.</i></p>
  </li>
- 
   <li>
-  <p><strong>Other:</strong> Blogspot Decomissioned - Extension Functions and how-to moved to Wiki.</p>
+  <p><strong>Enhancemet:</strong> Capture Process Image provides option to expand all notes to capture detail.</i></p>
+ </li>
+ <li>
+ <p><strong>Bug Fix:</strong> Fix Extension Update Notification from appearing on the logon screen</i></p>
+</li>
+  <li>
+  <p><strong>Other:</strong> Blogspot Decommissioned - Extension Functions and how-to move to Wiki.</p>
   </li>
  </ul>
 `;
@@ -79,8 +84,8 @@ id="popup_on_popup_content" role="dialog" aria-modal="true">
                             <p>Check out the following new features and or bug fixes for the Boomi Platform Enhancer Extension:</p>
 ` + htmlUpdateContents + `
                             <p>For more detail on what each feature does and how to use it visit the <a
-                                    href="https://boomiplatformenhancer.blogspot.com"
-                                    target="_blank">Boomi Platform Enhancer Blog Page</a> - It is still in progress.</p>
+                                    href="https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/wikis/home"
+                                    target="_blank">Extension Wiki</a> - It is still in progress.</p>
                         </div>
                     </div> 
                 </div>
