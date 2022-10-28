@@ -30,7 +30,7 @@ function updateNotificationfun() {
   <p><strong>Feature:</strong> Process reporting refresh, set the seconds in options and use the new refresh button to control the interval.</i></p>
  </li>
   <li>
-  <p><strong>Enhancemet:</strong> Capture Process Image provides option to expand all notes to capture detail.</i></p>
+  <p><strong>Enhancement:</strong> Capture Process Image provides option to expand all notes to capture detail.</i></p>
  </li>
  <li>
  <p><strong>Bug Fix:</strong> Fix Extension Update Notification from appearing on the logon screen</i></p>
