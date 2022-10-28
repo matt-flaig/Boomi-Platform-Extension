@@ -1,5 +1,10 @@
 function updatenotificationCheck() {
 
+
+  let integration = document.getElementsByClassName('qm-c-servicenav__service-name')[0];
+
+  if(integration){
+
   let currentAppver = chrome.runtime.getManifest().version
   //console.log(currentAppver)
   if (typeof (Storage) !== "undefined") {
@@ -101,5 +106,7 @@ id="popup_on_popup_content" role="dialog" aria-modal="true">
 
 
 
+
+}
 
 }
