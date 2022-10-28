@@ -98,6 +98,7 @@ The following provides the current abilities of the released extension for use w
 * Ability to assign keyboard button to easily go into and out of Full Screen Mode - default is the `~` key.
 * JSON Viewing toggle added to Message and Notify Shape; will both format the JSON and add the ' quote padding, automatically.
 * Capture a diagram of your process flow easily via the "Capture Process Flow" button; will capture the entire flow and save an image to a local file.
+  * Options available are - Use Transparent Background, Zoom Size and Ability to Expand all notes to capture the note detail
 * Debug has been enhanced to provide more robust coloring, this includes glowing colors, item selection and error emphasis.
 * Ability to Remove the Canvas Build Background (dots) which works well with dark modes.
 * Save Reminder – When packaging a component you will be reminded to save the process as Boomi doesn't save automatically when packaging.
@@ -106,6 +107,7 @@ The following provides the current abilities of the released extension for use w
 * Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unusable.
 * Enable the selection of Icon Sets within the option to define user experience instead of default Boomi UX.
 * In Process Reporting, Pending Executions runtime clock/timer now auto-updates - Note: Auto Refresh must be turned on for this to work.
+* Define a custom refresh period and have process reporting auto refresh to your needs
 
 <br><br>
 
