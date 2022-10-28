@@ -54,6 +54,11 @@ const process_to_image = (process) => {
                                         <option value="2.0">2x</option>
                                     </select>
                                 </div>
+                                <div>
+                                    <label>
+                                        <input type="checkbox" class="expandNotes" style="vertical-align: middle;"/>Expand Notes
+                                    </label>
+                                </div>
     
                             </div>                     </div>
                     </div>
@@ -77,6 +82,7 @@ const process_to_image = (process) => {
 
             let transparency = document.querySelector('.BoomiPlatformOverlay .transparent').checked;
             let uiscale = document.querySelector('.BoomiPlatformOverlay .uiscale').value || '1.0';
+            let expandNotes = document.querySelector('.BoomiPlatformOverlay .expandNotes').checked;
 
             document.querySelector('.BoomiPlatformOverlay').remove();
 
@@ -96,6 +102,17 @@ const process_to_image = (process) => {
                 process.style.backgroundImage = "none";
             } else {
                 process.style.backgroundColor = "white";
+            }
+
+            if(expandNotes){
+                window.noteExpandInterval = setInterval( function() { 
+                    if(document.getElementsByTagName('body')[0].style.marginTop == "99999px"){
+                        // expand all note dialogs
+                        [...document.querySelectorAll('.note-preview')].forEach(div => {
+                            div.parentNode.parentNode.style.setProperty("display", "", "important");
+                        });
+                    }
+                }, 50);                
             }
 
             [...document.querySelectorAll('.BoomiPlatformEndpointMenu')].forEach(stopper => {
@@ -145,6 +162,16 @@ const process_to_image = (process) => {
                         [...document.querySelectorAll('.BoomiPlatformEndpointMenu')].forEach(stopper => {
                             stopper.style.visibility = 'visible';
                         })
+
+                        if(window.noteExpandInterval){
+                            // clear note expander timer
+                            clearInterval(window.noteExpandInterval);
+                            
+                            //hide all note dialogs
+                            [...document.querySelectorAll('.note-preview')].forEach(div => {
+                                div.parentNode.parentNode.style.setProperty("display", "none");
+                            });
+                        }
 
                         document.getElementById('output-process-image').click();
                         document.getElementById('output-process-image').remove();
