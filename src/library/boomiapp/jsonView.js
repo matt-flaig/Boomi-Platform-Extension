@@ -8,7 +8,7 @@ const add_sidepanel_listener = (sidepanel) => {
         let toggle_editor = `
         <label style="display:block;">
             <input type="checkbox" onchange="toggleEditor(this)">
-            Toggle JSON Editor <br> (<b>Note:</b> Will add auto escape curly bracket notation)
+            Toggle XML/JSON Editor <br> (<b>Note:</b> Will add auto escape curly bracket notation for JSON)
         </label>
         `;
         container.insertAdjacentHTML('beforeend', toggle_editor);
@@ -33,11 +33,20 @@ const renderEditor = (target) => {
             lineNumbers: false
         })
 
+        codeArea.addLanguage('html')
+
         let code = String.raw `${textArea.value.trim().replace(/^\'/,'').replace(/\'$/,'').replace(/\'(\{\d+\})\'/g,"$1")}`
         codeArea.updateCode(code)
 
         codeArea.onUpdate(e => {
-            textArea.value = "'" + e.replace(/(\{\d+\})/g, "'$1'") + "'";
+
+            if(e.startsWith("<")){
+                textArea.value = e.replace(/(\{\d+\})/g, "'$1'");
+            }else{
+                textArea.value = "'" + e.replace(/(\{\d+\})/g, "'$1'") + "'";
+            }
+
+            
         })
     }, 100)
 }
