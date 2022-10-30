@@ -301,3 +301,20 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
     width: auto !important;
 }
 
+.boomiDown {
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
