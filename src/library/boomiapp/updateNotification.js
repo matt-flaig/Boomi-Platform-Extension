@@ -24,22 +24,29 @@ function updatenotificationCheck() {
 
 function updateNotificationfun() {
 
-  let htmlUpdateContents = `
+let htmlUpdateContents = `
   <ul>
   <li>
-  <p><strong>Feature:</strong> Process reporting refresh, set the seconds in options and use the new refresh button to control the interval.</i></p>
- </li>
-  <li>
-  <p><strong>Enhancement:</strong> Capture Process Image provides option to expand all notes to capture detail.</i></p>
+  <p><strong>Feature:</strong> Process reporting refresh, set the seconds in options and use the new refresh button to control the interval.</p>
  </li>
  <li>
- <p><strong>Bug Fix:</strong> Fix Extension Update Notification from appearing on the logon screen</i></p>
+ <p><strong>Feature:</strong> New Status Bar Platform Status & provides the status of the boomi services.</p>
+</li>
+  <li>
+  <p><strong>Enhancement:</strong> Capture Process Image provides option to expand all notes to capture detail.</p>
+ </li>
+ <li>
+ <p><strong>Enhancement:</strong> XML/HTML enhancement has been added to the JSON view for message shapes & renamed to XML/JSON Editor .</p>
+</li>
+ <li>
+ <p><strong>Bug Fix:</strong> Fix Extension Update Notification from appearing on the logon screen</p>
 </li>
   <li>
   <p><strong>Other:</strong> Blogspot Decommissioned - Extension Functions and how-to move to Wiki.</p>
   </li>
  </ul>
-`;
+`
+
 
 let updateHtml= `<div style="left: 618px; top: 139px; visibility: visible; position: absolute; overflow: visible;" class="center_panel BoomiUpdateOverlay"
 id="popup_on_popup_content" role="dialog" aria-modal="true">

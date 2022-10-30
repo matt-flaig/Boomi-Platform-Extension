@@ -107,8 +107,9 @@ The following provides the current abilities of the released extension for use w
 * Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unusable.
 * Enable the selection of Icon Sets within the option to define user experience instead of default Boomi UX.
 * In Process Reporting, Pending Executions runtime clock/timer now auto-updates - Note: Auto Refresh must be turned on for this to work.
-* Define a custom refresh period and have process reporting auto refresh to your needs
-* Expand the Element Selection Screen within Shapes to provide more visual room for ease of use
+* Define a custom refresh period and have process reporting auto refresh to your needs.
+* Expand the Element Selection Screen within Shapes to provide more visual room for ease of use.
+* Platform Status Detail - Shows if operational or if any Boomi systems are not operational.
 
 <br><br>
 
