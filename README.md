@@ -96,7 +96,7 @@ The following provides the current abilities of the released extension for use w
 * Add Markdown in the process description or notes to show better visual formatting.
 * When tables (for example Process Reporting list view) is displayed there's an option to "Toggle Line Wrapping" available to maximize screen real estate.
 * Ability to assign keyboard button to easily go into and out of Full Screen Mode - default is the `~` key.
-* JSON Viewing toggle added to Message and Notify Shape; will both format the JSON and add the ' quote padding, automatically.
+* JSON & XML Viewing toggle added to Message and Notify Shapes; will format the JSON and add the ' quote padding automatically.
 * Capture a diagram of your process flow easily via the "Capture Process Flow" button; will capture the entire flow and save an image to a local file.
   * Options available are - Use Transparent Background, Zoom Size and Ability to Expand all notes to capture the note detail
 * Debug has been enhanced to provide more robust coloring, this includes glowing colors, item selection and error emphasis.
@@ -108,6 +108,7 @@ The following provides the current abilities of the released extension for use w
 * Enable the selection of Icon Sets within the option to define user experience instead of default Boomi UX.
 * In Process Reporting, Pending Executions runtime clock/timer now auto-updates - Note: Auto Refresh must be turned on for this to work.
 * Define a custom refresh period and have process reporting auto refresh to your needs
+* Expand the Element Selection Screen within Shapes to provide more visual room for ease of use
 
 <br><br>
 

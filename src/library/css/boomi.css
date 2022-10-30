@@ -284,3 +284,20 @@ span.ignoreBreaks {
     border-color: #107755!important;
     color: #2e2c2c!important;
 }
+
+
+.gwt-ParamPopup {
+    overflow: auto !important;
+    resize: horizontal !important;
+    
+  }
+  
+
+div[style*="position: relative; height: 250px; width: 250px;"] {
+
+    min-width: 350px !important;
+    min-height: 350px !important;
+    height: auto !important;
+    width: auto !important;
+}
+
