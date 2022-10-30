@@ -23,16 +23,16 @@
                 "library/css/boomi.css"
             ],
             "js": [
-                "library/jquery/jquery-3.6.min.js",
-                "library/boomiapp/contentScript.js",
-                "library/boomiapp/global.js",
-                "library/boomiapp/boomi.js",
-                "library/boomiapp/clickComponents.js",
-                "library/boomiapp/dashboard.js",
-                "library/boomiapp/buildPallet.js",
-                "library/boomiapp/shortCuts.js",
-                "library/boomiapp/updateNotification.js",
-                "library/inject/shortcut.js"
+              "library/jquery/jquery-3.6.min.js",
+              "library/boomiapp/contentScript.js",
+              "library/boomiapp/global.js",
+              "library/boomiapp/boomi.js",
+              "library/boomiapp/clickComponents.js",
+              "library/boomiapp/dashboard.js",
+              "library/boomiapp/buildPallet.js",
+              "library/boomiapp/shortCuts.js",
+              "library/boomiapp/updateNotification.js",
+              "library/inject/shortcut.js"
                   ]
                 }
               ],
@@ -52,6 +52,7 @@
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
                 "library/boomiapp/reminders.js",
+                "library/boomiapp/customrefresh.js",
                 "library/boomiapp/doubleClick.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",

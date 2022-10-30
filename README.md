@@ -83,7 +83,7 @@ The following provides the current abilities of the released extension for use w
 
 * Keyboard Shortcuts
   * Ctrl+Alt + S = Save Current Flow
-  * Ctrl+Alt = Test Current Flow
+  * Ctrl+Alt + T = Test Current Flow
   * ~ = Toggle Full Screen - On/Off
 * Adjustments to the portal for integration around font sizing, header and menu sizing to provide more build and processing space within the default view.
 * Account dashboard now defaults to 7 days instead of the maximum value.
