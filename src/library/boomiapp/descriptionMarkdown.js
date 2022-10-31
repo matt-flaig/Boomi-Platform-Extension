@@ -2,7 +2,7 @@ const add_description_listener = (description) => {
 
     if (BoomiPlatform.description_markdown == 'off') return false;
 
-    const converter = new showdown.Converter(),
+    const converter = new showdown.Converter({literalMidWordUnderscores: true}),
         renderMD = () => {
             const text_value = description.querySelector('textarea').value;
             var html = null;
