@@ -57,8 +57,8 @@ const create_note_group = (el) => {
             let color_use = Object.keys(colors)[currentColor];
 
             let notegroup_html = `
-            <div class="BoomiPlatformNoteGroup" data-notegroup="${group_id}" style="position:absolute;z-index:0;top:${matched_icon.style.top};left:${matched_icon.style.left};width:60px;height:40px;background:rgba(${colors[color_use]},0.1);border:1px solid rgba(${colors[color_use]},0.5);border-radius:2px;">
-                <div class="NoteResize" style="display:none;position:absolute;bottom:0;right:0;width:10px;height:10px;cursor:nwse-resize;background: linear-gradient(-45deg,rgba(0,0,0,0.5) 10%, transparent 10%,transparent 20%, rgba(0,0,0,0.5) 20%,rgba(0,0,0,0.5) 30%, transparent 30%,transparent 40%, rgba(0,0,0,0.5) 40%,rgba(0,0,0,0.5) 50%, transparent 50%);"></div>
+            <div class="BoomiPlatformNoteGroup" data-notegroup="${group_id}" style="position:absolute;z-index:0;top:${matched_icon.style.top};left:${matched_icon.style.left};width:60px;height:40px;background:rgba(${colors[color_use]},0.1);border:1px solid rgba(${colors[color_use]},0.5);border-radius:2px;pointer-events: none;">
+                <div class="NoteResize" style="display:none;position:absolute;bottom:0;right:0;width:10px;height:10px;cursor:nwse-resize;background: linear-gradient(-45deg,rgba(0,0,0,0.5) 10%, transparent 10%,transparent 20%, rgba(0,0,0,0.5) 20%,rgba(0,0,0,0.5) 30%, transparent 30%,transparent 40%, rgba(0,0,0,0.5) 40%,rgba(0,0,0,0.5) 50%, transparent 50%);pointer-events: auto;"></div>
             </div>
             `
 
