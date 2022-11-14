@@ -127,6 +127,8 @@ The following provides the current abilities of the released extension for use w
 
 See the [open Requests / Changes](https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/boards/1957917) for a list of proposed features (and known issues).
 
+## Discussion
+Join the Boomi Discord [#extension-enhancer](https://discord.gg/XcXRrYHVUa) channel for updates, discussion and more!
 
 
 ## Contributing
