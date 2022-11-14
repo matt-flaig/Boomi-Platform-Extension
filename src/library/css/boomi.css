@@ -178,11 +178,11 @@
 }
 
 .BoomiPlatform-linetrace {
-    background: #dddddd !important;
+    stroke: #dddddd !important;
 }
 
 .BoomiPlatform-linetrace-active-solid {
-    background: #007db8;
+    stroke: #007db8;
 }
 
 .BoomiPlatform-linetrace-active-pulse {
@@ -191,11 +191,11 @@
 
 @keyframes tracepulse {
     from {
-        background: #007db8;
+        stroke: #007db8;
     }
 
     to {
-        background: #00adff;
+        stroke: #00adff;
     }
 }
 
