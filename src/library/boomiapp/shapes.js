@@ -179,7 +179,7 @@ const add_shape_listener = (shape) => {
                     [...document.querySelectorAll(`.gwt-connectors-path-connected:not(.BoomiPlatform-linetrace)`)].forEach(line => {
                         line.parentNode.classList.add('BoomiPlatform-lineparent')
 
-                        line.classList.add(BoomiPlatform.path_trace_highlight == 'solid' ? 'BoomiPlatform-linetrace-active-solid' : 'BoomiPlatform-linetrace-active-pulse')
+                        line.classList.add(BoomiPlatform.path_trace_highlight == 'solid' ? 'BoomiPlatform-linetrace-active-solid' : 'BoomiPlatform-linetrace-active-dash')
                     })
                 }, 0)
             }, 650)
@@ -192,7 +192,7 @@ const add_shape_listener = (shape) => {
                 line.classList.remove('BoomiPlatform-linetrace')
                 line.parentNode.classList.remove('BoomiPlatform-lineparent')
                 line.classList.remove('BoomiPlatform-linetrace-active')
-                line.classList.remove('BoomiPlatform-linetrace-active-pulse')
+                line.classList.remove('BoomiPlatform-linetrace-active-dash')
             });
         })
 
@@ -203,7 +203,7 @@ const add_shape_listener = (shape) => {
                 line.classList.remove('BoomiPlatform-linetrace')
                 line.parentNode.classList.remove('BoomiPlatform-lineparent')
                 line.classList.remove('BoomiPlatform-linetrace-active')
-                line.classList.remove('BoomiPlatform-linetrace-active-pulse')
+                line.classList.remove('BoomiPlatform-linetrace-active-dash')
             });
         })
 

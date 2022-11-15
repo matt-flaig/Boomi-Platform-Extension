@@ -199,6 +199,19 @@
     }
 }
 
+.BoomiPlatform-linetrace-active-dash {
+    stroke: #00adff !important;
+    stroke-dasharray: 20, 10;
+    animation: tracedash 7s linear infinite reverse;
+    stroke-linecap: round;
+}
+
+@keyframes tracedash {
+    to {
+        stroke-dashoffset: 250;
+    }
+}
+
 span.ignoreBreaks {
     white-space: pre-line;
 }
