@@ -20,7 +20,9 @@
   </p>
 </p>
 
-
+<h2 align="center">Disclaimer</h2>
+  <p align="center">Boomi has no affiliation with this extension and does not support it, endorse its use, or provide any promises or warranties (as per legal requirements)
+  </p>
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -32,6 +34,7 @@
   - [Installation](#installation)
 - [Usage](#usage)
 - [Roadmap](#roadmap)
+- [Discussion](#discussion)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)

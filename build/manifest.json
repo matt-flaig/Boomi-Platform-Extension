@@ -1,8 +1,8 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.7.2.1",
+    "version": "1.7.2.3",
     "options_ui": {
         "page": "options.html",
         "open_in_tab": true,
@@ -23,23 +23,20 @@
                 "library/css/boomi.css"
             ],
             "js": [
-                "library/jquery/jquery-3.6.min.js",
-                "library/boomiapp/contentScript.js",
-                "library/boomiapp/global.js",
-                "library/boomiapp/boomi.js",
-                "library/boomiapp/clickComponents.js",
-                "library/boomiapp/dashboard.js",
-                "library/boomiapp/buildPallet.js",
-                "library/boomiapp/shortCuts.js",
-                "library/boomiapp/updateNotification.js",
-                "library/inject/shortcut.js"
-
-            ]
-        }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": [
+              "library/jquery/jquery-3.6.min.js",
+              "library/boomiapp/contentScript.js",
+              "library/boomiapp/global.js",
+              "library/boomiapp/boomi.js",
+              "library/boomiapp/clickComponents.js",
+              "library/boomiapp/dashboard.js",
+              "library/boomiapp/buildPallet.js",
+              "library/boomiapp/shortCuts.js",
+              "library/boomiapp/updateNotification.js",
+              "library/inject/shortcut.js"
+                  ]
+                }
+              ],
+              "web_accessible_resources": [
                 "*.png",
                 "*.jpg",
                 "library/jquery/jquery-3.6.min.js",
@@ -61,14 +58,8 @@
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"
-
-            ],
-            "matches": [
-                "https://platform.boomi.com/*"
-            ]
-        }
-    ],
-    "permissions": [
-        "storage"
-    ]
-}
+              ],
+              "permissions": [
+                "storage"
+              ]
+            }
