@@ -31,33 +31,26 @@ let wait_for_load = setInterval(() => {
 
         updateBoomiPlatformConfig()
 
-//-------------
+        //-------------
+
+        var platformStatus = document.evaluate("//a[text()='Platform Status & Announcements']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
         fetch('https://status.boomi.com/api/v2/status.json')
         .then(res => res.json())
         .then((out) => {
-            console.log('Output: ', out);
-            if(out.status.description === 'All Systems Operational'){
+            if(out.status.description === 'All Systems Operational' && platformStatus){
+                platformStatus.innerHTML = `<a href="https://status.boomi.com/" target="_blank"><p><b>Platform Status: </b><b style="color: green;"> All Operational</b></p></a>`;
+            } else {
+                platformStatus.innerHTML = `<a href="https://status.boomi.com/" target="_blank"><p><b>Platform Status: </b><b class="boomiDown" style="color: red;"> ${out.status.description}</b></p></a>`;
+            }
+
+            //-------------
             document.getElementById('footer_links').insertAdjacentHTML('afterbegin', `
-            <li><p><b>Platform Status: </b><b style="color: green;"> All Operational</b></p></li>
-        `)
-    } else {
-        document.getElementById('footer_links').insertAdjacentHTML('afterbegin', `
-        <li><p><b>Platform Status: </b><b class="boomiDown" style="color: red;"> ${out.status.description}</b></p></li> `)
-    }
-    
-//-------------
-        document.getElementById('footer_links').insertAdjacentHTML('afterbegin', `
             <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko/">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a></li>
-        `);
-
-
-
-}).catch(err => console.error(err));
-
-
+            `);
+        }).catch(err => console.error(err));
     }
 
-}, 250)
+}, 250);
 
 
 //options updated via extension options
