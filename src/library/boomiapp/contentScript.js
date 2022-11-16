@@ -11,6 +11,7 @@ loadScript('./library/boomiapp/groups.js');
 loadScript('./library/boomiapp/shapes.js');
 loadScript('./library/boomiapp/fullscreen.js');
 loadScript('./library/boomiapp/jsonView.js');
+loadScript('./library/boomiapp/sqlView.js');
 loadScript('./library/boomiapp/imageCapture.js');
 loadScript('./library/boomiapp/tableWrap.js');
 loadScript('./library/boomiapp/iconSets.js');

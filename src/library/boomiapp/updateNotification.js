@@ -25,26 +25,26 @@ function updatenotificationCheck() {
 function updateNotificationfun() {
 
 let htmlUpdateContents = `
-  <ul>
-  <li>
-  <p><strong>Feature:</strong> Process reporting refresh, set the seconds in options and use the new refresh button to control the interval.</p>
- </li>
- <li>
- <p><strong>Feature:</strong> New Status Bar Platform Status & provides the status of the boomi services.</p>
+<ul>
+<li>
+<p><strong>Feature:</strong> Toggle SQL Editor added to Program Shape (Similar to JSON/XML Editor).</p>
 </li>
-  <li>
-  <p><strong>Enhancement:</strong> Capture Process Image provides option to expand all notes to capture detail.</p>
- </li>
- <li>
- <p><strong>Enhancement:</strong> XML/HTML enhancement has been added to the JSON view for message shapes & renamed to XML/JSON Editor .</p>
+<li>
+<p><strong>Enhancement:</strong> Platform Status merged into Boomi status to provide single view.</p>
 </li>
- <li>
- <p><strong>Bug Fix:</strong> Fix Extension Update Notification from appearing on the logon screen</p>
+<li>
+<p><strong>Bug Fix:</strong> Fix Add Shape Double Click not working in Notes Group Box’s.</p>
 </li>
-  <li>
-  <p><strong>Other:</strong> Blogspot Decommissioned - Extension Functions and how-to move to Wiki.</p>
-  </li>
- </ul>
+<li>
+<p><strong>Bug Fix:</strong> Shape Path Highlighting updated to work with Boomi UX change.</p>
+</li>
+<li>
+<p><strong>Bug Fix:</strong> Underscores no longer being treated as false italic in Markdown.</p>
+</li>
+<li>
+<p><strong>Note:</strong> Boomi platform enhancer is not associated or endorsed by Boomi.</p>
+</li>
+</ul>
 `
 
 
