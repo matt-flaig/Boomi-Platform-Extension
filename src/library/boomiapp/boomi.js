@@ -39,6 +39,8 @@ let boomiatomLoaded = setInterval(()=>{
     
 function onNavigationChange(){
   var urlPath = getUrlpath();
+
+  removeAccountPrefixFromDocumentTitle();
   
   // Process Reporting Page
   if(document.getElementsByTagName("title")[0].innerHTML.includes("Process Reporting") || urlPath.includes('reporting')){
@@ -73,3 +75,15 @@ function onNavigationChange(){
 // run on window change states
 window.addEventListener('popstate', onNavigationChange);
 window.addEventListener('onhashchange', onNavigationChange);
+document.addEventListener("visibilitychange", (event) => {
+  if (document.visibilityState != "visible") {
+    removeAccountPrefixFromDocumentTitle();
+  }
+});
+
+function removeAccountPrefixFromDocumentTitle(){
+  // Change Page Title to Drop Account Prefix
+  setTimeout(function(){
+    document.title = document.title.replace(document.getElementsByClassName("qm-c-inlinemenu__settings-menu-item-name")[1].innerHTML, '').replace(/^(\s-\s)/, '');
+  }, 250);
+}
