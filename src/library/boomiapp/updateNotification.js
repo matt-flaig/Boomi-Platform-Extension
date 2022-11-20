@@ -27,10 +27,10 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>change:</strong> Updated Icon to align with legal requirements.</p>
+<p><strong>Feature:</strong> Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc.</p>
 </li>
 <li>
-<p><strong>change:</strong> Addition of Disclaimer in Extension Options to align with legal requirements.</p>
+<p><strong>Bugfix:</strong> New logo not appearing in options page properly.</p>
 </li>
 </ul>
 `
