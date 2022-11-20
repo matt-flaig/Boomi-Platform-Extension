@@ -22,6 +22,11 @@ loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');
 loadScript('./library/jquery/jquery-3.6.min.js');
+loadScript('./library/boomiapp/messageEditor.js');
+// CodeMirror Scripts
+loadScript('./library/inject/cm/codemirror.js');
+loadScript('./library/inject/cm/mode/javascript.js');
+loadScript('./library/inject/cm/mode/xml.js');
 
 let org_title = document.title;
 let wait_for_load = setInterval(() => {
