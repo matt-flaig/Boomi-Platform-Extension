@@ -19,6 +19,7 @@ loadScript('./library/boomiapp/listenerGlobal.js');
 loadScript('./library/boomiapp/canvas.js');
 loadScript('./library/boomiapp/reminders.js');
 loadScript('./library/boomiapp/customrefresh.js');
+loadScript('./library/boomiapp/menuOpen.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');

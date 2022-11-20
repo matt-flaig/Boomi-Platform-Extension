@@ -30,6 +30,9 @@ let htmlUpdateContents = `
 <p><strong>Feature:</strong> Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc.</p>
 </li>
 <li>
+<p><strong>Feature:</strong> New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.</p>
+</li>
+<li>
 <p><strong>Bugfix:</strong> New logo not appearing in options page properly.</p>
 </li>
 </ul>

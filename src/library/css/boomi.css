@@ -331,3 +331,9 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
         opacity: 0;
     }
 }
+
+
+.boomimenuOpen{
+
+    display : inline-block !important
+}
