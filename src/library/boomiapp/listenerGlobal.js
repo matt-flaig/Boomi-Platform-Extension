@@ -113,7 +113,8 @@ const BoomiPlatform_Init = () => {
         listenerClass('.boomi_standard_table', add_table_listener);
         listenerClass('.build_actionsButton', add_fullscreen_listener);
         listenerClass('.description_panel', add_description_listener);
-        listenerClass('.shape_side_panel', [add_sidepanel_listener, add_sql_sidepanel_list]);
+        //listenerClass('.shape_side_panel', add_sidepanel_listener);
+        listenerClass('.shape_side_panel', add_sidepanel_message_listener);
         listenerClass('.note-content', add_notecontent_listener);
         listenerClass('.auto_refresh_li', refreshInterval_listener);
         // listenerClass('.packaged_components_wizard',reminder_save);

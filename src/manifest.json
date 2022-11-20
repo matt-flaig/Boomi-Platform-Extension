@@ -21,7 +21,9 @@
             ],
             "run_at": "document_end",
             "css": [
-                "library/css/boomi.css"
+                "library/css/boomi.css",
+                "library/css/cm/codemirror.css",
+                "library/css/cm/theme/twilight.css"
             ],
             "js": [
                 "library/jquery/jquery-3.6.min.js",
@@ -34,7 +36,6 @@
                 "library/boomiapp/shortCuts.js",
                 "library/boomiapp/updateNotification.js",
                 "library/inject/shortcut.js"
-
             ]
         }
     ],
@@ -52,7 +53,7 @@
                 "library/boomiapp/fullscreen.js",
                 "library/boomiapp/tableWrap.js",
                 "library/boomiapp/jsonView.js",
-                "library/boomiapp/sqlView.js",
+                "library/boomiapp/messageEditor.js",
                 "library/boomiapp/iconSets.js",
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
@@ -61,8 +62,10 @@
                 "library/boomiapp/doubleClick.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
-                "library/inject/codeflask.min.js"
-
+                "library/inject/codeflask.min.js",
+                "library/inject/cm/codemirror.js",
+                "library/inject/cm/mode/javascript.js",
+                "library/inject/cm/mode/xml.js"
             ],
             "matches": [
                 "https://platform.boomi.com/*"
