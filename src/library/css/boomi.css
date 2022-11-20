@@ -191,11 +191,11 @@
 }
 
 .BoomiPlatform-linetrace {
-    background: #dddddd !important;
+    stroke: #dddddd !important;
 }
 
 .BoomiPlatform-linetrace-active-solid {
-    background: #007db8;
+    stroke: #007db8;
 }
 
 .BoomiPlatform-linetrace-active-pulse {
@@ -204,11 +204,24 @@
 
 @keyframes tracepulse {
     from {
-        background: #007db8;
+        stroke: #007db8;
     }
 
     to {
-        background: #00adff;
+        stroke: #00adff;
+    }
+}
+
+.BoomiPlatform-linetrace-active-dash {
+    stroke: #00adff !important;
+    stroke-dasharray: 20, 10;
+    animation: tracedash 7s linear infinite reverse;
+    stroke-linecap: round;
+}
+
+@keyframes tracedash {
+    to {
+        stroke-dashoffset: 250;
     }
 }
 
