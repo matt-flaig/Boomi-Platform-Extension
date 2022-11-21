@@ -14,7 +14,7 @@ for (var i = 0; i < openchildMenu.length; i++) {
     
 
 
-   var ass =  '<a title="Click to open in new tab" style="display: inline-block;  position: absolute; right: 0" href="' + hrefval + '" target="_blank"><img class="openimage" src="' + opennewtabImage + '" width="40"></a>'
+   var ass =  '<a title="Click to open in new tab" style="display: inline-block;  position: absolute; right: 0" href="' + hrefval + '" target="_blank"><img class="openimage" src="' + opennewtabImage + '"></a>'
    
    currentchildMenu.childNodes[0].classList.add('boomimenuOpen')
    currentchildMenu.childNodes[0].insertAdjacentHTML('afterend', ass);
