@@ -14,10 +14,10 @@ for (var i = 0; i < openchildMenu.length; i++) {
     
 
 
-   var ass =  '<a style="display: inline-block;  position: absolute; right: 0" href="' + hrefval + '" target="_blank"><img style="display: inline-block;" src="' + opennewtabImage + '" width="30"></a>'
+   var ass =  '<a style="display: inline-block;  position: absolute; right: 0" href="' + hrefval + '" target="_blank"><img style="display: inline-block;" src="' + opennewtabImage + '" width="40"></a>'
    
    currentchildMenu.childNodes[0].classList.add('boomimenuOpen')
-   $(currentchildMenu).append(ass)
+   currentchildMenu.childNodes[0].insertAdjacentHTML('afterend', ass);
 
 
   
