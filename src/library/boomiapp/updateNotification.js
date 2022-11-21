@@ -27,7 +27,10 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature:</strong> Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc.</p>
+<p><strong>Feature:</strong> Brand new code editor attached to Message, Notify and Command Shape, click Edit message to open up a dedicated code window with choice of code display</p>
+</li>
+<li>
+<p><strong>Feature:</strong> Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc. Toggle Option Available</p>
 </li>
 <li>
 <p><strong>Feature:</strong> New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.</p>
