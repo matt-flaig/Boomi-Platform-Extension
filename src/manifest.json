@@ -69,7 +69,6 @@
                 "library/boomiapp/shapes.js",
                 "library/boomiapp/fullscreen.js",
                 "library/boomiapp/tableWrap.js",
-                "library/boomiapp/jsonView.js",
                 "library/boomiapp/messageEditor.js",
                 "library/boomiapp/iconSets.js",
                 "library/boomiapp/listenerGlobal.js",
