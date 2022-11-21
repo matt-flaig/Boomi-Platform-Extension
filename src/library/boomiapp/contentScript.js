@@ -10,8 +10,6 @@ loadScript('./library/boomiapp/descriptionMarkdown.js');
 loadScript('./library/boomiapp/groups.js');
 loadScript('./library/boomiapp/shapes.js');
 loadScript('./library/boomiapp/fullscreen.js');
-loadScript('./library/boomiapp/jsonView.js');
-loadScript('./library/boomiapp/sqlView.js');
 loadScript('./library/boomiapp/imageCapture.js');
 loadScript('./library/boomiapp/tableWrap.js');
 loadScript('./library/boomiapp/iconSets.js');
@@ -24,7 +22,6 @@ loadScript('./library/boomiapp/connectionOperations.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');
-loadScript('./library/jquery/jquery-3.6.min.js');
 
 let org_title = document.title;
 let wait_for_load = setInterval(() => {
