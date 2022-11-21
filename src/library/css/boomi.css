@@ -4,19 +4,6 @@
     height: 2.5em !important;
 }
 
-.qm-u-theme-dark {
-    --color-canvas-grid: rgba(131, 131, 131, 0.25);
-}
-
-.qm-u-theme-default {
-    -color-canvas-grid: rgba(131, 131, 131, 0.50);
-}
-
-.canvas_grid {
-    background-size: 18px 18px !important;
-    background-image: radial-gradient(var(--color-canvas-grid) 1px, transparent 1px) !important;
-}
-
 /*process reporting specifc*/
 
 .reporting-type-menu {
