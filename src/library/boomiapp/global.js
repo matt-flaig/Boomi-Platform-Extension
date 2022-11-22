@@ -52,8 +52,16 @@ function getUrlParameter(sParam) {
       return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
     }
   }
-};
+}
 
+function getGWTPageName(){
+  var urlString = $(location).attr('href');
+  var page = urlString.substring(
+    urlString.indexOf("#") + 1, 
+    urlString.indexOf(";")
+  );
+  return page;
+}
 
 function showInformationAlertDialog(message){
   var informationAlertDialog = `<div class="gwt-PopupPanel oops_message_panel informationAlertDialog"
