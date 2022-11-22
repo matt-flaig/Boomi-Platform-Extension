@@ -1,7 +1,8 @@
 let boomi_title = document.title;
-let boomiatomLoaded = setInterval(()=>{
+let boomiPageLoaded = setInterval(()=>{
 
     if(boomi_title != document.title){
+      clearInterval(boomiPageLoaded);
 
       var subHeaderContainerNav = document.getElementsByClassName('qm-c-servicenav')[0];
       var headerAdd = document.getElementsByClassName('qm-c-servicenav__navbar')[0];
@@ -28,8 +29,6 @@ let boomiatomLoaded = setInterval(()=>{
               '<li id="showHeaderbtn" class="qm-c-servicenav__nav-item"><a class="gwt-Anchor qm-c-servicenav__nav-link qm-a--alternate"><span id="showHeaderspan" class="">' + headerVisibilityState + ' Header</span></a></li>'
             );
           });
-          // clear the setInterval timer to poll for injecting the Show Header Button
-          clearInterval(boomiatomLoaded);
         }
       onNavigationChange();
       updatenotificationCheck();
