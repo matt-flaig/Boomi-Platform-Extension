@@ -54,6 +54,10 @@ function getUrlParameter(sParam) {
   }
 }
 
+function getPageNameWithoutExtension(){
+  return window.location.pathname.split('/').pop().split('.')[0];
+}
+
 function getGWTPageName(){
   var urlString = $(location).attr('href');
   var page = urlString.substring(
