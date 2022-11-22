@@ -59,8 +59,6 @@ document.arrive('.gwt-TextArea.validatable[data-locator="formrow-message"]', fun
                 case "json":
                     if (code?.trim()) code = code.trim().replace(/^'*/, '\'').replace(/'*$/, '\'').replace(/'*({\d+})'*/g, "'$1'");
                     break;
-                case "xml":
-                    if (code?.trim()) code = code.trim().replace(/'*({\d+})'*/g, "'$1'");
             }
             $(textAreaId)[0].value = code;
             $('#popup_on_popup_content, #popup_on_popup').remove();
