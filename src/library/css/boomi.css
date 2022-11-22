@@ -367,3 +367,11 @@ padding-right: 7px;
 padding-top: 3px;
 
 }
+
+.connectorText{
+    width: auto !important
+}
+
+.connectorVal{
+    width: 375px !important
+}

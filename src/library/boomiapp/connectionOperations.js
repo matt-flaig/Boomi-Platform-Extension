@@ -1,59 +1,45 @@
 const add_connector_list = (conOperation) => {
 
 
-    let somethinghere = conOperation
     
-    let zzzzz = conOperation.children
+    let connectorList = conOperation.children
     
-    for (var i = 0; i < zzzzz.length; i++) {
-        var currentzzzzz = zzzzz[i];
-        var something = currentzzzzz.parentNode.parentNode.parentNode.parentNode
-
-        something.classList.add('boomiConnect')
-
-        
-       // var something1 =  something.parentNode
-    
-       //var something2 = something1.parentNode
-    
-       
-      
-    
-    
+    for (var i = 0; i < connectorList.length; i++) {
+        var currentconnectorList = connectorList[i];
+        var currentconnectorParent = currentconnectorList.parentNode.parentNode.parentNode.parentNode
+        currentconnectorParent.classList.add('boomiConnect')
+     
       }
-    
-    
-    
-    
-    }
 
 
 
-    const add_connector_txt = (conText) => {
 
 
-        let somethinghere = conText.nextElementSibling
-        
-        //let zzzzz = conOperation.children
-        
-/*         for (var i = 0; i < zzzzz.length; i++) {
-            var currentzzzzz = zzzzz[i];
-            var something = currentzzzzz.parentNode.parentNode.parentNode.parentNode
-    
-            something.classList.add('boomiConnect')
-    
-            
-           // var something1 =  something.parentNode
-        
-           //var something2 = something1.parentNode
-        
-           
-          
-        
-        
-          } */
-        
-        
-        
-        
+      let tableElement = document.getElementsByClassName("smallLabels");
+
+      for (var i = 0; i < tableElement.length; i++) {
+        var currenttableElement = tableElement[i].children;
+
+        for (var b = 0; b < currenttableElement.length; b++) {
+          var itemcurrenttableElement = currenttableElement[b];
+          itemcurrenttableElement.childNodes[0].classList.add("connectorText");
+
+          if (itemcurrenttableElement.childNodes[0].innerHTML == "Name") {
+            itemcurrenttableElement.childNodes[1].childNodes[0].childNodes[0].classList.add("connectorVal");
+          }
+
+          if (itemcurrenttableElement.childNodes[0].innerHTML == "Value") {
+            itemcurrenttableElement.childNodes[1].classList.add("connectorVal");
+          }
         }
+      }
+
+     //for later
+      //let tableElement1 = document.getElementsByClassName("largeLabels");
+      //let headerElement = tableElement1[2]
+    
+
+
+}
+
+
