@@ -36,7 +36,13 @@ let htmlUpdateContents = `
 <p><strong>Feature:</strong> New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.</p>
 </li>
 <li>
+<p><strong>Change:</strong> Connector Operation Screen for HTTP has increased sizing on Request details for better use</p>
+</li>
+<li>
 <p><strong>Bugfix:</strong> New logo not appearing in options page properly.</p>
+</li>
+<li>
+<p><strong>Bugfix:</strong> Minor Code Bug Enhancements.</p>
 </li>
 </ul>
 `
