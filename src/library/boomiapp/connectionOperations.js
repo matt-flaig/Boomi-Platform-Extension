@@ -3,33 +3,27 @@ const add_connector_list = (conOperation) => {
 
     
     let connectorList = conOperation.children
+
+    connectorList[1].children[0].classList.add('boomiConnect')
     
-    for (var i = 0; i < connectorList.length; i++) {
-        var currentconnectorList = connectorList[i];
-        var currentconnectorParent = currentconnectorList.parentNode.parentNode.parentNode.parentNode
-        currentconnectorParent.classList.add('boomiConnect')
-     
-      }
 
 
 
-
-
-      let tableElement = document.getElementsByClassName("smallLabels");
+      let tableElement = connectorList[1].lastChild.childNodes//document.getElementsByClassName("smallLabels");
 
       for (var i = 0; i < tableElement.length; i++) {
         var currenttableElement = tableElement[i].children;
 
         for (var b = 0; b < currenttableElement.length; b++) {
           var itemcurrenttableElement = currenttableElement[b];
-          itemcurrenttableElement.childNodes[0].classList.add("connectorText");
+          itemcurrenttableElement.classList.add("connectorText");
 
-          if (itemcurrenttableElement.childNodes[0].innerHTML == "Name") {
-            itemcurrenttableElement.childNodes[1].childNodes[0].childNodes[0].classList.add("connectorVal");
+          if (itemcurrenttableElement.innerHTML == "Name") {
+            itemcurrenttableElement.nextSibling.childNodes[0].childNodes[0].classList.add("connectorVal");
           }
 
-          if (itemcurrenttableElement.childNodes[0].innerHTML == "Value") {
-            itemcurrenttableElement.childNodes[1].classList.add("connectorVal");
+          if (itemcurrenttableElement.innerHTML == "Value") {
+            itemcurrenttableElement.nextElementSibling.classList.add("connectorVal");
           }
         }
       }
