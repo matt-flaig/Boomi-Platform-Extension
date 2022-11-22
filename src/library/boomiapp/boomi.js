@@ -107,7 +107,6 @@ function changeFaviconBasedOnPage(){
   
   switch (subdomain){
     case 'platform':
-      console.log(pageName);
       switch(pageName){
         case 'AtomSphere':
           switch (gwtPage){
@@ -153,7 +152,6 @@ function changeFaviconImage(link){
   var faviconIcon = document.getElementsByTagName('head')[0].querySelector("link[rel~='icon']") || document.getElementsByTagName('head')[0].querySelector("link[rel='shortcut icon']");
 
   if (!faviconIcon) {
-    console.log('Creating Favicon');
     faviconIcon = document.createElement('link');
     faviconIcon.rel = 'icon';
     document.getElementsByTagName('head')[0].appendChild(faviconIcon);
