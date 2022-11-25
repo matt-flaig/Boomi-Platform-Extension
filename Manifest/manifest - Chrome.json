@@ -3,7 +3,7 @@
     "manifest_version": 3,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.7.2.1",
+    "version": "1.7.3",
     "options_ui": {
         "page": "options.html",
         "open_in_tab": true,
@@ -19,12 +19,30 @@
             "matches": [
                 "https://platform.boomi.com/*"
             ],
+            "run_at": "document_start",
+            "js": [
+                "library/inject/arrive.min.js",
+                "library/jquery/jquery-3.6.min.js",
+                "library/inject/cm/codemirror.js",
+                "library/inject/cm/mode/javascript.js",
+                "library/inject/cm/mode/xml.js",
+                "library/inject/cm/mode/sql.js",
+                "library/inject/cm/addons/closebrackets.js",
+                "library/inject/cm/addons/closetags.js",
+                "library/inject/cm/addons/xml-fold.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://platform.boomi.com/*"
+            ],
             "run_at": "document_end",
             "css": [
-                "library/css/boomi.css"
+                "library/css/boomi.css",
+                "library/css/cm/codemirror.css",
+                "library/css/cm/theme/twilight.css"
             ],
             "js": [
-                "library/jquery/jquery-3.6.min.js",
                 "library/boomiapp/contentScript.js",
                 "library/boomiapp/global.js",
                 "library/boomiapp/boomi.js",
@@ -33,8 +51,8 @@
                 "library/boomiapp/buildPallet.js",
                 "library/boomiapp/shortCuts.js",
                 "library/boomiapp/updateNotification.js",
+                "library/boomiapp/messageEditor.js",
                 "library/inject/shortcut.js"
-
             ]
         }
     ],
@@ -51,18 +69,18 @@
                 "library/boomiapp/shapes.js",
                 "library/boomiapp/fullscreen.js",
                 "library/boomiapp/tableWrap.js",
-                "library/boomiapp/jsonView.js",
-                "library/boomiapp/sqlView.js",
+                "library/boomiapp/messageEditor.js",
                 "library/boomiapp/iconSets.js",
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
                 "library/boomiapp/reminders.js",
                 "library/boomiapp/customrefresh.js",
+                "library/boomiapp/menuOpen.js",
+                "library/boomiapp/connectionOperations.js",
                 "library/boomiapp/doubleClick.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"
-
             ],
             "matches": [
                 "https://platform.boomi.com/*"
