@@ -383,3 +383,9 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
     overflow: auto !important;
 
 }
+
+
+.gwt-TextBox[maxlength='255']{
+    min-width: 900px !important;
+    width:1200px !important;
+}

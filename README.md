@@ -113,6 +113,11 @@ The following provides the current abilities of the released extension for use w
 * Define a custom refresh period and have process reporting auto refresh to your needs.
 * Expand the Element Selection Screen within Shapes to provide more visual room for ease of use.
 * Platform Status Detail - Shows if operational or if any Boomi systems are not operational.
+* Brand new code editor attached to Message, Notify and Command Shape, click Edit message to open up a dedicated code window with choice of code display
+* Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc. Toggle Option Available.
+* New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.
+* Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.
+* Connector Operation Screen for HTTP has increased sizing on Request details for better use.
 
 <br><br>
 
