@@ -52,6 +52,7 @@
                 "library/boomiapp/shortCuts.js",
                 "library/boomiapp/updateNotification.js",
                 "library/boomiapp/messageEditor.js",
+                "library/boomiapp/connectoractionconfig.js",
                 "library/inject/shortcut.js"
             ]
         }

@@ -378,7 +378,7 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
 
 .flex_panel {
     max-width: 100% !important;
-    min-height: 800px !important;
+    min-height: 600px !important;
     resize: both !important;
     overflow: auto !important;
 
