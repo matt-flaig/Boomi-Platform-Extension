@@ -48,7 +48,7 @@ let htmlUpdateContents = `
 <p><strong>Bugfix:</strong> New logo not appearing in options page properly.</p>
 </li>
 <li>
-<p><strong>Bugfix:</strong> Minor Code Bug Enhancements.</p>
+<p><strong>Bugfix:</strong> Incorrectly applied flex css as this was applied to all windows - only applys to editor screens.</p>
 </li>
 </ul>
 `

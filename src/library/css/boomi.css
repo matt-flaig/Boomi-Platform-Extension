@@ -376,7 +376,7 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
     width: 375px !important
 }
 
-.flex_panel {
+.flex_panel_sql {
     max-width: 100% !important;
     min-height: 600px !important;
     resize: both !important;
@@ -388,4 +388,38 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
 .gwt-TextBox[maxlength='255']{
     min-width: 900px !important;
     width:1200px !important;
+}
+
+
+.boomiHTTPReminder{
+    animation: reminderHTTPanimate 1.5s linear infinite;
+}
+
+@keyframes reminderHTTPanimate {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 700px){
+
+.testRunDialog input[type='text']{
+    width: 500px !important;
+}
+
+}
+
+.qm-button--primary-savetest{
+    background-color: #b67600!important;
+    border-color: #b67600!important;
+    color: #fff!important;
+
 }

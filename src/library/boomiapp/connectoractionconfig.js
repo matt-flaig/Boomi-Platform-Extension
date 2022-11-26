@@ -8,7 +8,7 @@ document.arrive(".connectorActionConfig", function () {
   if (httpRemind) {
     actionLable[0].innerHTML =
       actionLable[0].innerHTML +
-      '<br> <b style="color: orange">Reminder:</b> in-coming message shapes will not work into the HTTP connector if you have set connector parameters';
+      '<br> <b style="color: orange" class="boomiHTTPReminder">Reminder:</b> in-coming message shapes will not work into the HTTP connector if you have set connector parameters';
   } else {
     letsCheck()
   }
@@ -24,7 +24,7 @@ let check_http_selection = setInterval(() => {
     if (httpRemind) {
       actionLable[0].innerHTML =
         actionLable[0].innerHTML +
-        '<br> <b style="color: orange">Reminder:</b> in-coming message shapes will not work into the HTTP connector if you have set connector parameters';
+        '<br> <b style="color: orange" class="boomiHTTPReminder">Reminder:</b> in-coming message shapes will not work into the HTTP connector if you have set connector parameters';
 
       clearInterval(check_http_selection);
     }
