@@ -1,4 +1,4 @@
-//Reminder to Save when making packaging component
+/* //Reminder to Save when making packaging component
 const reminder_save = (reminderSave) => {
   if (BoomiPlatform.reminder_savePackage != "off") {
     let remindtosaveHtml = `
@@ -9,7 +9,7 @@ const reminder_save = (reminderSave) => {
     let wizardpanel = document.getElementsByClassName("modal_contents");
     $(wizardpanel).append(remindtosaveHtml);
   }
-};
+}; */
 
 //Reminder to create schedule after depployment
 const reminder_schedule = (reminderSchedule) => {
@@ -31,3 +31,24 @@ const reminder_schedule = (reminderSchedule) => {
     }
   }
 };
+
+
+
+
+
+document.arrive("[data-locator='button-view-deployments']", function (deploymentScreen) {
+
+  
+  debugger
+
+  chrome.storage.local.get(["reminder_schedule"], function(e) {
+
+    let scheduleHtml = `
+    <p><b style="color: orange">REMINDER:</b> Dont forget to set up a schedule in the runtime if its required for your deployed service</p>`;
+    deploymentScreen.offsetParent.parentNode.children[0].insertAdjacentHTML('afterend', scheduleHtml);
+
+  });
+
+
+
+});

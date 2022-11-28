@@ -99,12 +99,12 @@ The following provides the current abilities of the released extension for use w
 * Add Markdown in the process description or notes to show better visual formatting.
 * When tables (for example Process Reporting list view) is displayed there's an option to "Toggle Line Wrapping" available to maximize screen real estate.
 * Ability to assign keyboard button to easily go into and out of Full Screen Mode - default is the `~` key.
-* JSON & XML Viewing toggle added to Message and Notify Shapes; will format the JSON and add the ' quote padding automatically.
+* Brand new code editor attached to Message, Notify and Command Shape, click Edit message to open up a dedicated code window with choice of code display
+* Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.
 * Capture a diagram of your process flow easily via the "Capture Process Flow" button; will capture the entire flow and save an image to a local file.
   * Options available are - Use Transparent Background, Zoom Size and Ability to Expand all notes to capture the note detail
 * Debug has been enhanced to provide more robust coloring, this includes glowing colors, item selection and error emphasis.
 * Ability to Remove the Canvas Build Background (dots) which works well with dark modes.
-* Save Reminder – When packaging a component you will be reminded to save the process as Boomi doesn't save automatically when packaging.
 * Schedule Reminder - Once a deployment has occurred or been deployed to another environment the notification message will also provide a reminder to setup a schedule (if enabled).
 * Easily copy the current Component URL/ID using the Copy Component ID Button (In the ⚙️ action button above the build canvas).
 * Build Shape "connector" Pallet has been restored back to its better life before Boomi UX decided to change it and make it unusable.
@@ -113,10 +113,9 @@ The following provides the current abilities of the released extension for use w
 * Define a custom refresh period and have process reporting auto refresh to your needs.
 * Expand the Element Selection Screen within Shapes to provide more visual room for ease of use.
 * Platform Status Detail - Shows if operational or if any Boomi systems are not operational.
-* Brand new code editor attached to Message, Notify and Command Shape, click Edit message to open up a dedicated code window with choice of code display
 * Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc. Toggle Option Available.
 * New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.
-* Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.
+
 * Connector Operation Screen for HTTP has increased sizing on Request details for better use.
 
 <br><br>
