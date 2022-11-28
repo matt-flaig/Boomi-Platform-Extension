@@ -15,6 +15,7 @@ loadScript('./library/boomiapp/tableWrap.js');
 loadScript('./library/boomiapp/iconSets.js');
 loadScript('./library/boomiapp/listenerGlobal.js');
 loadScript('./library/boomiapp/canvas.js');
+loadScript('./library/boomiapp/reminders.js');
 loadScript('./library/boomiapp/customrefresh.js');
 loadScript('./library/boomiapp/menuOpen.js');
 loadScript('./library/boomiapp/connectionOperations.js');

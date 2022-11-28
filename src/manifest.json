@@ -53,7 +53,6 @@
                 "library/boomiapp/updateNotification.js",
                 "library/boomiapp/messageEditor.js",
                 "library/boomiapp/connectoractionconfig.js",
-                "library/boomiapp/reminders.js",
                 "library/boomiapp/dbsqlEditor.js",
                 "library/inject/shortcut.js"
             ]
@@ -76,6 +75,7 @@
                 "library/boomiapp/iconSets.js",
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
+                "library/boomiapp/reminders.js",
                 "library/boomiapp/customrefresh.js",
                 "library/boomiapp/menuOpen.js",
                 "library/boomiapp/connectionOperations.js",
