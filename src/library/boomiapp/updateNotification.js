@@ -27,10 +27,28 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Bugfix:</strong> DB Profile Editor enhancement being applied globally to all boomi screens.</p>
+<p><strong>Feature:</strong> Brand new code editor attached to Message, Notify and Command Shape, click Edit message to open up a dedicated code window with choice of code display.</p>
 </li>
 <li>
-<p><strong>Bugfix:</strong> Canvas Dot Background not being displayed in Light Mode.</p>
+<p><strong>Feature:</strong> Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc. Toggle Option Available.</p>
+</li>
+<li>
+<p><strong>Feature:</strong> New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.</p>
+</li>
+<li>
+<p><strong>Feature:</strong> Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.</p>
+</li>
+<li>
+<p><strong>Change:</strong> Connector Operation Screen for HTTP has increased sizing on Request details for better use.</p>
+</li>
+<li>
+<p><strong>Change:</strong> Process Description Edit Box width increased to enable full view of description when editing.</p>
+</li>
+<li>
+<p><strong>Bugfix:</strong> New logo not appearing in options page properly.</p>
+</li>
+<li>
+<p><strong>Bugfix:</strong> Minor Code Bug Enhancements.</p>
 </li>
 </ul>
 `
