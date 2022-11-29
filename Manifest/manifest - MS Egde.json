@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.7.3.2",
+    "version": "1.7.3.5",
     "options_ui": {
         "page": "options.html",
         "open_in_tab": true,
