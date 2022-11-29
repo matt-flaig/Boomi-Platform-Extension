@@ -46,7 +46,7 @@ let wait_for_load = setInterval(() => {
 
             //-------------
             document.getElementById('footer_links').insertAdjacentHTML('afterbegin', `
-            <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko/">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a></li>
+            <li><a class="alternate_link" target="_blank" href="https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/wikis/home">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a></li>
             `);
         }).catch(err => console.error(err));
     }
