@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.7.4",
+    "version": "1.7.3.5",
     "options_ui": {
         "page": "options.html",
         "open_in_tab": true,
@@ -20,32 +20,15 @@
         ],
         "run_at": "document_start",
         "js": [
-            "library/inject/arrive.min.js",
-            "library/jquery/jquery-3.6.min.js",
-            "library/inject/cm/codemirror.js",
-            "library/inject/cm/mode/javascript.js",
-            "library/inject/cm/mode/xml.js",
-            "library/inject/cm/mode/sql.js",
-            "library/inject/cm/addons/closebrackets.js",
-            "library/inject/cm/addons/closetags.js",
-            "library/inject/cm/addons/xml-fold.js"
-        ]
-    },
-      {
-        "matches": [
-            "https://platform.boomi.com/*"
-        ],
-        "run_at": "document_start",
-        "js": [
-            "library/inject/arrive.min.js",
-            "library/jquery/jquery-3.6.min.js",
-            "library/inject/cm/codemirror.js",
-            "library/inject/cm/mode/javascript.js",
-            "library/inject/cm/mode/xml.js",
-            "library/inject/cm/mode/sql.js",
-            "library/inject/cm/addons/closebrackets.js",
-            "library/inject/cm/addons/closetags.js",
-            "library/inject/cm/addons/xml-fold.js"
+          "library/inject/arrive.min.js",
+          "library/jquery/jquery-3.6.min.js",
+          "library/inject/cm/codemirror.js",
+          "library/inject/cm/mode/javascript.js",
+          "library/inject/cm/mode/xml.js",
+          "library/inject/cm/mode/sql.js",
+          "library/inject/cm/addons/closebrackets.js",
+          "library/inject/cm/addons/closetags.js",
+          "library/inject/cm/addons/xml-fold.js"
         ]
     },
         {
@@ -55,20 +38,21 @@
             "run_at": "document_end",
             "css": [
               "library/css/boomi.css",
-              "library/css/cm/codemirror.css",
-              "library/css/cm/theme/twilight.css"
+                "library/css/cm/codemirror.css",
+                "library/css/cm/theme/twilight.css"
             ],
             "js": [
               "library/boomiapp/contentScript.js",
-              "library/boomiapp/global.js",
-              "library/boomiapp/boomi.js",
-              "library/boomiapp/clickComponents.js",
-              "library/boomiapp/dashboard.js",
-              "library/boomiapp/buildPallet.js",
-              "library/boomiapp/shortCuts.js",
-              "library/boomiapp/updateNotification.js",
-              "library/boomiapp/messageEditor.js",
-              "library/inject/shortcut.js"
+                "library/boomiapp/global.js",
+                "library/boomiapp/boomi.js",
+                "library/boomiapp/clickComponents.js",
+                "library/boomiapp/dashboard.js",
+                "library/boomiapp/buildPallet.js",
+                "library/boomiapp/shortCuts.js",
+                "library/boomiapp/updateNotification.js",
+                "library/boomiapp/messageEditor.js",
+                "library/boomiapp/dbsqlEditor.js",
+                "library/inject/shortcut.js"
                   ]
                 }
               ],
