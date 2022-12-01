@@ -27,10 +27,7 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Bugfix:</strong> Incorrectly applied flex css as this was applied to all windows - only applys to editor screens.</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Resolution of Dot Background not appearing in light mode (canvas).</p>
+<p><strong>Bugfix:</strong> issue with code editor escaping incorrectly.</p>
 </li>
 </ul>
 `
