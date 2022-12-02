@@ -52,7 +52,8 @@
                 "library/boomiapp/shortCuts.js",
                 "library/boomiapp/updateNotification.js",
                 "library/boomiapp/messageEditor.js",
-                "library/inject/shortcut.js"
+                "library/inject/shortcut.js",
+                "library/boomiapp/menuOpen.js"
             ]
         }
     ],
