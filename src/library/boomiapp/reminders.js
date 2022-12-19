@@ -12,7 +12,7 @@ const reminder_save = (reminderSave) => {
 }; */
 
 //Reminder to create schedule after depployment
-const reminder_schedule = (reminderSchedule) => {
+/* const reminder_schedule = (reminderSchedule) => {
   if (BoomiPlatform.reminder_schedule != "off") {
     let scheduleHtml = `
     <p><b style="color: orange">REMINDER:</b> Dont forget to set up a schedule in the runtime if its required for your deployed service</p>`;
@@ -27,10 +27,10 @@ const reminder_schedule = (reminderSchedule) => {
         $(deploymentpop).append(scheduleHtml);
       }
     } catch (error) {
-      /*no handler required*/
+    
     }
   }
-};
+}; */
 
 
 
