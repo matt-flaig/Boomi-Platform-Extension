@@ -27,28 +27,13 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature:</strong> Brand new code editor attached to Message, Notify and Command Shape, click Edit message to open up a dedicated code window with choice of code display.</p>
+<p><strong>Feature/Change:</strong> New Double Click in Build Panel Quick Component Selection.</p>
 </li>
 <li>
-<p><strong>Feature:</strong> Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc. Toggle Option Available.</p>
+<p><strong>Change:</strong> Aligned Icon against Drop Down Menu items i.e. Atom Manage to match platforms standard</p>
 </li>
 <li>
-<p><strong>Feature:</strong> New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.</p>
-</li>
-<li>
-<p><strong>Feature:</strong> Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.</p>
-</li>
-<li>
-<p><strong>Change:</strong> Connector Operation Screen for HTTP has increased sizing on Request details for better use.</p>
-</li>
-<li>
-<p><strong>Change:</strong> Process Description Edit Box width increased to enable full view of description when editing.</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> New logo not appearing in options page properly.</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Incorrectly applied flex css as this was applied to all windows - only applys to editor screens.</p>
+<p><strong>Bugfix:</strong> Schedule Reminder not appearing in Deployed Process Screen.</p>
 </li>
 </ul>
 `

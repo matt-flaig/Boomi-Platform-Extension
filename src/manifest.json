@@ -53,6 +53,8 @@
                 "library/boomiapp/updateNotification.js",
                 "library/boomiapp/messageEditor.js",
                 "library/boomiapp/reminders.js",
+                "library/boomiapp/deployedProcess.js",
+                "library/boomiapp/quickclickComponent.js",
                 "library/inject/shortcut.js",
                 "library/boomiapp/menuOpen.js"
             ]
