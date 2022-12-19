@@ -116,7 +116,8 @@ const BoomiPlatform_Init = () => {
         listenerClass('.note-content', add_notecontent_listener);
         listenerClass('.auto_refresh_li', refreshInterval_listener);
         listenerClass('.gwt-DetailAreaInner', add_connector_list);
-        listenerClass('.qm-c-inlinemenu--servicenav-menu-constrain',add_menu_dropdown)
+        // listenerClass('.packaged_components_wizard',reminder_save);
+        listenerClass('.popupContent',reminder_schedule);
 
     }, 1000)
 
