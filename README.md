@@ -133,7 +133,7 @@ The following provides the current abilities of the released extension for use w
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open Requests / Changes](https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/boards/1957917) for a list of proposed features (and known issues).
+See the Issues tab for a list of proposed features (and known issues).
 
 ## Discussion
 Join the Boomi Discord [#extension-enhancer](https://discord.gg/XcXRrYHVUa) channel for updates, discussion and more!
@@ -172,7 +172,6 @@ Name - [Mitchell Franklin](https://mitchellfranklin.info) - mitchellfranklin@gma
 * **Tony Banik** - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this extension.
 * [Baptiste BIEBER](https://github.com/baptistebieber) - Developer of Boomi Extension that provided idea for future enhancements
 * **Noah Skelton** - Developer of the Build Pallet Fix Script used to return the UX for Shapes back to what it was
-* [Boomi Developer (Boomian)](https://gitlab.com/boomian) - Providing script and feature enhancements to the project
 * [Boomi](https://boomi.com/)
 * [Boomi Community](https://community.boomi.com/)
 * [Choose an Open Source License](https://choosealicense.com)
