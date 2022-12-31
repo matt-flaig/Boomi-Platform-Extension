@@ -16,7 +16,7 @@
     ·
         <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer">View Firefox Store</a>
     ·
-    <a href="https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/boards/1957917">Request a feature</a>
+    <a href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/issues">Request a feature</a>
   </p>
 </p>
 
