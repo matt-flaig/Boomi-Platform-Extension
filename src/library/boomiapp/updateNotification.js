@@ -30,6 +30,9 @@ let htmlUpdateContents = `
 <p><strong>Feature/Change:</strong> New Double Click in Build Panel Quick Component Selection.</p>
 </li>
 <li>
+<p><strong>Feature/Change:</strong> New Filter Default Option for Selection via Extension Options.</p>
+</li>
+<li>
 <p><strong>Change:</strong> Aligned Icon against Drop Down Menu items i.e. Atom Manage to match platforms standard</p>
 </li>
 <li>
@@ -82,8 +85,8 @@ id="popup_on_popup_content" role="dialog" aria-modal="true">
                             <p>Check out the following new features and or bug fixes for the Boomi Platform Enhancer Extension:</p>
 ` + htmlUpdateContents + `
                             <p>For more detail on what each feature does and how to use it visit the <a
-                                    href="https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/wikis/home"
-                                    target="_blank">Extension Wiki</a> - It is still in progress.</p>
+                                    href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/wiki"
+                                    target="_blank">Extension Wiki</a></p>
                         </div>
                     </div> 
                 </div>
