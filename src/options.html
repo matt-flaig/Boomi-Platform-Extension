@@ -110,7 +110,29 @@
                                                     </label>                                                     
                                                     <br> 
                                                     <small>Shortcut will not override system shortcuts, so be careful with what keys/modifiers you use.</small> 
-                                                </section>                                                 
+                                                </section>   
+                                                
+                                                <div class="input-group mb-3"> 
+                                                    
+                                                    <section> 
+                                                        <br>
+                                                        <label>Default Filters - Applied with clicking the filter button:</label> 
+                                             
+                                                    <select name="apply_process_filters" class="option form-select" aria-label=""> 
+                                                        <option value="on">On</option>                                                     
+                                                        <option value="off" selected>Off</option>                                                     
+                                                    </select>  
+                                                    
+                                                        <label> 
+                                                            <input type="checkbox" name="Filter_process" value="Process" class="option form-check-input">Process
+                                                        </label>                                                    <label> 
+                                                            <input type="checkbox" name="Filter_processProp" value="ProcessProperties" class="option form-check-input">Process Properties
+                                                        </label> 
+                                                        <label> 
+                                                            <input type="checkbox" name="Filter_crossref" value="CrossReferrenceTables" class="option form-check-input">Cross Referrence Tables
+                                                        </label> 
+
+                                                    </section> 
                                             </div>                                             
                                             <br> 
                                             <button id="save" type="button" class="btn d-block w-100 btn-primary fw-bold">Save Options</button>                                             

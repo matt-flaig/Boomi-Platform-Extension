@@ -27,28 +27,22 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature:</strong> Brand new code editor attached to Message, Notify and Command Shape, click Edit message to open up a dedicated code window with choice of code display.</p>
+<p><strong>Feature/Change:</strong> New Double Click in Build Panel Quick Component Selection.</p>
 </li>
 <li>
-<p><strong>Feature:</strong> Tab names remove the account name to enable better display of tabs function i.e. Build, Reporting etc. Toggle Option Available.</p>
+<p><strong>Feature/Change:</strong> New Filter Default Option for Selection via Extension Options.</p>
 </li>
 <li>
-<p><strong>Feature:</strong> New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.</p>
+<p><strong>Feature/Change:</strong> Expansion of Choose and Set Property and Value Fields to be expanded .</p>
 </li>
 <li>
-<p><strong>Feature:</strong> Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.</p>
+<p><strong>Feature/Change:</strong> Aligned Icon against Drop Down Menu items i.e. Atom Manage to match platforms standard</p>
 </li>
 <li>
-<p><strong>Change:</strong> Connector Operation Screen for HTTP has increased sizing on Request details for better use.</p>
+<p><strong>Feature/Change:</strong> Update of open in new Tab to align with platform look and feel</p>
 </li>
 <li>
-<p><strong>Change:</strong> Process Description Edit Box width increased to enable full view of description when editing.</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> New logo not appearing in options page properly.</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Minor Code Bug Enhancements.</p>
+<p><strong>Bugfix:</strong> Schedule Reminder not appearing in Deployed Process Screen.</p>
 </li>
 </ul>
 `
@@ -97,8 +91,8 @@ id="popup_on_popup_content" role="dialog" aria-modal="true">
                             <p>Check out the following new features and or bug fixes for the Boomi Platform Enhancer Extension:</p>
 ` + htmlUpdateContents + `
                             <p>For more detail on what each feature does and how to use it visit the <a
-                                    href="https://gitlab.com/mjs-integration/boomi/chromium-addons/boomi-platform-extension/-/wikis/home"
-                                    target="_blank">Extension Wiki</a> - It is still in progress.</p>
+                                    href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/wiki"
+                                    target="_blank">Extension Wiki</a></p>
                         </div>
                     </div> 
                 </div>

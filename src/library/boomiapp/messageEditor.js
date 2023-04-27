@@ -16,7 +16,7 @@ document.arrive('.gwt-TextArea.validatable[data-locator="formrow-message"]', fun
 
         $('body').append(renderMessageEditorPopup(this.id));
 
-        var code = $(textAreaId)[0].value.replace(/^'*/, '').replace(/'*$/, '').replace(/'({\d+})'/, '$1')
+        var code = $(textAreaId)[0].value.replace(/^'*/, '').replace(/'*$/, '').replace(/'({\d+})'/g, '$1')
 
         editor = CodeMirror($('#bpe-message-editor')[0], {
             value: code,

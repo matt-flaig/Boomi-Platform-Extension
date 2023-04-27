@@ -5,16 +5,18 @@
 }
 
 .qm-u-theme-dark {
-    --color-canvas-grid: rgba(131, 131, 131, 0.25);
+    --canvas-grid-background-svg: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 8 8' style='enable-background:new 0 0 8 8;' xml:space='preserve' fill='%23838383' fill-opacity='0.25'%3E%3Ccircle class='st0' cx='3.5' cy='4' r='0.5'/%3E%3C/svg%3E");
+    --dots-size-canvas-grid: 18px;
 }
 
 .qm-u-theme-default {
-    -color-canvas-grid: rgba(131, 131, 131, 0.50);
+    --canvas-grid-background-svg: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 8 8' style='enable-background:new 0 0 8 8;' xml:space='preserve' fill='%23BCBCBC' fill-opacity='1'%3E%3Ccircle class='st0' cx='3.5' cy='4' r='0.5'/%3E%3C/svg%3E%0A");
+    --dots-size-canvas-grid: 8px;
 }
 
 .canvas_grid {
-    background-size: 18px 18px !important;
-    background-image: radial-gradient(var(--color-canvas-grid) 1px, transparent 1px) !important;
+    background-size: var(--dots-size-canvas-grid) var(--dots-size-canvas-grid) !important;
+    background-image: var(--canvas-grid-background-svg) !important;
 }
 
 /*process reporting specifc*/
@@ -376,7 +378,7 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
     width: 375px !important
 }
 
-.flex_panel {
+.flex_panel_sql {
     max-width: 100% !important;
     min-height: 600px !important;
     resize: both !important;
@@ -388,4 +390,44 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
 .gwt-TextBox[maxlength='255']{
     min-width: 900px !important;
     width:1200px !important;
+}
+
+
+.boomiHTTPReminder{
+    animation: reminderHTTPanimate 1.5s linear infinite;
+}
+
+@keyframes reminderHTTPanimate {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 700px){
+
+.testRunDialog input[type='text']{
+    width: 500px !important;
+}
+
+}
+
+.qm-button--primary-savetest{
+    background-color: #b67600!important;
+    border-color: #b67600!important;
+    color: #fff!important;
+
+}
+
+
+.new_shape_chooser_popup .category_row_hover_style:hover, .new_shape_chooser_popup .category_row_hover_style:focus {
+    height: 38px!important;
+
 }

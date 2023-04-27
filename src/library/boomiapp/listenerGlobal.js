@@ -106,7 +106,7 @@ const BoomiPlatform_Init = () => {
             }
         }
 
-        listenerClass('.gwt-ProcessPanel', [quick_component_select, process_to_image, check_beta, add_canvase_listener]);
+        listenerClass('.gwt-ProcessPanel', [process_to_image, check_beta, add_canvase_listener]);
         listenerClass('.gwt-EndPoint', add_endpoint_listener);
         listenerClass('.gwt-Shape', add_shape_listener);
         listenerClass('.gwt-DialogBox', add_dialog_listener);
@@ -116,9 +116,6 @@ const BoomiPlatform_Init = () => {
         listenerClass('.note-content', add_notecontent_listener);
         listenerClass('.auto_refresh_li', refreshInterval_listener);
         listenerClass('.gwt-DetailAreaInner', add_connector_list);
-        // listenerClass('.packaged_components_wizard',reminder_save);
-        listenerClass('.popupContent',reminder_schedule);
-        listenerClass('.qm-c-inlinemenu--servicenav-menu-constrain',add_menu_dropdown)
 
     }, 1000)
 
