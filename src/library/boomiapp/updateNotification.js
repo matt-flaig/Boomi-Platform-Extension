@@ -39,6 +39,9 @@ let htmlUpdateContents = `
 <p><strong>Feature/Change:</strong> Aligned Icon against Drop Down Menu items i.e. Atom Manage to match platforms standard</p>
 </li>
 <li>
+<p><strong>Feature/Change:</strong> Update of open in new Tab to align with platform look and feel</p>
+</li>
+<li>
 <p><strong>Bugfix:</strong> Schedule Reminder not appearing in Deployed Process Screen.</p>
 </li>
 </ul>
