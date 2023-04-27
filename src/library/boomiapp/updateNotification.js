@@ -33,7 +33,10 @@ let htmlUpdateContents = `
 <p><strong>Feature/Change:</strong> New Filter Default Option for Selection via Extension Options.</p>
 </li>
 <li>
-<p><strong>Change:</strong> Aligned Icon against Drop Down Menu items i.e. Atom Manage to match platforms standard</p>
+<p><strong>Feature/Change:</strong> Expansion of Choose and Set Property and Value Fields to be expanded .</p>
+</li>
+<li>
+<p><strong>Feature/Change:</strong> Aligned Icon against Drop Down Menu items i.e. Atom Manage to match platforms standard</p>
 </li>
 <li>
 <p><strong>Bugfix:</strong> Schedule Reminder not appearing in Deployed Process Screen.</p>
