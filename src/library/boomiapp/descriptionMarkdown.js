@@ -35,7 +35,7 @@ const add_description_listener = (description) => {
     }
 
     let toggle_html = `
-    <a class="fonticon_anchor icon-eye bph-markdown-toggle" onclick="toggleMarkdown(this)">Toggle Markdown</a>
+    <a class="gwt-Anchor svg_decorated_anchor icon-eye bph-markdown-toggle" onclick="toggleMarkdown(this)">Toggle Markdown</a>
     `;
     description.closest('.component_header').querySelector('.links').insertAdjacentHTML('beforeend', toggle_html);
 
