@@ -45,7 +45,7 @@ const create_note_group = (el) => {
 
             let matched_icon = [...nodeParent.querySelectorAll(':not([data-notegroup]')].reverse().find(child => {
                 try {
-                    if (parseInt(child.style.top) == parseInt(node.style.top) - 23 && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.gwt-Image')) return true;
+                    if (parseInt(child.style.top) == parseInt(node.style.top) - 15 && parseInt(child.style.left) == parseInt(node.style.left) && child.querySelector('.gwt-Image')) return true;
                 } catch (error) {}
             })
 
