@@ -27,22 +27,16 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature/Change:</strong> New Double Click in Build Panel Quick Component Selection.</p>
+<p><strong>Feature/Change:</strong> Ability to turn set Extension Icon override to off i.e. Platform Defined Shapes.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> New Filter Default Option for Selection via Extension Options.</p>
+<p><strong>Feature/Change:</strong> Loaded both the current and beta icons into the extension to provide more control.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Expansion of Choose and Set Property and Value Fields to be expanded .</p>
+<p><strong>Bugfix:</strong> Fixed Note Groups not appearing after March Release - TY @matt-flaig.</p>
 </li>
-<li>
-<p><strong>Feature/Change:</strong> Aligned Icon against Drop Down Menu items i.e. Atom Manage to match platforms standard</p>
 </li>
-<li>
-<p><strong>Feature/Change:</strong> Update of open in new Tab to align with platform look and feel</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Schedule Reminder not appearing in Deployed Process Screen.</p>
+<p><strong>Bugfix:</strong> Fixed Display of Toggle Markdown due to March Release - TY @matt-flaig.</p>
 </li>
 </ul>
 `
