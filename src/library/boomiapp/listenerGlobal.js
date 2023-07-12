@@ -11,23 +11,17 @@ const add_dialog_listener = (dialog) => {
 let bt_init = false;
 const BoomiPlatform_Init = () => {
 
-    // load shape style settings
-    dynamicShapeIconStyleData = "";
-    if(BoomiPlatform.shape_icon_styling == "modern"){
-        dynamicShapeIconStyleData = JSON.parse(modernIconData);
-    }
-    if(BoomiPlatform.shape_icon_styling == "2022"){
-        dynamicShapeIconStyleData = JSON.parse(i2022IconData);
-    }
-    if(BoomiPlatform.shape_icon_styling == "legacy"){
-        dynamicShapeIconStyleData = JSON.parse(legacyIconData);
-    }
-    if(BoomiPlatform.shape_icon_styling == "2023-dark"){
-        dynamicShapeIconStyleData = JSON.parse(i2023IconDarkData);
-    }
-    if(BoomiPlatform.shape_icon_styling == "2023-light"){
-        dynamicShapeIconStyleData = JSON.parse(i2023IconLightData);
-    }
+ // load shape style settings
+ dynamicShapeIconStyleData = "";
+ if(BoomiPlatform.shape_icon_styling == "modern"){
+     dynamicShapeIconStyleData = JSON.parse(modernIconData);
+ }
+ if(BoomiPlatform.shape_icon_styling == "minimal-inverted"){
+     dynamicShapeIconStyleData = JSON.parse(invertedIconStyleColorCodes);
+ }
+ if(BoomiPlatform.shape_icon_styling == "legacy"){
+     dynamicShapeIconStyleData = JSON.parse(legacyIconData);
+ }
 
     
 
