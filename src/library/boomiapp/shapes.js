@@ -82,6 +82,12 @@ const add_shape_listener = (shape) => {
         shape.addEventListener('mouseover', function (e) {
 
             timer = setTimeout(() => {
+
+                // don't show line trace animation if multiple shapes are selected in a box to be moved
+                if(document.getElementsByClassName("processShapeBoundingBox") && document.getElementsByClassName("processShapeBoundingBox")[0].style.display !== "none"){
+                    return;
+                }
+
                 [...document.querySelectorAll(`.gwt-connectors-path-connected`)].forEach(line => {
                     line.classList.add('BoomiPlatform-linetrace')
                 });
@@ -109,7 +115,7 @@ const add_shape_listener = (shape) => {
                         line.classList.add(BoomiPlatform.path_trace_highlight == 'solid' ? 'BoomiPlatform-linetrace-active-solid' : 'BoomiPlatform-linetrace-active-dash')
                     })
                 }, 0)
-            }, 650)
+            }, 750)
         })
 
         shape.addEventListener('mouseout', function (e) {
@@ -134,6 +140,6 @@ const add_shape_listener = (shape) => {
             });
         })
 
-    }, 0)
+    }, 250)
 
 }
