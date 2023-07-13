@@ -11,19 +11,31 @@ const add_dialog_listener = (dialog) => {
 let bt_init = false;
 const BoomiPlatform_Init = () => {
 
- // load shape style settings
- dynamicShapeIconStyleData = "";
- if(BoomiPlatform.shape_icon_styling == "modern"){
-     dynamicShapeIconStyleData = JSON.parse(modernIconData);
- }
- if(BoomiPlatform.shape_icon_styling == "minimal-inverted"){
-     dynamicShapeIconStyleData = JSON.parse(invertedIconStyleColorCodes);
- }
- if(BoomiPlatform.shape_icon_styling == "legacy"){
-     dynamicShapeIconStyleData = JSON.parse(legacyIconData);
- }
+    // load shape style settings
+    dynamicShapeIconStyleData = "";
+    if(BoomiPlatform.shape_icon_styling == "legacy"){
+        dynamicShapeIconStyleData = legacyIconData;
+    }
+    if(BoomiPlatform.shape_icon_styling == "modern"){
+        dynamicShapeIconStyleData = modernIconData;
+    }    
+    if(BoomiPlatform.shape_icon_styling == "minimal"){
+        // simple check for light theme or dark theme
+        if(window.getComputedStyle(document.body, null).getPropertyValue('background-color') == "rgb(38, 38, 38)"){
+            dynamicShapeIconStyleData = minimalDarkThemeIconData; // dark theme
+        }else{
+            dynamicShapeIconStyleData = minimalLightThemeIconData; // light theme
+        }
+    }
+    if(BoomiPlatform.shape_icon_styling == "minimal-inverted"){
+        dynamicShapeIconStyleData = minimalInvertedIconStyleColorCodes;
+    }
+    if(BoomiPlatform.shape_icon_styling == "refreshed-inverted"){
+        dynamicShapeIconStyleData = refreshedIconStyleColorCodes;
+    }
 
-    
+
+
 
     const dom_watcher = (() => {
         document.addEventListener('DOMNodeInserted', function (e) {
@@ -46,14 +58,17 @@ const BoomiPlatform_Init = () => {
                             if(shapeImageIcon){
                                 var img = e.target.getElementsByTagName('img')[0];
                                 if(shapeImageIcon.charAt(0) != '#'){
+                                    // if we're using the refreshed theme we don't want to change the base icon style, all other themes are icons-only
+                                    if(BoomiPlatform.shape_icon_styling !== "minimal"){
+                                        img.style.setProperty("width", "32px", "important");
+                                        img.style.setProperty("height", "32px", "important");
+                                        img.style.setProperty("background-color", "transparent", "important");
+                                            
+                                        elem.style.border = "0px";
+                                        elem.style.borderRadius = "0px";
+                                        elem.style.setProperty("background-color", "transparent", "important");
+                                    }
                                     img.src = shapeImageIcon;
-                                    img.style.setProperty("width", "32px", "important");
-                                    img.style.setProperty("height", "32px", "important");
-                                    img.style.setProperty("background-color", "transparent", "important");
-                                        
-                                    elem.style.border = "0px";
-                                    elem.style.borderRadius = "0px";
-                                    elem.style.setProperty("background-color", "transparent", "important");
                                 }else{
                                     img.style.setProperty("width", "24px", "important");
                                     img.style.setProperty("height", "24px", "important");
@@ -111,6 +126,7 @@ const BoomiPlatform_Init = () => {
         listenerClass('.gwt-ProcessPanel', [process_to_image, check_beta, add_canvase_listener]);
         listenerClass('.gwt-EndPoint', add_endpoint_listener);
         listenerClass('.gwt-Shape', add_shape_listener);
+        listenerClass('.gwt-connectors-svg', add_path_listener);
         listenerClass('.gwt-DialogBox', add_dialog_listener);
         listenerClass('.boomi_standard_table', add_table_listener);
         listenerClass('.build_actionsButton', add_fullscreen_listener);

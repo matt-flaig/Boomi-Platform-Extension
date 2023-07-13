@@ -78,10 +78,14 @@ const add_shape_listener = (shape) => {
     let timer = null;
 
     setTimeout(() => {
-
         shape.addEventListener('mouseover', function (e) {
 
             timer = setTimeout(() => {
+                // don't show line trace animation if multiple shapes are selected in a box to be moved
+                if(document.getElementsByClassName("processShapeBoundingBox") && document.getElementsByClassName("processShapeBoundingBox")[0].style.display !== "none"){
+                    return;
+                }
+                
                 [...document.querySelectorAll(`.gwt-connectors-path-connected`)].forEach(line => {
                     line.classList.add('BoomiPlatform-linetrace')
                 });
@@ -109,7 +113,7 @@ const add_shape_listener = (shape) => {
                         line.classList.add(BoomiPlatform.path_trace_highlight == 'solid' ? 'BoomiPlatform-linetrace-active-solid' : 'BoomiPlatform-linetrace-active-dash')
                     })
                 }, 0)
-            }, 650)
+            }, 750)
         })
 
         shape.addEventListener('mouseout', function (e) {
@@ -134,6 +138,54 @@ const add_shape_listener = (shape) => {
             });
         })
 
-    }, 0)
+    }, 250)
+
+}
+
+const add_path_listener = (path) => {
+    if (BoomiPlatform.path_trace_highlight == 'off') return false;
+    let timer = null;
+
+    setTimeout(() => {
+        path.addEventListener('mouseover', function (e) {
+
+            timer = setTimeout(() => {
+                // don't show line trace animation if multiple shapes are selected in a box to be moved
+                if(document.getElementsByClassName("processShapeBoundingBox") && document.getElementsByClassName("processShapeBoundingBox")[0].style.display !== "none"){
+                    return;
+                }
+                
+                [...document.querySelectorAll(`.gwt-connectors-path-connected`)].forEach(line => {
+                    line.classList.add('BoomiPlatform-linetrace')
+                });
+
+                e.target.parentNode.querySelector('.gwt-connectors-path-connected').classList.add(BoomiPlatform.path_trace_highlight == 'solid' ? 'BoomiPlatform-linetrace-active-solid' : 'BoomiPlatform-linetrace-active-dash')
+                
+            }, 750)
+        })
+
+        path.addEventListener('mouseout', function (e) {
+            clearTimeout(timer);
+
+            [...document.querySelectorAll(`.gwt-connectors-path-connected`)].forEach(line => {
+                line.classList.remove('BoomiPlatform-linetrace')
+                line.parentNode.classList.remove('BoomiPlatform-lineparent')
+                line.classList.remove('BoomiPlatform-linetrace-active')
+                line.classList.remove('BoomiPlatform-linetrace-active-dash')
+            });
+        })
+
+        path.addEventListener('mousedown', function (e) {
+            clearTimeout(timer);
+
+            [...document.querySelectorAll(`.gwt-connectors-path-connected`)].forEach(line => {
+                line.classList.remove('BoomiPlatform-linetrace')
+                line.parentNode.classList.remove('BoomiPlatform-lineparent')
+                line.classList.remove('BoomiPlatform-linetrace-active')
+                line.classList.remove('BoomiPlatform-linetrace-active-dash')
+            });
+        })
+
+    }, 250)
 
 }
