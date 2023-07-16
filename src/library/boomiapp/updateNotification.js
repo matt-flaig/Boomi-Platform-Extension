@@ -30,22 +30,22 @@ let htmlUpdateContents = `
 <p><strong>Feature/Change:</strong> Ability to turn set Extension Icon override to off i.e. Platform Defined Shapes.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Loaded both the current and beta icons into the extension to provide more control with Inverted options. TY @matt-flaig.</p>
+<p><strong>Feature/Change:</strong> Loaded both the current and beta icons into the extension to provide more control with Inverted options.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Enhanced Hover over shape for path highligting, grey out other lines not valid to see only the detail in the front required. TY @matt-flaig.</p>
+<p><strong>Feature/Change:</strong> Enhanced Hover over shape for path highlighting, grey out other lines not valid to see only the detail in the front required.</p>
 </li>
 <li>
 <p><strong>Feature/Change:</strong> New Collapse all Folders button in Process Reporting - Process Filters .</p>
 </li>
 <li>
-<p><strong>Bugfix:</strong> Fixed Note Groups not appearing after March Release - TY @matt-flaig.</p>
+<p><strong>Bugfix:</strong> Fixed Note Groups not appearing after March Release</p>
 </li>
 </li>
-<p><strong>Bugfix:</strong> Fixed Display of Toggle Markdown due to March Release - TY @matt-flaig.</p>
+<p><strong>Bugfix:</strong> Fixed Display of Toggle Markdown due to March Release</p>
 </li>
 </li>
-<p><strong>Bugfix:</strong> Fixed Display Filters not setting based on Extnesion options settings</p>
+<p><strong>Bugfix:</strong> Fixed Display Filters not setting based on Extension options settings</p>
 </li>
 </li>
 <p><strong>General:</strong> Minor formatting and processing enhancements for executing code</p>
