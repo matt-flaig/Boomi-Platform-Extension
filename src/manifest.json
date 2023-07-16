@@ -54,6 +54,7 @@
                 "library/boomiapp/messageEditor.js",
                 "library/boomiapp/reminders.js",
                 "library/boomiapp/buildFilters.js",
+                "library/boomiapp/filterButtons.js",
                 "library/boomiapp/quickclickComponent.js",
                 "library/inject/shortcut.js",
                 "library/boomiapp/menuOpen.js"

@@ -316,6 +316,18 @@ span.ignoreBreaks {
     color: #2e2c2c !important;
 }
 
+.closeall_doing_action {
+    background-color: #2ac07a !important;
+    border-color: #2ac07a !important;
+    color: #2e2c2c !important;
+}
+
+.closeall_doing_action:hover {
+    background-color: #107755 !important;
+    border-color: #107755 !important;
+    color: #2e2c2c !important;
+}
+
 
 .gwt-ParamPopup {
     overflow: auto !important;

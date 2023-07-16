@@ -36,6 +36,9 @@ let htmlUpdateContents = `
 <p><strong>Feature/Change:</strong> Enhanced Hover over shape for path highligting, grey out other lines not valid to see only the detail in the front required. TY @matt-flaig.</p>
 </li>
 <li>
+<p><strong>Feature/Change:</strong> New Collapse all Folders button in Process Reporting - Process Filters .</p>
+</li>
+<li>
 <p><strong>Bugfix:</strong> Fixed Note Groups not appearing after March Release - TY @matt-flaig.</p>
 </li>
 </li>
