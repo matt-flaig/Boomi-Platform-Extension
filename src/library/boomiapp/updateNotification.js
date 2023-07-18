@@ -39,6 +39,9 @@ let htmlUpdateContents = `
 <p><strong>Feature/Change:</strong> New Collapse all Folders button in Process Reporting - Process Filters .</p>
 </li>
 <li>
+<p><strong>Feature/Change:</strong> New Collapse all Folders button in Atom Management - Deployed Processes .</p>
+</li>
+<li>
 <p><strong>Bugfix:</strong> Fixed Note Groups not appearing after March Release</p>
 </li>
 </li>

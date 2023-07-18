@@ -18,3 +18,26 @@ $(document).on("click", "#colaButton", function () {
     }
 
 });
+
+
+
+
+
+
+
+document.arrive("[data-locator='button-schedules']",function (schedulebutton) {
+
+schedulebutton.parentNode.insertAdjacentHTML('beforeend', '<button type="button" id="coladepButton" class="gwt-Button">Collapes all Folders</button>')
+});
+
+$(document).on("click", "#coladepButton", function () {
+[...document.getElementsByClassName("deployed_processes_panel")[0].querySelectorAll(".open")].reverse().forEach((element) => {closeNode(element)})
+function closeNode(targetNode) {
+    ["mouseover", "mousedown", "mouseup"].forEach(function(eventType) { 
+        var clickEvent = document.createEvent('MouseEvents');
+        clickEvent.initEvent(eventType, true, true);
+        targetNode.dispatchEvent(clickEvent);
+    });
+}
+
+});
