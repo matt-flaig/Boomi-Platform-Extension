@@ -1,6 +1,8 @@
 document.arrive(".filter_panel_dialog_popup_panel", function (filterpanel) {
-    var buttonBar = document.getElementsByClassName('button-bar')
-    buttonBar[0].insertAdjacentHTML('beforeend', '<button id="colaButton" type="button" class="gwt-Button qm-button--primary-action closeall_doing_action" data-locator="button-filter">Collapse All Folders</button>')
+    if(filterpanel.querySelector(".filterable_tree_loading_container")){
+        var buttonBar = document.getElementsByClassName('button-bar')
+        buttonBar[0].insertAdjacentHTML('beforeend', '<button id="colaButton" type="button" class="gwt-Button qm-button--primary-action closeall_doing_action" data-locator="button-filter">Collapse All Folders</button>')
+    }
 });
 
 
