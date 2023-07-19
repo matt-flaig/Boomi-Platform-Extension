@@ -5,7 +5,7 @@ document.arrive(".filter_panel_dialog_popup_panel", function (filterpanel) {
 
 
 $(document).on("click", "#colaButton", function () {
-    [...document.getElementsByClassName("open")].reverse().forEach((element) => {
+    [...document.getElementsByClassName("filter_panel_dialog_popup_panel")[0].querySelectorAll(".open")].reverse().forEach((element) => {
         closeNode(element)
     })
 
@@ -27,7 +27,7 @@ $(document).on("click", "#colaButton", function () {
 
 document.arrive("[data-locator='button-schedules']",function (schedulebutton) {
 
-schedulebutton.parentNode.insertAdjacentHTML('beforeend', '<button type="button" id="coladepButton" class="gwt-Button">Collapes all Folders</button>')
+schedulebutton.parentNode.insertAdjacentHTML('beforeend', '<button type="button" id="coladepButton" class="gwt-Button">Collapse All Folders</button>')
 });
 
 $(document).on("click", "#coladepButton", function () {
