@@ -118,6 +118,8 @@ The following provides the current abilities of the released extension for use w
 * New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.
 * Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.
 * Connector Operation Screen for HTTP has increased sizing on Request details for better use.
+* Ability to Collapse All Processes into Folders in the Process Reporting Process Filter screen.
+* Ability to Collapse All Processes into Folders in the Deployed Process Screen in Atom Management.
 
 <br><br>
 
@@ -172,6 +174,7 @@ Name - [Mitchell Franklin](https://mitchellfranklin.info) - mitchellfranklin@gma
 * **Tony Banik** - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this extension.
 * [Baptiste BIEBER](https://github.com/baptistebieber) - Developer of Boomi Extension that provided idea for future enhancements
 * **Noah Skelton** - Developer of the Build Pallet Fix Script used to return the UX for Shapes back to what it was
+* [Matthew Flaig ](https://github.com/matt-flaig) - Ongoing Contributer and developer of Extension who without the extension would not be as updated
 * [Boomi](https://boomi.com/)
 * [Boomi Community](https://community.boomi.com/)
 * [Choose an Open Source License](https://choosealicense.com)
