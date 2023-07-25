@@ -44,13 +44,13 @@ let htmlUpdateContents = `
 <li>
 <p><strong>Bugfix:</strong> Fixed Note Groups not appearing after March Release</p>
 </li>
-</li>
+<li>
 <p><strong>Bugfix:</strong> Fixed Display of Toggle Markdown due to March Release</p>
 </li>
-</li>
+<li>
 <p><strong>Bugfix:</strong> Fixed Display Filters not setting based on Extension options settings</p>
 </li>
-</li>
+<li>
 <p><strong>General:</strong> Minor formatting and processing enhancements for executing code</p>
 </li>
 </ul>
