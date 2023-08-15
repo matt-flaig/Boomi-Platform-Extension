@@ -120,6 +120,7 @@ The following provides the current abilities of the released extension for use w
 * Connector Operation Screen for HTTP has increased sizing on Request details for better use.
 * Ability to Collapse All Processes into Folders in the Process Reporting Process Filter screen.
 * Ability to Collapse All Processes into Folders in the Deployed Process Screen in Atom Management.
+* Ability to remove the sticky revision notification from the build view.
 
 <br><br>
 
