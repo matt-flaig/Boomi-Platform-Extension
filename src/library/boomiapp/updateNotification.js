@@ -27,31 +27,19 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature/Change:</strong> Ability to turn set Extension Icon override to off i.e. Platform Defined Shapes.</p>
+<p><strong>Feature/Change:</strong> Ability to close the This view corresponds to revision XX sticky notification.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Loaded both the current and beta icons into the extension to provide more control with Inverted options.</p>
+<p><strong>Feature/Change:</strong> New Extension option to turn on or off the table wrap selector.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Enhanced Hover over shape for path highlighting, grey out other lines not valid to see only the detail in the front required.</p>
+<p><strong>Bugfix:</strong> Fixed spelling of information in Extension options.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> New Collapse all Folders button in Process Reporting - Process Filters .</p>
+<p><strong>Notice:</strong> Extension will no longer be published via the MS Edge Store due to MS policy requiring the ability to test and run the extension (I am not paying for them to have an account) as of now the Extension has been removed from the MS Edge Store.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> New Collapse all Folders button in Atom Management - Deployed Processes .</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Fixed Note Groups not appearing after March Release</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Fixed Display of Toggle Markdown due to March Release</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Fixed Display Filters not setting based on Extension options settings</p>
-</li>
-<li>
-<p><strong>General:</strong> Minor formatting and processing enhancements for executing code</p>
+<p><strong>Notice:</strong> Extension within the Firefox app store has been re-listed as Boomi Platform Enhancer (Active), the pre-existing exists however I have lost access to the account and unable to resolve access with Mozilla.</p>
 </li>
 </ul>
 `

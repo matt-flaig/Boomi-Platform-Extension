@@ -134,6 +134,7 @@ const BoomiPlatform_Init = () => {
         listenerClass('.note-content', add_notecontent_listener);
         listenerClass('.auto_refresh_li', refreshInterval_listener);
         listenerClass('.gwt-DetailAreaInner', add_connector_list);
+        listenerClass('.buildMain', add_notification_close);
 
     }, 1000)
 
