@@ -1,4 +1,5 @@
 const add_table_listener = (table) => {
+    if (BoomiPlatform.tablewrap_selector !== 'off') {
     let head = table.querySelector('thead');
     let wrapped = false;
     let wrapper = null;
@@ -41,5 +42,6 @@ const add_table_listener = (table) => {
             }
         }, 100)
     });
+} 
 
 }
