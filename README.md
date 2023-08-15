@@ -63,9 +63,8 @@ The main frameworks of this extension and IDE used to build this extension.
 
 ## Getting Started
 
-To get started simply visit one of the following Browser App Stores:
+To get started simply visit one of the following Browser App Stores: Notice - This will not be published onto the MS Edge Store due to MS requireing Access to Boomi to test to align with MS Policy
 * [Chrome Web Store](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko) 
-* [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/pkenpacohpnmkgkejeofonpbedcipkdl)
 * [Firefox Browser Add-ons](https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer-active/)
 
 and install the addon; once done it will auto-enable when on the Boomi Web Platform.
@@ -73,9 +72,8 @@ and install the addon; once done it will auto-enable when on the Boomi Web Platf
 
 ### Installation
 
-1. Visit one of the following Browser App Stores:
+1. Visit one of the following Browser App Stores: Notice - This will not be published onto the MS Edge Store due to MS requireing Access to Boomi to test to align with MS Policy
    * [Chrome Web Store](https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko).
-   * [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/pkenpacohpnmkgkejeofonpbedcipkdl).
    * [Firefox Browser Add-ons](https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer-active/)
 2. Click Install
 
