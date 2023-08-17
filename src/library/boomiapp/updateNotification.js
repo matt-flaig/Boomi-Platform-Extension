@@ -27,19 +27,13 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature/Change:</strong> Ability to close the This view corresponds to revision XX sticky notification.</p>
+<p><strong>Feature/Change:</strong> Removal of "This view corresponds to revision XX" changes color of process header to easily ascertain that you are looking at a revision.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> New Extension option to turn on or off the table wrap selector.</p>
+<p><strong>Feature/Change:</strong> Prevention of Double Click to add tasks on Build Canvas when in test mode..</p>
 </li>
 <li>
-<p><strong>Bugfix:</strong> Fixed spelling of information in Extension options.</p>
-</li>
-<li>
-<p><strong>Notice:</strong> Extension will no longer be published via the MS Edge Store due to MS policy requiring the ability to test and run the extension (I am not paying for them to have an account) as of now the Extension has been removed from the MS Edge Store.</p>
-</li>
-<li>
-<p><strong>Notice:</strong> Extension within the Firefox app store has been re-listed as Boomi Platform Enhancer (Active), the pre-existing exists however I have lost access to the account and unable to resolve access with Mozilla.</p>
+<p><strong>Bugfix:</strong> Fixed Save Settings notification location.</p>
 </li>
 </ul>
 `
