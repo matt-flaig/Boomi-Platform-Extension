@@ -12,8 +12,6 @@
     <br />
     <a href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko">View Chrome Store</a>
     ·
-        <a href="https://microsoftedge.microsoft.com/addons/detail/boomi-platform-enhancer/lpepdgcihicbcmkpfochhlgploogklgp">View Microsoft Edge Store</a>
-    ·
         <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer">View Firefox Store</a>
     ·
     <a href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/issues">Request a feature</a>
