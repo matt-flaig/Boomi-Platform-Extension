@@ -16,7 +16,10 @@ document.arrive('.gwt-ProcessPanel', function (panel) {
     // --------------------------------------------------
     $(panel).on('dblclick', function (e) {
         e.preventDefault();
-        if (!$('.copy_paste_panel').hasClass('no_display')) return;
+        // don't open panel if copy_paste_panel is visible, or if in test mode (testModeCover) as it's confusing
+        // we check for test mode, by checking if .testModeCover is visible
+        // (we have to check through all elements with that class as you could have multiple tabs in test mode)
+        if (!$('.copy_paste_panel').hasClass('no_display') || !Array.from(document.querySelectorAll('.testModeCover')).every((el) => el.offsetParent === null)) return;
         $('.bpe-quickshape-popup').each(function () {$(this).remove();});
         rendorQuickShapePopup(panel, e.offsetX, e.offsetY, e.clientX, e.clientY);
     });
