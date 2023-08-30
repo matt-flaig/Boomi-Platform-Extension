@@ -117,6 +117,7 @@ The following provides the current abilities of the released extension for use w
 * Ability to Collapse All Processes into Folders in the Process Reporting Process Filter screen.
 * Ability to Collapse All Processes into Folders in the Deployed Process Screen in Atom Management.
 * Ability to remove the sticky revision notification from the build view.
+* Ability to adjust Schedule Section Icons in Atom Managemen to the old style prior to the new release due to new icons being hard to define based on a little color difference.
 
 <br><br>
 
