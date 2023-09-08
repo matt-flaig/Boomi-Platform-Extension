@@ -123,6 +123,7 @@ const BoomiPlatform_Init = () => {
             }
         }
 
+        listenerClass('.modal_top', modal_listener);
         listenerClass('.gwt-ProcessPanel', [process_to_image, check_beta, add_canvas_listener]);
         listenerClass('.gwt-EndPoint', add_endpoint_listener);
         listenerClass('.gwt-Shape', add_shape_listener);
@@ -135,7 +136,7 @@ const BoomiPlatform_Init = () => {
         listenerClass('.auto_refresh_li', refreshInterval_listener);
         listenerClass('.gwt-DetailAreaInner', add_connector_list);
         listenerClass('.buildMain', add_notification_close);
-        listenerClass('.modal_top', modal_listener);
+
 
     }, 1000)
 
