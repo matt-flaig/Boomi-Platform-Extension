@@ -135,6 +135,7 @@ const BoomiPlatform_Init = () => {
         listenerClass('.auto_refresh_li', refreshInterval_listener);
         listenerClass('.gwt-DetailAreaInner', add_connector_list);
         listenerClass('.buildMain', add_notification_close);
+        listenerClass('.modal_top', modal_listener);
 
     }, 1000)
 

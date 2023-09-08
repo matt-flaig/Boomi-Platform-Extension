@@ -36,6 +36,9 @@ let htmlUpdateContents = `
 <p><strong>Feature/Change:</strong> Ability to adjust Schedule Section Icons in Atom Managemen to the old style prior to the new release due to new icons being hard to define based on a little color difference.</p>
 </li>
 <li>
+<p><strong>Feature/Change:</strong> Ability to reverse the modal button layout to match side panel layout i.e. OK - Cancel instead of new default of Cancel - OK.</p>
+</li>
+<li>
 <p><strong>Bugfix:</strong> Fixed Save Settings notification location.</p>
 </li>
 <li>

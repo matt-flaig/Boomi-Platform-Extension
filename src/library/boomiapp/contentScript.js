@@ -18,6 +18,7 @@ loadScript('./library/boomiapp/canvas.js');
 loadScript('./library/boomiapp/customrefresh.js');
 loadScript('./library/boomiapp/connectionOperations.js');
 loadScript('./library/boomiapp/versionNotification.js');
+loadScript('./library/boomiapp/modalButtons.js');
 loadScript('./library/inject/rasterizeHTML.min.js');
 loadScript('./library/inject/showdown.min.js');
 loadScript('./library/inject/codeflask.min.js');

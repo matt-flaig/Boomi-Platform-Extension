@@ -48,7 +48,3 @@ function closeNode(targetNode) {
 }
 
 });
-
-
-
-
