@@ -57,6 +57,7 @@
                 "library/boomiapp/filterButtons.js",
                 "library/boomiapp/quickclickComponent.js",
                 "library/boomiapp/menuOpen.js",
+                "library/boomiapp/scheduleIcons.js",
                 "library/inject/shortcut.js"
 
             ]
