@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.7.4.3",
+    "version": "1.7.4.4",
     "options_ui": {
         "page": "options.html",
         "open_in_tab": true,
@@ -42,21 +42,22 @@
               "library/css/cm/theme/twilight.css"
             ],
             "js": [
-              "library/boomiapp/contentScript.js",
-              "library/boomiapp/global.js",
-              "library/boomiapp/boomi.js",
-              "library/boomiapp/clickComponents.js",
-              "library/boomiapp/dashboard.js",
-              "library/boomiapp/buildPallet.js",
-              "library/boomiapp/shortCuts.js",
-              "library/boomiapp/updateNotification.js",
-              "library/boomiapp/messageEditor.js",
-              "library/boomiapp/reminders.js",
-              "library/boomiapp/buildFilters.js",
-              "library/boomiapp/filterButtons.js",
-              "library/boomiapp/quickclickComponent.js",
-              "library/inject/shortcut.js",
-              "library/boomiapp/menuOpen.js"
+                "library/boomiapp/contentScript.js",
+                "library/boomiapp/global.js",
+                "library/boomiapp/boomi.js",
+                "library/boomiapp/clickComponents.js",
+                "library/boomiapp/dashboard.js",
+                "library/boomiapp/buildPallet.js",
+                "library/boomiapp/shortCuts.js",
+                "library/boomiapp/updateNotification.js",
+                "library/boomiapp/messageEditor.js",
+                "library/boomiapp/reminders.js",
+                "library/boomiapp/buildFilters.js",
+                "library/boomiapp/filterButtons.js",
+                "library/boomiapp/quickclickComponent.js",
+                "library/boomiapp/menuOpen.js",
+                "library/boomiapp/scheduleIcons.js",
+                "library/inject/shortcut.js"
                   ]
                 }
               ],
@@ -80,6 +81,7 @@
                 "library/boomiapp/connectionOperations.js",
                 "library/boomiapp/doubleClick.js",
                 "library/boomiapp/versionNotification.js",
+                "library/boomiapp/modalButtons.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"
