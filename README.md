@@ -12,10 +12,18 @@
     <br />
     <a href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko">View Chrome Store</a>
     ·
-        <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer-active/">View Firefox Store</a>
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer-active">View Firefox Store</a>
     ·
     <a href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/issues">Request a feature</a>
   </p>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;" align="center">
+    <a href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko">
+      <img src="logo/chrome-web-store-badge-border.png" width="248" alt="Image 1">
+    </a>
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer-active">
+      <img src="logo/firefox-add-on-badge-border.png" width="248" alt="Image 2">
+    </a>
+  </div>
 </p>
 
 <h2 align="center">Disclaimer</h2>
