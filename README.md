@@ -21,7 +21,7 @@
       <img src="logo/chrome-web-store-badge-border.png" width="248" alt="Image 1">
     </a>
     <a href="https://addons.mozilla.org/en-US/firefox/addon/boomi-platform-enhancer-active">
-      <img src="logo/firefox-add-on-badge-border.png" width="248" alt="Image 2">
+      <img src="logo/firefox-add-on-badge-border-resized.png" width="248" alt="Image 2">
     </a>
   </div>
 </p>
