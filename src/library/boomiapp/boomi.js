@@ -46,35 +46,6 @@ function onNavigationChange(){
       changeFaviconBasedOnPage();
     }
   });
- 
-  // Process Reporting Page
-  if(document.getElementsByTagName("title")[0].innerHTML.includes("Process Reporting") || urlPath.includes('reporting')){
-      const processExecutionDurationReporting = setInterval(function(){
-        var autoRefreshElement = Array.from(document.querySelectorAll('label')).find(el => el.textContent.includes('Auto Refresh'));
-          if(!autoRefreshElement || (autoRefreshElement && autoRefreshElement.innerHTML != "Auto Refresh is On")){
-              clearInterval(processExecutionDurationReporting);
-              return false;
-          }
-          // get any row that's in-process
-          document.querySelectorAll('img[title*="In Process"]').forEach(function(element){
-      
-              // get div containing entire row
-              var inProgressRow = element.parentElement.parentElement.parentElement;
-      
-              var processExecutionTime = inProgressRow.getElementsByClassName('link_action')[0].innerHTML;
-              
-              const diffTime = Math.abs(new Date() - new Date(processExecutionTime));
-              
-              var processElapsedTime = inProgressRow.querySelectorAll('div')[11];
-              processElapsedTime.innerHTML = fancyTimeFormat(diffTime/1000);
-              processElapsedTime.style.color = "red";
-          })
-      }, 1000);
-  }else{
-    if(typeof processExecutionDurationReporting !== 'undefined'){
-      clearInterval(processExecutionDurationReporting);
-    }
-  }
 }
 
 // enhance the favicon to a high res image

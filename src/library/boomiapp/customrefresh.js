@@ -5,6 +5,33 @@ const refreshInterval_listener = (refreshInterval) => {
     BoomiPlatform.refresh_interval = 15;
   }
 
+  // Initalize timer for Process Reporting Duration Counters
+  const processExecutionDurationReporting = setInterval(function(){
+    var autoRefreshElement = Array.from(document.querySelectorAll('label')).find(el => el.textContent.includes('Auto Refresh'));
+      // show the counter if either autoRefresh switch is on, or if custom refresh is enabled
+      if(((!autoRefreshElement || (autoRefreshElement && autoRefreshElement.innerHTML != "Auto Refresh is On")) && !do_refresh)){
+          return false;
+      }
+      // clear duration counting if we navigate to another page
+      if(!window.location.href.includes('#reporting')){
+        clearInterval(processExecutionDurationReporting);
+      }
+      // get any row that's in-process
+      document.querySelectorAll('img[title*="In Process"]').forEach(function(element){
+
+          // get div containing entire row
+          var inProgressRow = element.parentElement.parentElement.parentElement;
+
+          var processExecutionTime = inProgressRow.getElementsByClassName('link_action')[0].innerHTML;
+          
+          const diffTime = Math.abs(new Date() - new Date(processExecutionTime));
+          
+          var processElapsedTime = inProgressRow.querySelectorAll('div')[11];
+          processElapsedTime.innerHTML = fancyTimeFormat(diffTime/1000);
+          processElapsedTime.style.color = "red";
+      })
+  }, 1000);
+
   $(".reporting_right_side").prepend(
     $(
       '<li id="refresh_reporting"> <button  type="button" class="refresh_primary_action" alt="off">Refresh Every ' +
@@ -41,6 +68,7 @@ const refreshInterval_listener = (refreshInterval) => {
 
   function stop_refresh() {
     do_refresh = false;
+    resetProcessReportingDurationCountersToZero();
   }
 
   function refresh_reporting() {
@@ -53,6 +81,33 @@ const refreshInterval_listener = (refreshInterval) => {
     }
   }
 
+  function resetProcessReportingDurationCountersToZero(){
+    document.querySelectorAll('img[title*="In Process"]').forEach(function(element){
+      var inProgressRow = element.parentElement.parentElement.parentElement;        
+      var processElapsedTime = inProgressRow.querySelectorAll('div')[11];
+      processElapsedTime.innerHTML = "0:00";
+      processElapsedTime.style.color = "";
+    })
+  }
+
+  function fancyTimeFormat(duration){   
+    // Hours, minutes and seconds
+    var hrs = ~~(duration / 3600);
+    var mins = ~~((duration % 3600) / 60);
+    var secs = ~~duration % 60;
+  
+    // Output like "1:01" or "4:03:59" or "123:03:59"
+    var ret = "";
+  
+    if (hrs > 0) {
+        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+    }
+  
+    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+    return ret;
+  }  
+
   window.onhashchange = function reportfresh() {
     var processreportingCheck = $(location).attr("href");
     var child = document.getElementById("refresh_reporting");
@@ -64,4 +119,4 @@ const refreshInterval_listener = (refreshInterval) => {
       child.parentNode.removeChild(child);
     }
   };
-};
+}
