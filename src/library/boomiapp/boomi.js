@@ -63,7 +63,7 @@ document.addEventListener("visibilitychange", (event) => {
 function removeAccountPrefixFromDocumentTitle(){
   // Change Page Title to Drop Account Prefix
   setTimeout(function(){
-    var title = document.title.replace(document.getElementsByClassName("qm-c-inlinemenu__settings-menu-item-name")[1].innerHTML, '').replace(/^(\s-\s)/, '');;
+    var title = document.title.replace(document.getElementsByClassName("qm-c-inlinemenu__settings-menu-item-name")[1].innerHTML, '').replace(/^(\s-\s)/, '');
     // replace trailing " - Boomi AtomSphere" (optional)
     //title = title.split(' -')[0];
     document.title = title;
