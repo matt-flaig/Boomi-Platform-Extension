@@ -38,29 +38,31 @@
                                             </div>                                             
                                             <div class="mb-3"> 
                                                 <label>Non-Connected Endpoint Notification:</label>                                                 
-                                                <select name="endpoint_flash" class="option form-select" aria-label="Default select example"> 
+                                                <select name="endpoint_flash" class="option form-select"> 
                                                     <option value="on" selected>Always On</option>                                                     
                                                     <option value="off">Always Off</option>                                                     
                                                     <option value="testing">Only when running tests</option>                                                     
                                                 </select>                                                 
                                             </div> 
                                             <div class="mb-3"> 
-                                                <label>Enable Table Wrapping Selector:</label>                                                 
-                                                <select name="tablewrap_selector" class="option form-select" aria-label="Default select example"> 
-                                                    <option value="on" selected>On</option>                                                     
-                                                    <option value="off">Off</option>                                                     
-                                                </select>                                                 
+                                                <label>Table Text Wrapping:</label>                                                 
+                                                <select name="tablewrap_selector" class="option form-select">
+                                                    <option value="never" selected>Never Wrap (Default)</option>
+                                                    <option value="always">Always Wrap</option>
+                                                    <option value="toggle">Toggle on Header Hover</option>
+                                                </select>    
+                                                <small>Allows the table text to wrap instead of being cut off. This is useful on the Process Reporting page to see all the details.</small>                                              
                                             </div>                                             
                                             <div class="mb-3"> 
                                                 <label>Trace Path Highlight:</label>                                                 
-                                                <select name="path_trace_highlight" class="option form-select" aria-label="Default select example"> 
+                                                <select name="path_trace_highlight" class="option form-select"> 
                                                     <option value="pulse" selected>On</option>                                                     
                                                     <option value="off">Off</option>                                                     
                                                 </select>                                                 
                                             </div>                                             
                                             <div class="mb-3"> 
                                                 <label>Process Flow Description Markdown:</label>                                                 
-                                                <select name="description_markdown" class="option form-select" aria-label="Default select example"> 
+                                                <select name="description_markdown" class="option form-select"> 
                                                     <option value="on" selected>On Automatically</option>                                                     
                                                     <option value="manual">On Manually</option>                                                     
                                                     <option value="off">Off</option>                                                     
@@ -68,28 +70,28 @@
                                             </div>                                             
                                             <div class="mb-3"> 
                                                 <label>Show Canvas Grid:</label>                                                 
-                                                <select name="canvas_grid" class="option form-select" aria-label="Default select example"> 
+                                                <select name="canvas_grid" class="option form-select"> 
                                                     <option value="on" selected>On</option>                                                     
                                                     <option value="off">Off</option>                                                     
                                                 </select>                                                 
                                             </div>                                             
                                             <div class="mb-3"> 
                                                 <label>Show Play and Pause Icons (Old Style) in Deployed Processes:</label>                                                 
-                                                <select name="schedule_icon" class="option form-select" aria-label="Default select example"> 
+                                                <select name="schedule_icon" class="option form-select"> 
                                                     <option value="on">On</option>                                                     
                                                     <option value="off" selected>Off</option>                                                     
                                                 </select>                                                 
                                             </div>    
                                             <div class="mb-3"> 
                                                 <label>Reverse Modal Buttons to Match Side Panel Button layout:</label>                                                 
-                                                <select name="reverse_modal" class="option form-select" aria-label="Default select example"> 
+                                                <select name="reverse_modal" class="option form-select"> 
                                                     <option value="on">On</option>                                                     
                                                     <option value="off" selected>Off</option>                                                     
                                                 </select>                                                 
                                             </div>                                           
                                             <div class="mb-3"> 
                                                 <label>Reminder - Schedule Deployed Component:</label>                                                 
-                                                <select name="reminder_schedule" class="option form-select" aria-label="Default select example"> 
+                                                <select name="reminder_schedule" class="option form-select"> 
                                                     <option value="on" selected>On</option>                                                     
                                                     <option value="off">Off</option>                                                     
                                                 </select>                                                 
