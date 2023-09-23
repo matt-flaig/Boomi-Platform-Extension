@@ -45,7 +45,7 @@ const add_table_listener = (table) => {
                 }
             }, 100)
         });
-    }else if(BoomiPlatform.tablewrap_selector == 'always'){ // Never Wrap Option
+    }else if(BoomiPlatform.tablewrap_selector == 'always'){ // Always Wrap Option
         table.classList.add('bph-wrap');
     }
 }
