@@ -18,14 +18,7 @@ $(document).on("click", "#colaButton", function () {
             targetNode.dispatchEvent(clickEvent);
         });
     }
-
 });
-
-
-
-
-
-
 
 document.arrive("[data-locator='button-schedules']", function (schedulebutton) {
 
@@ -34,17 +27,44 @@ document.arrive("[data-locator='button-schedules']", function (schedulebutton) {
 
 });
 
-
-
+// allow sidebar items to be clicked anywhere to open and components to be opened with a single click
+// maybe this should probably be an option you can turn on or turn off at some point?
+document.arrive(".rail.simplify .gwt-FastTree .treeItemContent", function(el){
+    //document.querySelectorAll(".treeItemContent").forEach((el) => {
+        if(!el.onclick){
+            el.onclick = function(e) {
+                
+                // turn single-click to double-click
+                if(this.parentElement.parentElement.classList.contains("children")){
+                    doubleClickNode(e.target)
+                    return;
+                }
+                clickNode(this.parentElement.parentElement.querySelector(".closed,.open"))
+                
+            }
+        }
+        function clickNode(targetNode) {
+            ["mouseover", "mousedown", "mouseup"].forEach(function(eventType) { 
+                var clickEvent = document.createEvent('MouseEvents');
+                clickEvent.initEvent(eventType, true, true);
+                targetNode.dispatchEvent(clickEvent);
+            });
+        }
+        function doubleClickNode(targetNode) {
+            var clickEvent = document.createEvent('MouseEvents');
+            clickEvent.initEvent ('dblclick', true, true);
+            targetNode.dispatchEvent(clickEvent);
+        }
+    //})
+})
 
 $(document).on("click", "#coladepButton", function () {
-[...document.getElementsByClassName("deployed_processes_panel")[0].querySelectorAll(".open")].reverse().forEach((element) => {closeNode(element)})
-function closeNode(targetNode) {
-    ["mouseover", "mousedown", "mouseup"].forEach(function(eventType) { 
-        var clickEvent = document.createEvent('MouseEvents');
-        clickEvent.initEvent(eventType, true, true);
-        targetNode.dispatchEvent(clickEvent);
-    });
-}
-
+    [...document.getElementsByClassName("deployed_processes_panel")[0].querySelectorAll(".open")].reverse().forEach((element) => {closeNode(element)})
+    function closeNode(targetNode) {
+        ["mouseover", "mousedown", "mouseup"].forEach(function(eventType) { 
+            var clickEvent = document.createEvent('MouseEvents');
+            clickEvent.initEvent(eventType, true, true);
+            targetNode.dispatchEvent(clickEvent);
+        });
+    }
 });
