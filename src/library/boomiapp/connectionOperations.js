@@ -2,12 +2,9 @@ const add_connector_list = (conOperation) => {
 
 
     
-    let connectorList = conOperation.children
-
-    connectorList[1].children[0].classList.add('boomiConnect')
-    
-
-
+    let connectorList = conOperation.children;
+    if(connectorList && connectorList[1] && connectorList[1].children){
+      connectorList[1].children[0].classList.add('boomiConnect')
 
       let tableElement = connectorList[1].lastChild.childNodes//document.getElementsByClassName("smallLabels");
 
@@ -31,9 +28,8 @@ const add_connector_list = (conOperation) => {
      //for later
       //let tableElement1 = document.getElementsByClassName("largeLabels");
       //let headerElement = tableElement1[2]
+    }
     
-
-
 }
 
 
