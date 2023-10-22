@@ -127,7 +127,7 @@ The following provides the current abilities of the released extension for use w
 * Ability to remove the sticky revision notification from the build view.
 * Ability to adjust Schedule Section Icons in Atom Management to the old style prior to the new release due to new icons being hard to define based on a little color difference.
 * Ability to reverse the modal button layout to match side panel layout i.e. OK - Cancel instead of new default of Cancel - OK.
-* Ability to single-anywhere on a process folder or tilte to open (Instead of the tiny icon to expand).
+* Ability to single-anywhere on a process folder or title to open (Instead of the tiny icon to expand).
 * Document viewer has been changed to Mono-Spaced to provide all round better display.
 
 
