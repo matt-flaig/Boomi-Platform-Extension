@@ -27,22 +27,19 @@ function updateNotificationfun() {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature/Change:</strong> Removal of "This view corresponds to revision XX" changes color of process header to easily ascertain that you are looking at a revision.</p>
+<p><strong>Feature/Change:</strong> Extension Option Features for Table Wrapping, Always/Never Wrap or Toggle when Hover over Header.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Prevention of Double Click to add tasks on Build Canvas when in test mode..</p>
+<p><strong>Feature/Change:</strong> Reduction in default padding applied in new sidebar design.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Ability to adjust Schedule Section Icons in Atom Management to the old style prior to the new release due to new icons being hard to define based on a little color difference.</p>
+<p><strong>Feature/Change:</strong> Ability to single-anywhere on a process folder or tilte to open (Instead of the tiny icon to expand).</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Ability to reverse the modal button layout to match side panel layout i.e. OK - Cancel instead of new default of Cancel - OK.</p>
+<p><strong>Feature/Change:</strong> Document viewer has been changed to Mono-Spaced to provide all round better display.</p>
 </li>
 <li>
-<p><strong>Bugfix:</strong> Fixed Save Settings notification location.</p>
-</li>
-<li>
-<p><strong>Bugfix:</strong> Fixed some spelling mistakes on my part.</p>
+<p><strong>Bugfix:</strong> Multiple Under the hood code fixes.</p>
 </li>
 </ul>
 `

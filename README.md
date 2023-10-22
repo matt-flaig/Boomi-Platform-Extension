@@ -101,7 +101,7 @@ The following provides the current abilities of the released extension for use w
 * Hover over flow shape to see the connection points it make.
 * Use notes to group tasks and provide information relating to multiple areas of the flow.
 * Add Markdown in the process description or notes to show better visual formatting.
-* When tables (for example Process Reporting list view) is displayed there's an option to "Toggle Line Wrapping" available to maximize screen real estate.
+* When tables (for example Process Reporting list view) is displayed there's an option to tabble wrap - Always/Never Wrap or Toggle when Hover over Header..
 * Ability to assign keyboard button to easily go into and out of Full Screen Mode - default is the `~` key.
 * JSON & XML Viewing toggle added to Message and Notify Shapes; will format the JSON and add the ' quote padding automatically.
 * Capture a diagram of your process flow easily via the "Capture Process Flow" button; will capture the entire flow and save an image to a local file.
@@ -127,6 +127,9 @@ The following provides the current abilities of the released extension for use w
 * Ability to remove the sticky revision notification from the build view.
 * Ability to adjust Schedule Section Icons in Atom Management to the old style prior to the new release due to new icons being hard to define based on a little color difference.
 * Ability to reverse the modal button layout to match side panel layout i.e. OK - Cancel instead of new default of Cancel - OK.
+* Ability to single-anywhere on a process folder or tilte to open (Instead of the tiny icon to expand).
+* Document viewer has been changed to Mono-Spaced to provide all round better display.
+
 
 <br><br>
 
