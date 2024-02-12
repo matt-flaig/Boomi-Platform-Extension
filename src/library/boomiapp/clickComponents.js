@@ -32,13 +32,14 @@ $(document).ready(function () {
 
     });
 
-    $(document).on("click", ".build_actionsButton", function () {
-
-        var ul = document.getElementsByClassName('menu_item_group')[0]
+    // this is a fix to work with both the legacy "gear" icon (hidden in February 2024 release)
+    // and the three ellipse "more" option icon (introduced in Feb 2024 UI update)
+    // wait for enter full screen menu to appear, then insert additional options
+    document.arrive('[data-locator="link-enter-full-screen"]', function (element){
+        var ul = $(element).closest('ul')[0];
         $(ul).append('<li id="copyCompID"><a class="gwt-Anchor">Copy Current Component ID</a></li>');
         $(ul).append('<li id="copyCompURL"><a class="gwt-Anchor">Copy Current Component URL</a></li>');
-    });
-
+    })
 
     $(document).on("click", "#copyCompID", function () {
 
