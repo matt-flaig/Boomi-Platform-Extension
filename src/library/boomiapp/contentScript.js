@@ -5,6 +5,7 @@ const loadScript = (url) => {
   script.setAttribute("src", chrome.runtime.getURL(url));
   body.appendChild(script);
 };
+
 loadScript("./library/boomiapp/notes.js");
 loadScript("./library/boomiapp/descriptionMarkdown.js");
 loadScript("./library/boomiapp/groups.js");
@@ -31,8 +32,6 @@ let wait_for_load = setInterval(() => {
 
     updateBoomiPlatformConfig();
 
-    //-------------
-
     var platformStatus = document.evaluate(
       "//a[text()='Platform Status & Announcements']",
       document,
@@ -52,7 +51,6 @@ let wait_for_load = setInterval(() => {
           platformStatus.innerHTML = `<a href="https://status.boomi.com/" target="_blank"><p><b>Platform Status: </b><b class="boomiDown" style="color: red;"> ${out.status.description}</b></p></a>`;
         }
 
-        //-------------
         document.getElementById("footer_links").insertAdjacentHTML(
           "afterbegin",
           `
@@ -120,16 +118,14 @@ chrome.storage.onChanged.addListener((e) => {
                         <div class="qm-c-alert__text">
                             <div class="updated_typography c-whats-new">
                                 <h1>Settings Changed.</h1>
-                                <p>The Boomi Platform Enhancer Extension options have been adjusted, for these to take affect please reload the page to apply.</p>
+                                <p>The Boomi Platform Enhancer Extension options have been adjusted, please reload the page for the changes to apply.</p>
                             </div>
                         </div> 
                     </div>
                 </div>
             </div>
             <div class="button_set">
-                <div class="button_spinner_panel no_display"> <i
-                        class="font_icon icon-spinner before-animate-spin spinner"></i> </div><button id="closeUpdate" type="button" class="gwt-Button"
-                    >Close</button>
+                <div class="button_spinner_panel no_display"> <i class="font_icon icon-spinner before-animate-spin spinner"></i> </div><button id="closeUpdate" type="button" class="gwt-Button">Close</button>
             </div>
         </div>
     </div>
@@ -143,3 +139,8 @@ chrome.storage.onChanged.addListener((e) => {
 
   updateBoomiPlatformConfig();
 });
+
+
+function openExensionOptionsPage(){
+  window.open(chrome.runtime.getURL('options.html'));
+}
