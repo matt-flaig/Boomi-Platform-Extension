@@ -40,7 +40,7 @@ function updateNotificationCheck() {
           <p><strong>Bugfix:</strong> Fix department collapse button on Atom management</p>
           </li>
           <li>
-          <p><strong>Bugfix:</strong> Filter Elemement Classes updated</p>
+          <p><strong>Bugfix:</strong> Filter Element Classes updated</p>
           </li>
           <li>
           <p><strong>Bugfix:</strong> Fixed Canvas not being removed when enabled in options</p>
@@ -55,10 +55,10 @@ function updateNotificationCheck() {
           <p><strong>Bugfix:</strong> Adjusted update notification overlay</p>
           </li>
           <li>
-          <p><strong>Bugfix:</strong> minor code adjustmeents and cleanup & Spelling updates</p>
+          <p><strong>Bugfix:</strong> minor code adjustments and cleanup & Spelling updates</p>
           </li>
           <li>
-          <p><strong>Feature Removoal:</strong> Disabled Description Markdown Code - Boomi made some changes to how the element is rendered and does not support styling</p>
+          <p><strong>Feature Removal:</strong> Disabled Description Markdown Code - Boomi made some changes to how the element is rendered and does not support styling</p>
           </li>
           </ul>
           `
