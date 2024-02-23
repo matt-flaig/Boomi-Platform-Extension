@@ -24,20 +24,41 @@ function updateNotificationCheck() {
   
           let htmlUpdateContents = `
           <ul>
-          <li>
-          <p><strong>Feature/Change:</strong> Extension Option Features for Table Wrapping, Always/Never Wrap or Toggle when Hover over Header.</p>
+           <li>
+          <p><strong>This Update:</strong> This update is thanks to matt-flaig who did 99.9% of all, the 0.1% was me releasing.</p>
           </li>
           <li>
-          <p><strong>Feature/Change:</strong> Reduction in default padding applied in new sidebar design.</p>
+          <p><strong>Note:</strong> These changes are designed to work with the new UI changes, if you are using the old you will need to load the previos version manually for it to work.</p>
           </li>
           <li>
-          <p><strong>Feature/Change:</strong> Ability to single-anywhere on a process folder or title to open (Instead of the tiny icon to expand).</p>
+          <p><strong>Bugfix:</strong> Fix Collapse All Folders on Schedule Page</p>
           </li>
           <li>
-          <p><strong>Feature/Change:</strong> Document viewer has been changed to Mono-Spaced to provide all round better display.</p>
+          <p><strong>Bugfix:</strong> Fixed options inserted to ellipse menu</p>
           </li>
           <li>
-          <p><strong>Bugfix:</strong> Multiple Under the hood code fixes.</p>
+          <p><strong>Bugfix:</strong> Fix department collapse button on Atom management</p>
+          </li>
+          <li>
+          <p><strong>Bugfix:</strong> Filter Elemement Classes updated</p>
+          </li>
+          <li>
+          <p><strong>Bugfix:</strong> Fixed Canvas not being removed when enabled in options</p>
+          </li>
+          <li>
+          <p><strong>Bugfix:</strong> Image Capture not visible (Added to side menu)</p>
+          </li>
+          <li>
+          <p><strong>Bugfix:</strong> Prevent the Quick Shape Creation Component from appearing when text is selected</p>
+          </li>
+          <li>
+          <p><strong>Bugfix:</strong> Adjusted update notification overlay</p>
+          </li>
+          <li>
+          <p><strong>Bugfix:</strong> minor code adjustmeents and cleanup & Spelling updates</p>
+          </li>
+          <li>
+          <p><strong>Feature Removoal:</strong> Disabled Description Markdown Code - Boomi made some changes to how the element is rendered and does not support styling</p>
           </li>
           </ul>
           `
