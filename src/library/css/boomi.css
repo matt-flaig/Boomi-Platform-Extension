@@ -468,7 +468,7 @@ div[style*="position: relative; height: 250px; width: 250px;"] {
     padding-bottom: 0px !important;
 }
 
-/* Change the Process Reporting DocumentViewer and the Test Mode Document Viewer to Mono-space */
+/* Change the Process Reporting DocumentViewer and the Test Mode Document Viewer to Monospace */
 #popup_on_popup_content_DocumentDialogContents .modal_contents .margin_popup_contents .documentViewer .gwt-TextArea, .popupContent .modal_contents .margin_popup_contents .documentViewer .gwt-TextArea {
     font-family: monospace, monospace !important;
     line-height: 1.2em !important;
