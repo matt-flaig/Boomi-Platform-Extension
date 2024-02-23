@@ -20,13 +20,17 @@ document.arrive(".gwt-ProcessPanel", function (panel) {
     // don't open panel if copy_paste_panel is visible, or if in test mode (testModeCover) as it's confusing
     // we check for test mode, by checking if .testModeCover is visible
     // (we have to check through all elements with that class as you could have multiple tabs in test mode)
+    // we also check if the user is selecting text (for example in a note element) so that we don't open
+    // the selection dialog above the notes panel
     if (
       !$(".copy_paste_panel").hasClass("no_display") ||
       !Array.from(document.querySelectorAll(".testModeCover")).every(
         (el) => el.offsetParent === null,
-      )
-    )
+      ) ||
+      (typeof window.getSelection != "undefined" && window.getSelection().toString() !== "")
+    ){
       return;
+    }
     $(".bpe-quickshape-popup").each(function () {
       $(this).remove();
     });
