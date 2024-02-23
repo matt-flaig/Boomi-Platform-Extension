@@ -77,7 +77,7 @@
                 "library/boomiapp/iconSets.js",
                 "library/boomiapp/listenerGlobal.js",
                 "library/boomiapp/canvas.js",
-                "library/boomiapp/customrefresh.js",
+                "library/boomiapp/customRefresh.js",
                 "library/boomiapp/menuOpen.js",
                 "library/boomiapp/connectionOperations.js",
                 "library/boomiapp/doubleClick.js",
