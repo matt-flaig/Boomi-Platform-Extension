@@ -1,28 +1,30 @@
 function updateNotificationCheck() {
+  let integration = document.getElementsByClassName(
+    "qm-c-servicenav__service-name",
+  )[0];
 
-
-  let integration = document.getElementsByClassName('qm-c-servicenav__service-name')[0];
-
-  if(integration){
-    let currentAppver = chrome.runtime.getManifest().version
-    if (typeof (Storage) !== "undefined") {
-            localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver);
-            if (localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver) === null || localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver) === '') {
-                localStorage.setItem("boomiplatenhanUpdateNot" + currentAppver, "done");
-                updateNotificationAlert()
-            } else {
-                //No action Required in that its actually already alerted
-                //alert(localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver))
-            }
-        } else {
-            alert('No Access to Local Storage')
-        }
+  if (integration) {
+    let currentAppver = chrome.runtime.getManifest().version;
+    if (typeof Storage !== "undefined") {
+      localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver);
+      if (
+        localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver) ===
+          null ||
+        localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver) === ""
+      ) {
+        localStorage.setItem("boomiplatenhanUpdateNot" + currentAppver, "done");
+        updateNotificationAlert();
+      } else {
+        //No action Required in that its actually already alerted
+        //alert(localStorage.getItem("boomiplatenhanUpdateNot" + currentAppver))
+      }
+    } else {
+      alert("No Access to Local Storage");
     }
+  }
 
-
-    function updateNotificationAlert() {
-
-        let htmlUpdateContents = `
+  function updateNotificationAlert() {
+    let htmlUpdateContents = `
         <ul>
         <li>
         <p><strong>Feature/Change:</strong> Extension Option Features for Table Wrapping, Always/Never Wrap or Toggle when Hover over Header.</p>
@@ -40,10 +42,10 @@ function updateNotificationCheck() {
         <p><strong>Bugfix:</strong> Multiple Under the hood code fixes.</p>
         </li>
         </ul>
-        `
+        `;
 
-
-        let updateHtml= `<div style="left: 618px; top: 139px; visibility: visible; position: absolute; overflow: visible;" class="center_panel BoomiUpdateOverlay"
+    let updateHtml =
+      `<div style="left: 618px; top: 139px; visibility: visible; position: absolute; overflow: visible;" class="center_panel BoomiUpdateOverlay"
         id="popup_on_popup_content" role="dialog" aria-modal="true">
         <div class="popupContent">
             <div class="modal modal_top">
@@ -84,7 +86,9 @@ function updateNotificationCheck() {
                                 <div class="updated_typography c-whats-new">
                                     <h1>Boomi Platform Enhancer Extension Updates</h1>
                                     <p>Check out the following new features and or bug fixes for the Boomi Platform Enhancer Extension:</p>
-        ` + htmlUpdateContents + `
+        ` +
+      htmlUpdateContents +
+      `
                                     <p>For more detail on what each feature does and how to use it visit the <a
                                             href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/wiki"
                                             target="_blank">Extension Wiki</a></p>
@@ -100,15 +104,15 @@ function updateNotificationCheck() {
                 </div>
             </div>
         </div>
-        </div>`
+        </div>`;
 
-        let overlayUpdate = document.querySelector('.BoomiUpdateOverlay');
-        if (overlayUpdate) overlayUpdate.remove();
+    let overlayUpdate = document.querySelector(".BoomiUpdateOverlay");
+    if (overlayUpdate) overlayUpdate.remove();
 
-        setTimeout(() => {
-            document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend', updateHtml)
-        
-        }, 1000);
-        
-    }
+    setTimeout(() => {
+      document
+        .getElementsByTagName("body")[0]
+        .insertAdjacentHTML("beforeend", updateHtml);
+    }, 1000);
+  }
 }

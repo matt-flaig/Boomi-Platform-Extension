@@ -1,76 +1,90 @@
 const loadScript = (url) => {
-    let body = document.getElementsByTagName('body')[0];
-    let script = document.createElement('script');
-    script.setAttribute('type', 'text/javascript');
-    script.setAttribute('src', chrome.runtime.getURL(url));
-    body.appendChild(script);
-}
-loadScript('./library/boomiapp/notes.js');
-loadScript('./library/boomiapp/descriptionMarkdown.js');
-loadScript('./library/boomiapp/groups.js');
-loadScript('./library/boomiapp/shapes.js');
-loadScript('./library/boomiapp/fullscreen.js');
-loadScript('./library/boomiapp/imageCapture.js');
-loadScript('./library/boomiapp/tableWrap.js');
-loadScript('./library/boomiapp/iconSets.js');
-loadScript('./library/boomiapp/listenerGlobal.js');
-loadScript('./library/boomiapp/canvas.js');
-loadScript('./library/boomiapp/customrefresh.js');
-loadScript('./library/boomiapp/connectionOperations.js');
-loadScript('./library/boomiapp/versionNotification.js');
-loadScript('./library/boomiapp/modalButtons.js');
-loadScript('./library/inject/rasterizeHTML.min.js');
-loadScript('./library/inject/showdown.min.js');
-loadScript('./library/inject/codeflask.min.js');
-loadScript('./library/jquery/jquery-3.6.min.js');
+  let body = document.getElementsByTagName("body")[0];
+  let script = document.createElement("script");
+  script.setAttribute("type", "text/javascript");
+  script.setAttribute("src", chrome.runtime.getURL(url));
+  body.appendChild(script);
+};
+loadScript("./library/boomiapp/notes.js");
+loadScript("./library/boomiapp/descriptionMarkdown.js");
+loadScript("./library/boomiapp/groups.js");
+loadScript("./library/boomiapp/shapes.js");
+loadScript("./library/boomiapp/fullscreen.js");
+loadScript("./library/boomiapp/imageCapture.js");
+loadScript("./library/boomiapp/tableWrap.js");
+loadScript("./library/boomiapp/iconSets.js");
+loadScript("./library/boomiapp/listenerGlobal.js");
+loadScript("./library/boomiapp/canvas.js");
+loadScript("./library/boomiapp/customrefresh.js");
+loadScript("./library/boomiapp/connectionOperations.js");
+loadScript("./library/boomiapp/versionNotification.js");
+loadScript("./library/boomiapp/modalButtons.js");
+loadScript("./library/inject/rasterizeHTML.min.js");
+loadScript("./library/inject/showdown.min.js");
+loadScript("./library/inject/codeflask.min.js");
+loadScript("./library/jquery/jquery-3.6.min.js");
 
 let org_title = document.title;
 let wait_for_load = setInterval(() => {
+  if (org_title != document.title) {
+    clearInterval(wait_for_load);
 
-    if (org_title != document.title) {
-        clearInterval(wait_for_load);
+    updateBoomiPlatformConfig();
 
-        updateBoomiPlatformConfig()
+    //-------------
+
+    var platformStatus = document.evaluate(
+      "//a[text()='Platform Status & Announcements']",
+      document,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null,
+    ).singleNodeValue;
+    fetch("https://status.boomi.com/api/v2/status.json")
+      .then((res) => res.json())
+      .then((out) => {
+        if (
+          out.status.description === "All Systems Operational" &&
+          platformStatus
+        ) {
+          platformStatus.innerHTML = `<a href="https://status.boomi.com/" target="_blank"><p><b>Platform Status: </b><b style="color: green;"> All Operational</b></p></a>`;
+        } else {
+          platformStatus.innerHTML = `<a href="https://status.boomi.com/" target="_blank"><p><b>Platform Status: </b><b class="boomiDown" style="color: red;"> ${out.status.description}</b></p></a>`;
+        }
 
         //-------------
-
-        var platformStatus = document.evaluate("//a[text()='Platform Status & Announcements']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-        fetch('https://status.boomi.com/api/v2/status.json')
-        .then(res => res.json())
-        .then((out) => {
-            if(out.status.description === 'All Systems Operational' && platformStatus){
-                platformStatus.innerHTML = `<a href="https://status.boomi.com/" target="_blank"><p><b>Platform Status: </b><b style="color: green;"> All Operational</b></p></a>`;
-            } else {
-                platformStatus.innerHTML = `<a href="https://status.boomi.com/" target="_blank"><p><b>Platform Status: </b><b class="boomiDown" style="color: red;"> ${out.status.description}</b></p></a>`;
-            }
-
-            //-------------
-            document.getElementById('footer_links').insertAdjacentHTML('afterbegin', `
+        document.getElementById("footer_links").insertAdjacentHTML(
+          "afterbegin",
+          `
             <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko/">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a></li>
-            `);
-        }).catch(err => console.error(err));
-    }
-
+            `,
+        );
+      })
+      .catch((err) => console.error(err));
+  }
 }, 250);
-
 
 //options updated via extension options
 const updateBoomiPlatformConfig = () => {
-    chrome.storage.sync.get(null, (config) => {
-        window.postMessage(Object.assign({
-            BoomiPlatformconfig: true
-        }, config))
-    });
-}
+  chrome.storage.sync.get(null, (config) => {
+    window.postMessage(
+      Object.assign(
+        {
+          BoomiPlatformconfig: true,
+        },
+        config,
+      ),
+    );
+  });
+};
 
 chrome.storage.onChanged.addListener((e) => {
+  // don't alert about preference changes if it was saving the header visibility state
+  if (e.headerVisible || e.headerVisible === "false") {
+    return;
+  }
 
-    // don't alert about preference changes if it was saving the header visibility state
-    if(e.headerVisible || e.headerVisible === "false"){
-        return;
-    }
-
-    let alert_html = `
+  let alert_html = `
     <div style="left: 618px; top: 139px; visibility: visible; position: absolute; overflow: visible;" class="center_panel BoomiUpdateOverlay"
     id="popup_on_popup_content" role="dialog" aria-modal="true">
     <div class="popupContent">
@@ -121,9 +135,11 @@ chrome.storage.onChanged.addListener((e) => {
     </div>
     </div>`;
 
-    let overlay = document.querySelector('.BoomiPlatformOverlay');
-    if (overlay) overlay.remove();
-    document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend', alert_html)
+  let overlay = document.querySelector(".BoomiPlatformOverlay");
+  if (overlay) overlay.remove();
+  document
+    .getElementsByTagName("body")[0]
+    .insertAdjacentHTML("beforeend", alert_html);
 
-    updateBoomiPlatformConfig()
+  updateBoomiPlatformConfig();
 });

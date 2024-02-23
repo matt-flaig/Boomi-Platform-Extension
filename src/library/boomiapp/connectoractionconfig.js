@@ -1,6 +1,4 @@
 document.arrive(".connectorActionConfig", function () {
-
-
   let actionLable = document.getElementsByClassName("label-wrap");
 
   let httpRemind = actionLable[0].innerHTML.includes("HTTP Client connector");
@@ -10,13 +8,12 @@ document.arrive(".connectorActionConfig", function () {
       actionLable[0].innerHTML +
       '<br> <b style="color: orange" class="boomiHTTPReminder">Reminder:</b> in-coming message shapes will not work into the HTTP connector if you have set connector parameters';
   } else {
-    letsCheck()
+    letsCheck();
   }
-
 });
 
-function letsCheck(){
-let check_http_selection = setInterval(() => {
+function letsCheck() {
+  let check_http_selection = setInterval(() => {
     let actionLable = document.getElementsByClassName("label-wrap");
 
     let httpRemind = actionLable[0].innerHTML.includes("HTTP Client connector");

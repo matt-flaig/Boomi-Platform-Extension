@@ -1,147 +1,169 @@
 const langs = {
-    plain_text: { mode: "default", display: "Plain Text" },
-    json: { mode: { name: "javascript", json: true }, display: "JSON" },
-    xml: { mode: "xml", display: "XML" },
-    html: { mode: { name: "xml", html: true }, display: "HTML" },
-    sql: { mode: "sql", display: "SQL" }
+  plain_text: { mode: "default", display: "Plain Text" },
+  json: { mode: { name: "javascript", json: true }, display: "JSON" },
+  xml: { mode: "xml", display: "XML" },
+  html: { mode: { name: "xml", html: true }, display: "HTML" },
+  sql: { mode: "sql", display: "SQL" },
 };
 
-
-document.arrive('.gwt-TextArea.validatable[data-locator="formrow-message"]', function () {
-    var bpeButtonId = `#bpe-message-editor-button-${this.id}`
-    $(this).parent().append(`<button type="button" class="gwt-Button qm-button--primary-action" id="bpe-message-editor-button-${this.id}" textareaid="${this.id}"style="display: block">Edit Message</button>`)
+document.arrive(
+  '.gwt-TextArea.validatable[data-locator="formrow-message"]',
+  function () {
+    var bpeButtonId = `#bpe-message-editor-button-${this.id}`;
+    $(this)
+      .parent()
+      .append(
+        `<button type="button" class="gwt-Button qm-button--primary-action" id="bpe-message-editor-button-${this.id}" textareaid="${this.id}"style="display: block">Edit Message</button>`,
+      );
 
     $(bpeButtonId).click(function (e) {
-        let textAreaId = `#${e.target.getAttribute('textareaid')}`;
+      let textAreaId = `#${e.target.getAttribute("textareaid")}`;
 
-        $('body').append(renderMessageEditorPopup(this.id));
+      $("body").append(renderMessageEditorPopup(this.id));
 
-        var code = $(textAreaId)[0].value.replace(/^'*/, '').replace(/'*$/, '').replace(/'({\d+})'/g, '$1')
+      var code = $(textAreaId)[0]
+        .value.replace(/^'*/, "")
+        .replace(/'*$/, "")
+        .replace(/'({\d+})'/g, "$1");
 
-        editor = CodeMirror($('#bpe-message-editor')[0], {
-            value: code,
-            mode: "default",
-            lineNumbers: true,
-            autoCloseTags: true,
-            autoCloseBrackets: true
-        });
+      editor = CodeMirror($("#bpe-message-editor")[0], {
+        value: code,
+        mode: "default",
+        lineNumbers: true,
+        autoCloseTags: true,
+        autoCloseBrackets: true,
+      });
 
-        switch (code.charAt(0)) {
-            case "{":
-                editor.setOption('mode', langs['json'].mode)
-                $('#bpe-message-editor-language')[0].value = 'json'
-                break;
-            case "[":
-                editor.setOption('mode', langs['json'].mode)
-                $('#bpe-message-editor-language')[0].value = 'json'
-                break;
-            case "<":
-                if (code.includes('<html>')) {
-                    editor.setOption('mode', langs['html'].mode)
-                    $('#bpe-message-editor-language')[0].value = 'html'
-                    break;
-                }
-                editor.setOption('mode', langs['xml'].mode)
-                $('#bpe-message-editor-language')[0].value = 'xml'
-                break;
+      switch (code.charAt(0)) {
+        case "{":
+          editor.setOption("mode", langs["json"].mode);
+          $("#bpe-message-editor-language")[0].value = "json";
+          break;
+        case "[":
+          editor.setOption("mode", langs["json"].mode);
+          $("#bpe-message-editor-language")[0].value = "json";
+          break;
+        case "<":
+          if (code.includes("<html>")) {
+            editor.setOption("mode", langs["html"].mode);
+            $("#bpe-message-editor-language")[0].value = "html";
+            break;
+          }
+          editor.setOption("mode", langs["xml"].mode);
+          $("#bpe-message-editor-language")[0].value = "xml";
+          break;
+      }
+
+      var theme = $("html").hasClass("qm-u-theme-dark")
+        ? "twilight"
+        : "default";
+      editor.setOption("theme", theme);
+
+      // Ok
+      $("#bpe-message-editor-ok").click(function () {
+        let lang = $("#bpe-message-editor-language")[0].value;
+        let code = editor.getValue();
+
+        switch (lang) {
+          case "json":
+            if (code?.trim())
+              code = code
+                .trim()
+                .replace(/^'*/, "'")
+                .replace(/'*$/, "'")
+                .replace(/'*({\d+})'*/g, "'$1'");
+            break;
         }
+        $(textAreaId)[0].value = code;
+        $("#popup_on_popup_content, #popup_on_popup").remove();
+      });
 
-        var theme = $('html').hasClass('qm-u-theme-dark') ? 'twilight' : 'default';
-        editor.setOption('theme', theme);
+      // Cancel
+      $("#bpe-message-editor-cancel").click(function () {
+        $("#popup_on_popup_content, #popup_on_popup").remove();
+      });
 
-
-        // Ok
-        $('#bpe-message-editor-ok').click(function () {
-            let lang = $('#bpe-message-editor-language')[0].value;
-            let code = editor.getValue();
-
-            switch (lang) {
-                case "json":
-                    if (code?.trim()) code = code.trim().replace(/^'*/, '\'').replace(/'*$/, '\'').replace(/'*({\d+})'*/g, "'$1'");
-                    break;
-            }
-            $(textAreaId)[0].value = code;
-            $('#popup_on_popup_content, #popup_on_popup').remove();
-        });
-
-        // Cancel
-        $('#bpe-message-editor-cancel').click(function () {
-            $('#popup_on_popup_content, #popup_on_popup').remove();
-        });
-
-        // Change
-        $('#bpe-message-editor-language').change(function (e) {
-            editor.setOption('mode', langs[e.target.value].mode);
-        });
-
+      // Change
+      $("#bpe-message-editor-language").change(function (e) {
+        editor.setOption("mode", langs[e.target.value].mode);
+      });
     });
+  },
+);
 
-});
-
-document.arrive('.gwt-TextArea.validatable[data-locator="formrow-sql"]', function () {
-    var progShape = $(this).closest('.prog_cmd_panel')
+document.arrive(
+  '.gwt-TextArea.validatable[data-locator="formrow-sql"]',
+  function () {
+    var progShape = $(this).closest(".prog_cmd_panel");
     if (progShape.length === 0) return;
 
-    var bpeButtonId = `#bpe-sql-editor-button-${this.id}`
-    $(progShape).find(`button[data-locator="button-edit-sql"]`).parent().remove();
-    $(this).parent().append(`<button type="button" class="gwt-Button qm-button--primary-action" id="bpe-sql-editor-button-${this.id}" textareaid="${this.id}"style="display: block">Edit SQL</button>`)
-    
+    var bpeButtonId = `#bpe-sql-editor-button-${this.id}`;
+    $(progShape)
+      .find(`button[data-locator="button-edit-sql"]`)
+      .parent()
+      .remove();
+    $(this)
+      .parent()
+      .append(
+        `<button type="button" class="gwt-Button qm-button--primary-action" id="bpe-sql-editor-button-${this.id}" textareaid="${this.id}"style="display: block">Edit SQL</button>`,
+      );
 
     $(bpeButtonId).click(function (e) {
-        let textAreaId = `#${e.target.getAttribute('textareaid')}`;
+      let textAreaId = `#${e.target.getAttribute("textareaid")}`;
 
-        $('body').append(renderMessageEditorPopup(this.id, 'sql'));
+      $("body").append(renderMessageEditorPopup(this.id, "sql"));
 
-        var code = $(textAreaId)[0].value
+      var code = $(textAreaId)[0].value;
 
-        editor = CodeMirror($('#bpe-message-editor')[0], {
-            value: code,
-            mode: "sql",
-            lineNumbers: true,
-            autoCloseTags: true,
-            autoCloseBrackets: true
-        });
+      editor = CodeMirror($("#bpe-message-editor")[0], {
+        value: code,
+        mode: "sql",
+        lineNumbers: true,
+        autoCloseTags: true,
+        autoCloseBrackets: true,
+      });
 
-        var theme = $('html').hasClass('qm-u-theme-dark') ? 'twilight' : 'default';
-        editor.setOption('theme', theme);
+      var theme = $("html").hasClass("qm-u-theme-dark")
+        ? "twilight"
+        : "default";
+      editor.setOption("theme", theme);
 
-        // Ok
-        $('#bpe-message-editor-ok').click(function () {
-            let code = editor.getValue();
-            $(textAreaId)[0].value = code;
-            $('#popup_on_popup_content, #popup_on_popup').remove();
-        });
+      // Ok
+      $("#bpe-message-editor-ok").click(function () {
+        let code = editor.getValue();
+        $(textAreaId)[0].value = code;
+        $("#popup_on_popup_content, #popup_on_popup").remove();
+      });
 
-        // Cancel
-        $('#bpe-message-editor-cancel').click(function () {
-            $('#popup_on_popup_content, #popup_on_popup').remove();
-        });
+      // Cancel
+      $("#bpe-message-editor-cancel").click(function () {
+        $("#popup_on_popup_content, #popup_on_popup").remove();
+      });
 
-        // Change
-        $('#bpe-message-editor-language').change(function (e) {
-            editor.setOption('mode', langs[e.target.value].mode);
-        });
+      // Change
+      $("#bpe-message-editor-language").change(function (e) {
+        editor.setOption("mode", langs[e.target.value].mode);
+      });
     });
-});
-
-
+  },
+);
 
 function renderMessageEditorPopup(id, lang) {
-    let left = Math.abs(window.innerWidth / 2) - 600
-    let top = Math.abs(window.innerHeight / 2) - 340
+  let left = Math.abs(window.innerWidth / 2) - 600;
+  let top = Math.abs(window.innerHeight / 2) - 340;
 
-    let lang_html = ''
-    let title = 'Edit Message';
-    if (!lang) {
-        for (const [k, v] of Object.entries(langs)) {
-            lang_html += `<option value="${k}">${v.display}</option>`
-        }
-    } else {
-        title = `Edit ${lang.toUpperCase()}`;
-        lang_html = `<option value="${langs[lang]}">${langs[lang].display}</option>`
+  let lang_html = "";
+  let title = "Edit Message";
+  if (!lang) {
+    for (const [k, v] of Object.entries(langs)) {
+      lang_html += `<option value="${k}">${v.display}</option>`;
     }
+  } else {
+    title = `Edit ${lang.toUpperCase()}`;
+    lang_html = `<option value="${langs[lang]}">${langs[lang].display}</option>`;
+  }
 
-    let html = `
+  let html = `
     <div class="popup_on_popup" id="popup_on_popup" style="position: absolute; left: 0px; top: 0px; visibility: visible; display: block; width: 100%; height: 100%;"></div>
     <div class="center_panel" id="popup_on_popup_content" role="dialog" aria-modal="true" style="left: ${left}px; top: ${top}px; visibility: visible; position: absolute; overflow: visible;">
         <div class="popupContent">
@@ -196,7 +218,7 @@ function renderMessageEditorPopup(id, lang) {
                 </div>
             </div>
         </div>
-    </div>`
+    </div>`;
 
-    return html;    
+  return html;
 }
