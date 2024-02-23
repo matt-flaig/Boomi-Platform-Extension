@@ -124,7 +124,7 @@ const BoomiPlatform_Init = () => {
         }
 
         listenerClass('.modal_top', modal_listener);
-        listenerClass('.gwt-ProcessPanel', [process_to_image, check_beta, add_canvas_listener]);
+        listenerClass('.gwt-ProcessPanel', [process_to_image, add_canvas_listener]);
         listenerClass('.gwt-EndPoint', add_endpoint_listener);
         listenerClass('.gwt-Shape', add_shape_listener);
         listenerClass('.gwt-connectors-svg', add_path_listener);
