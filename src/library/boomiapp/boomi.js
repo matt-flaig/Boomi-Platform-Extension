@@ -31,7 +31,7 @@ let boomiPageLoaded = setInterval(()=>{
           });
         }
       onNavigationChange();
-      updatenotificationCheck();
+      updateNotificationCheck();
     }
 
 }, 250);
