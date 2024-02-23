@@ -3,12 +3,12 @@ document.arrive(".filter_panel_dialog_popup_panel", function (filterpanel) {
     var buttonBar = document.getElementsByClassName("button-bar");
     buttonBar[0].insertAdjacentHTML(
       "beforeend",
-      '<button id="colaButton" type="button" class="gwt-Button">Collapse All Folders</button>',
+      '<button id="collapseFolders" type="button" class="gwt-Button">Collapse All Folders</button>',
     );
   }
 });
 
-$(document).on("click", "#colaButton", function () {
+$(document).on("click", "#collapseFolders", function () {
   [
     ...document
       .getElementsByClassName("filter_panel_dialog_popup_panel")[0]
@@ -32,7 +32,7 @@ document.arrive("[data-locator='button-schedules']", function (schedulebutton) {
   //Add Collapse All Button
   schedulebutton.parentNode.insertAdjacentHTML(
     "beforeend",
-    '<button type="button" id="coladepButton" class="gwt-Button drop_button qm-button--primary-action closeall_doing_action" style="position: absolute">Collapse All Folders</button>',
+    '<button type="button" id="collapseDeployedFolders" class="gwt-Button drop_button qm-button--primary-action closeall_doing_action" style="position: absolute">Collapse All Folders</button>',
   );
 });
 
@@ -67,7 +67,7 @@ document.arrive(".rail.simplify .gwt-FastTree .treeItemContent", function (el) {
   //})
 });
 
-$(document).on("click", "#coladepButton", function () {
+$(document).on("click", "#collapseDeployedFolders", function () {
   [
     ...document
       .getElementsByClassName("deployed_processes_panel")[0]
