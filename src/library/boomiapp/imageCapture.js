@@ -8,7 +8,7 @@ const process_to_image = (process) => {
     let newLink = `<a class="gwt-Anchor svg-anchor others_floats bph-capture-process" data-locator="capture-process-flow"><?xml version="1.0" encoding="UTF-8"?>
     <?xml version="1.0" encoding="UTF-8"?>
     <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 40px; height: 40px;">
-        <title>camera-icon</title>
+        <title>Capture Process Flow</title>
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="camera-icon" transform="translate(0.500000, 0.500000)">
                 <circle id="Oval" stroke="#CCCCCC" fill="#FFFFFF" fill-rule="nonzero" cx="19.5" cy="19.5" r="19.5"></circle>

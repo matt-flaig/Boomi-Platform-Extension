@@ -163,7 +163,7 @@ const BoomiPlatform_Init = () => {
     listenerClass(".gwt-DialogBox", add_dialog_listener);
     listenerClass(".boomi_standard_table", add_table_listener);
     listenerClass(".build_actionsButton", add_fullscreen_listener);
-    listenerClass(".description_panel", add_description_listener);
+    //listenerClass(".description_panel", add_description_listener);
     listenerClass(".note-content", add_notecontent_listener);
     listenerClass(".auto_refresh_li", refreshInterval_listener);
     listenerClass(".gwt-DetailAreaInner", add_connector_list);
