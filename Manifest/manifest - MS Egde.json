@@ -80,7 +80,6 @@
                 "library/boomiapp/customRefresh.js",
                 "library/boomiapp/menuOpen.js",
                 "library/boomiapp/connectionOperations.js",
-                "library/boomiapp/doubleClick.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"

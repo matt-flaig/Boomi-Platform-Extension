@@ -83,7 +83,6 @@
                 "library/boomiapp/customrefresh.js",
                 "library/boomiapp/menuOpen.js",
                 "library/boomiapp/connectionOperations.js",
-                "library/boomiapp/doubleClick.js",
                 "library/boomiapp/versionNotification.js",
                 "library/boomiapp/modalButtons.js",
                 "library/inject/rasterizeHTML.min.js",
