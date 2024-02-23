@@ -12,14 +12,14 @@ let boomiPageLoaded = setInterval(() => {
     // this covers about 90% of the use cases where the header should / shouldn't be hidden.
 
     /* Only hide the header if
-            1) The "Show Header" button can be injected
-            2) The nav-bar in which the show header button option is visible
-            3) The localstorage/chromestorage "headerVisibile" value is set to false
+        1) The "Show Header" button can be injected
+        2) The nav-bar in which the show header button option is visible
+        3) The localstorage/chromestorage "headerVisibile" value is set to false
 
-            This doesn't cover two cases:
-            1) The user navigated (with header hidden) to another page (such as settings) without the page reloading.
-            2) The user changed to another Boomi platform account, which reloads the DOM but this code is never re-executed because the page didn't reload
-        */
+        This doesn't cover two cases:
+        1) The user navigated (with header hidden) to another page (such as settings) without the page reloading.
+        2) The user changed to another Boomi platform account, which reloads the DOM but this code is never re-executed because the page didn't reload
+    */
 
     if (
       headerAdd &&
