@@ -81,7 +81,7 @@ function updateNotificationCheck() {
       htmlUpdateContents +
       `
                                     <p>For more detail on what each feature does and how to use it visit the <a
-                                            href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/wiki"
+                                            href="https://github.com/matt-flaig/Boomi-Platform-Extension/wiki"
                                             target="_blank">Extension Wiki</a></p>
                                 </div>
                             </div> 
