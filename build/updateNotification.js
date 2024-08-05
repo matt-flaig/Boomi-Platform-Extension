@@ -107,7 +107,7 @@ function updateNotificationCheck() {
                                       <p>Check out the following new features and or bug fixes for the Boomi Platform Enhancer Extension:</p>
           ` + htmlUpdateContents + `
                                       <p>For more detail on what each feature does and how to use it visit the <a
-                                              href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/wiki"
+                                              href="https://github.com/matt-flaig/Boomi-Platform-Extension/wiki"
                                               target="_blank">Extension Wiki</a></p>
                                   </div>
                               </div> 
