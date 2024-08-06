@@ -96,7 +96,8 @@ const create_note_group = (el) => {
 
       matched_node.insertAdjacentHTML("afterend", notegroup_html);
       matched_node.setAttribute("data-notegroup", group_id);
-      matched_node.querySelector(".note-content").style.whiteSpace = "pre";
+      // removed as adding `pre` to notes breaks the text outside the bounds of the note div
+      //matched_node.querySelector(".note-content").style.whiteSpace = "pre";
       matched_node.classList.add("note-hover");
       matched_node
         .querySelector(".note-preview-buttons")

@@ -27,19 +27,10 @@ function updateNotificationCheck() {
     let htmlUpdateContents = `
         <ul>
         <li>
-        <p><strong>Feature/Change:</strong> Extension Option Features for Table Wrapping, Always/Never Wrap or Toggle when Hover over Header.</p>
+        <p><strong>Bugfix:</strong> Fixed an issue where the icon overrides stopped working in Chrome.</p>
         </li>
         <li>
-        <p><strong>Feature/Change:</strong> Reduction in default padding applied in new sidebar design.</p>
-        </li>
-        <li>
-        <p><strong>Feature/Change:</strong> Ability to single-anywhere on a process folder or title to open (Instead of the tiny icon to expand).</p>
-        </li>
-        <li>
-        <p><strong>Feature/Change:</strong> Document viewer has been changed to Mono-Spaced to provide all round better display.</p>
-        </li>
-        <li>
-        <p><strong>Bugfix:</strong> Multiple Under the hood code fixes.</p>
+        <p><strong>Bugfix:</strong> Fixed an issue where note content might overflow the note area.</p>
         </li>
         </ul>
         `;
@@ -90,7 +81,7 @@ function updateNotificationCheck() {
       htmlUpdateContents +
       `
                                     <p>For more detail on what each feature does and how to use it visit the <a
-                                            href="https://github.com/mitchelljfranklin/Boomi-Platform-Extension/wiki"
+                                            href="https://github.com/matt-flaig/Boomi-Platform-Extension/wiki"
                                             target="_blank">Extension Wiki</a></p>
                                 </div>
                             </div> 
