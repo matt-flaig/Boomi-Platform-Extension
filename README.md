@@ -170,15 +170,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
-
-## Contact
-
-Name - [Mitchell Franklin](https://mitchellfranklin.info) - mitchellfranklin@gmail.com
-
-
-
-
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * **Tony Banik** - Developer of Boomi Tools that provided me with some of the best ideas that are implemented or being implemented into this extension.
