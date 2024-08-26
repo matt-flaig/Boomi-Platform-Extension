@@ -93,26 +93,31 @@ const BoomiPlatform_Init = () => {
                                 }
                             }, 0);
                         }
-                        
-                        // note groups
-                        let noteForm = node.querySelector(".note-form");
-                        if (!noteForm) return false;
 
-                        notegroupbutton_html = `
-                              <button type="button" class="NoteGroupButton" onclick="create_note_group(this)">Group</button>
-                              `;
-                        noteForm
-                          .querySelector(".button_row")
-                          .insertAdjacentHTML("beforeend", notegroupbutton_html);
+                        if(
+                          node !== null &&
+                          "querySelector" in node
+                        ){
+                          // note groups
+                          let noteForm = node.querySelector(".note-form");
+                          if (!noteForm) return false;
 
-                        if (
-                          /\n{0,2}---\n\#BoomiPlatform: \[\"(\d*px)\"\,\"(\d*px)\"\,\"([a-z]*)\"\]/g.test(
-                            noteForm.querySelector("textarea").value,
-                          )
-                        ) {
-                          setTimeout(() => {
-                            create_note_group(noteForm);
-                          }, 100);
+                          notegroupbutton_html = `
+                                <button type="button" class="NoteGroupButton" onclick="create_note_group(this)">Group</button>
+                                `;
+                          noteForm
+                            .querySelector(".button_row")
+                            .insertAdjacentHTML("beforeend", notegroupbutton_html);
+
+                          if (
+                            /\n{0,2}---\n\#BoomiPlatform: \[\"(\d*px)\"\,\"(\d*px)\"\,\"([a-z]*)\"\]/g.test(
+                              noteForm.querySelector("textarea").value,
+                            )
+                          ) {
+                            setTimeout(() => {
+                              create_note_group(noteForm);
+                            }, 100);
+                          }
                         }
                     } catch (err) {
                         console.error(err);
