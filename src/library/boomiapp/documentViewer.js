@@ -3,12 +3,12 @@
 // Añade un toggle “DB View” y un botón “🗖” de maximize en el modal de Document Viewer.
 // “DB View” carga Grid.js y muestra la tabla; “🗖” amplía/reduce el modal con efecto smooth.
 
-(function(){
+(function () {
   console.log('⚙️ documentViewer.js cargado');
 
   let dbViewEnabled = false;
-  let originalRaw    = null;
-  let savedStyles    = {};
+  let originalRaw = null;
+  let savedStyles = {};
 
   /** Inyecta estilos CSS para maximize y adaptación de la tabla */
   const style = document.createElement('style');
@@ -46,14 +46,14 @@
       if (!document.querySelector('link[data-gridjs]')) {
         const link = document.createElement('link');
         link.dataset.gridjs = '1';
-        link.rel  = 'stylesheet';
+        link.rel = 'stylesheet';
         link.href = 'https://unpkg.com/gridjs/dist/theme/mermaid.min.css';
         document.head.appendChild(link);
       }
       if (window.gridjs) return resolve();
       const script = document.createElement('script');
-      script.src    = 'https://unpkg.com/gridjs/dist/gridjs.umd.js';
-      script.onload  = () => resolve();
+      script.src = 'https://unpkg.com/gridjs/dist/gridjs.umd.js';
+      script.onload = () => resolve();
       script.onerror = () => reject(new Error('No se pudo cargar Grid.js'));
       document.head.appendChild(script);
     });
@@ -65,11 +65,11 @@
     const mount = document.createElement('div');
     container.appendChild(mount);
     new gridjs.Grid({
-      columns:    headers,
-      data:       dataRows,
-      search:     true,
-      sort:       true,
-      pagination: { enabled: true, limit: 10 },
+      columns: headers,
+      data: dataRows,
+      search: true,
+      sort: true,
+      pagination: { enabled: true, limit: 20 },
       style: { table: { 'white-space': 'nowrap' } }
     }).render(mount);
   }
@@ -79,10 +79,10 @@
     container.innerHTML = '';
     const ta = document.createElement('textarea');
     ta.className = 'gwt-TextArea';
-    ta.style.width  = savedStyles.width  || '620px';
+    ta.style.width = savedStyles.width || '620px';
     ta.style.height = savedStyles.height || '442px';
-    ta.readOnly     = true;
-    ta.value        = originalRaw || '';
+    ta.readOnly = true;
+    ta.value = originalRaw || '';
     container.appendChild(ta);
     console.log('   • textarea restaurado');
   }
@@ -90,10 +90,10 @@
   /** Encuentra el textarea visible y captura sus estilos */
   function findTextarea(modal) {
     const ta = Array.from(modal.querySelectorAll('textarea.gwt-TextArea'))
-                   .find(el => el.offsetParent !== null);
+      .find(el => el.offsetParent !== null);
     if (ta) {
       savedStyles = {
-        width:  ta.style.width  || ta.offsetWidth + 'px',
+        width: ta.style.width || ta.offsetWidth + 'px',
         height: ta.style.height || ta.offsetHeight + 'px'
       };
     }
@@ -112,10 +112,10 @@
 
     // --- Botón DB View ---
     const btn = document.createElement('button');
-    btn.id         = 'dbViewToggle';
-    btn.innerText  = `DB View: ${dbViewEnabled ? 'ON' : 'OFF'}`;
+    btn.id = 'dbViewToggle';
+    btn.innerText = `DB View: ${dbViewEnabled ? 'ON' : 'OFF'}`;
     btn.style.cssText = 'margin-left:8px;padding:2px 6px;cursor:pointer;border:1px solid #ccc;background:#eee;';
-    btn.title      = 'Toggle raw ↔ table view';
+    btn.title = 'Toggle raw ↔ table view';
     btn.addEventListener('click', async () => {
       const container = modal.querySelector('.documentViewer');
       dbViewEnabled = !dbViewEnabled;
@@ -127,19 +127,27 @@
         originalRaw = ta.value;
         // Limpieza y split
         let body = originalRaw.replace(/^DBSTART\|[\s\S]*?\|@?\|/, '')
-                              .replace(/\|@?\|DBEND\|[\s\S]*$/, '')
-                              .replace(/^BEGIN\|\d+\|@\|OUT_START\|\d+\|@\|/, '');
-        const segments = body.split('|#|').map(s=>s.trim())
-                             .filter(s=>s && !/^OUT_END/.test(s) && !/^END/.test(s));
-        const rows = segments.map(seg=>seg.split('|^|'));
-        const colCount = Math.max(...rows.map(r=>r.length));
-        rows.forEach(r=>{ while(r.length<colCount) r.push(''); });
-        const headers = Array.from({length:colCount},(_,i)=>`Column${i+1}`);
+          .replace(/\|@?\|DBEND\|[\s\S]*$/, '')
+          .replace(/^BEGIN\|\d+\|@\|OUT_START\|\d+\|@\|/, '');
+        let segments = body
+          .split('|#|')
+          .map(s => s.trim())
+          .filter(s => s && !/^OUT_END/.test(s) && !/^END/.test(s));
+
+        // Si el raw está truncado (no contiene DBEND), descartamos el último segmento parcial
+        if (!originalRaw.includes('|DBEND|') && segments.length > 0) {
+          segments.pop();
+        }
+
+        const rows = segments.map(seg => seg.split('|^|'));
+        const colCount = Math.max(...rows.map(r => r.length));
+        rows.forEach(r => { while (r.length < colCount) r.push(''); });
+        const headers = Array.from({ length: colCount }, (_, i) => `Column${i + 1}`);
 
         try {
           await loadGridJsFromCDN();
           renderWithGrid(headers, rows, container);
-        } catch(err) {
+        } catch (err) {
           console.error(err);
           restoreTextarea(container);
           dbViewEnabled = false;
@@ -149,16 +157,16 @@
         restoreTextarea(container);
       }
 
-      btn.innerText      = `DB View: ${dbViewEnabled?'ON':'OFF'}`;
+      btn.innerText = `DB View: ${dbViewEnabled ? 'ON' : 'OFF'}`;
       btn.style.background = dbViewEnabled ? '#d4edda' : '#eee';
     });
 
     // --- Botón Maximize ---
     const maxBtn = document.createElement('button');
-    maxBtn.id        = 'dbViewMaximize';
+    maxBtn.id = 'dbViewMaximize';
     maxBtn.innerText = '🗖';
     maxBtn.style.cssText = 'margin-left:4px;padding:2px 6px;cursor:pointer;border:1px solid #ccc;background:#eee;';
-    maxBtn.title     = 'Maximize modal';
+    maxBtn.title = 'Maximize modal';
     maxBtn.addEventListener('click', () => {
       modal.classList.toggle('dbview-maximized');
     });
