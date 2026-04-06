@@ -41,3 +41,4 @@ The following provides the current abilities of the released extension for use w
 * New Icon against Drop Down Menu items i.e. Manage to allow you to click and open in new tab instead of the same window.
 * Default SQL Editor in Data Base Operation code area is now resizable for use with larger screens.
 * Connector Operation Screen for HTTP has increased sizing on Request details for better use.
+* Document downloads are automatically renamed from the default timestamp filename to a meaningful name based on the process name, execution timestamp, and detected file type (e.g. MyProcess_20260405_153958.json). Supports JSON, XML, EDI, CSV, and TXT.
