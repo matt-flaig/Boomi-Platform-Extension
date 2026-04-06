@@ -77,7 +77,10 @@ function addOpenTabToExMenuItemGroup(group) {
     itemStyle.textContent = `
       a[part="anchor-menu-item"] {
         padding: 4px 12px !important;
-        min-height: unset !important;
+        min-height: 0 !important;
+        height: auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
       a[part="anchor-menu-item"].bph-active {
         border-left: 3px solid #4a9eff !important;
