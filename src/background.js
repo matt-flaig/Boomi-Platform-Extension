@@ -12,6 +12,9 @@ chrome.runtime.onMessage.addListener((msg) => {
     pendingContext = msg.context;
     pendingFileExt = msg.fileExt ?? null;
   }
+  if (msg.type === 'OPEN_OPTIONS') {
+    chrome.runtime.openOptionsPage();
+  }
 });
 
 // ── Rename on download ────────────────────────────────────────────────────────
