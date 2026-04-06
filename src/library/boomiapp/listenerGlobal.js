@@ -95,6 +95,7 @@ const BoomiPlatform_Init = () => {
                         }
                         
                         // note groups
+                        if (typeof node.querySelector !== "function") return;
                         let noteForm = node.querySelector(".note-form");
                         if (!noteForm) return false;
 

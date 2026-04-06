@@ -23,6 +23,7 @@ let boomiPageLoaded = setInterval(() => {
 
     if (
       headerAdd &&
+      subHeaderContainerNav &&
       subHeaderContainerNav.style.display != "none" &&
       !subHeaderContainerNav.classList.contains("no_display")
     ) {
