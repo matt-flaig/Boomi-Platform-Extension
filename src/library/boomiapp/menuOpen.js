@@ -49,6 +49,58 @@ function addOpenTabToExMenuItemGroup(group) {
   var categoryDiv = shadowRoot.querySelector(".ex-menu-item--category");
   if (!categoryDiv) return;
 
+  // Tighten spacing and apply active highlight — re-evaluated on every open
+  // so the active state stays correct after navigation.
+  var currentPage = window.location.hash.split(";")[0].replace("#", "");
+  var itemPage = (href.split("#")[1] || "").split(";")[0];
+  var isActive = currentPage && itemPage && currentPage === itemPage;
+
+  // Inject spacing overrides into ex-menu-item-group's shadow root (once).
+  // Must use a <style> element — !important is ignored in element.style.
+  if (!shadowRoot.querySelector("#bph-group-style")) {
+    var groupStyle = document.createElement("style");
+    groupStyle.id = "bph-group-style";
+    groupStyle.textContent = `
+      .menu-item-group { padding: 0 !important; margin: 0 !important; gap: 0 !important; }
+      .ex-menu-item--category { padding: 0 !important; margin: 0 !important; }
+      ex-menu-item { margin: 0 !important; display: block !important; }
+      :host { display: block !important; margin: 0 !important; padding: 0 !important; }
+    `;
+    shadowRoot.appendChild(groupStyle);
+  }
+
+  // Inject spacing + active-state overrides into ex-menu-item's shadow root (once).
+  var itemShadow = exMenuItem.shadowRoot;
+  if (itemShadow && !itemShadow.querySelector("#bph-item-style")) {
+    var itemStyle = document.createElement("style");
+    itemStyle.id = "bph-item-style";
+    itemStyle.textContent = `
+      a[part="anchor-menu-item"] {
+        padding: 4px 12px !important;
+        min-height: unset !important;
+      }
+      a[part="anchor-menu-item"].bph-active {
+        border-left: 3px solid #4a9eff !important;
+        background-color: rgba(74, 158, 255, 0.15) !important;
+        padding-left: 9px !important;
+      }
+      .menu-item__body-wrapper { padding: 0 !important; margin: 0 !important; }
+      .menu-item__content { padding: 0 !important; margin: 0 !important; }
+      .menu-item__secondary-label { padding: 0 !important; margin: 0 !important; min-height: 0 !important; }
+      label { margin: 0 !important; padding: 0 !important; }
+    `;
+    itemShadow.appendChild(itemStyle);
+  }
+
+  // Toggle active class on inner anchor — runs on every open to stay current.
+  if (itemShadow) {
+    var innerAnchor = itemShadow.querySelector('a[part="anchor-menu-item"]');
+    if (innerAnchor) {
+      innerAnchor.classList.toggle("bph-active", !!isActive);
+    }
+  }
+
+  // SVG anchor injection — only once per item
   if (categoryDiv.querySelector(".svg-anchor")) return;
 
   categoryDiv.style.display = "flex";
@@ -59,7 +111,7 @@ function addOpenTabToExMenuItemGroup(group) {
   anchor.className = "gwt-Anchor svg-anchor qm-c-inlinemenu__descriptive-composite-menu-icon";
   anchor.href = href;
   anchor.target = "_blank";
-  anchor.style.cssText = "padding: 4px 4px 0 8px; display: flex; align-items: flex-start; flex-shrink: 0; color: inherit; cursor: pointer;";
+  anchor.style.cssText = "padding: 4px 4px 0 8px; display: flex; align-items: flex-start; flex-shrink: 0; color: inherit; cursor: pointer; border-left: 2px solid #4a9eff;";
   anchor.innerHTML = openTabSvg;
   // Platform handlers in the shadow DOM call preventDefault on clicks, killing
   // native <a> navigation. Handle it ourselves instead.
@@ -82,6 +134,11 @@ document.arrive("ex-menu-item-group[data-testid]", { existing: true }, function 
 document.arrive("li.SubNavigation-module_header__nav-item__dQn5K", { existing: true }, function (navItem) {
   navItem.addEventListener("click", function () {
     setTimeout(function () {
+      // Tighten light DOM submenu container padding
+      var ul = navItem.querySelector("ul[role='menu']");
+      if (ul) ul.style.padding = "4px 0";
+      var groupContainer = navItem.querySelector('[class*="nav-group-menu-items"]');
+      if (groupContainer) { groupContainer.style.padding = "0"; groupContainer.style.gap = "0"; }
       navItem.querySelectorAll("ex-menu-item-group[data-testid]").forEach(addOpenTabToExMenuItemGroup);
     }, 100);
   });

@@ -1,5 +1,5 @@
 const add_dialog_listener = (dialog) => {
-  if (!dialog.querySelector(".dialogTopCenterInner .Caption").innerText)
+  if (!dialog.querySelector(".dialogTopCenterInner .Caption")?.innerText)
     return false;
 
   let rect = dialog.getBoundingClientRect();
