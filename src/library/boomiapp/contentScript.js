@@ -54,10 +54,16 @@ let wait_for_load = setInterval(() => {
         document.getElementById("footer_links").insertAdjacentHTML(
           "afterbegin",
           `
-            <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko/">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a></li>
+            <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko/">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a> [<a class="alternate_link" href="#" id="bph-options-link">options</a>]</li>
             `,
         );
         var mastfoot = document.getElementById("mastfoot");
+        if (mastfoot) mastfoot.classList.remove("mastfoot-hidden");
+
+        document.getElementById("bph-options-link").addEventListener("click", function (e) {
+          e.preventDefault();
+          chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" });
+        });
         if (mastfoot) {
           mastfoot.classList.remove("mastfoot-hidden");
           window.dispatchEvent(new Event("resize"));

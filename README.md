@@ -129,6 +129,7 @@ The following provides the current abilities of the released extension for use w
 * Ability to reverse the modal button layout to match side panel layout i.e. OK - Cancel instead of new default of Cancel - OK.
 * Ability to single-anywhere on a process folder or title to open (Instead of the tiny icon to expand).
 * Document viewer has been changed to Mono-Spaced to provide all round better display.
+* Document downloads are automatically renamed from the default timestamp filename to a meaningful name based on the process name, execution timestamp, and detected file type (e.g. MyProcess_20260405_153958.json). Supports JSON, XML, EDI, CSV, and TXT.
 
 
 <br><br>
