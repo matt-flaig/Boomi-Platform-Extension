@@ -57,6 +57,17 @@ let wait_for_load = setInterval(() => {
             <li><a class="alternate_link" target="_blank" href="https://chrome.google.com/webstore/detail/boomi-platform-enhancer/behhfojpggobllhaifocfcampokbfhko/">Boomi Platform Enhancer v${chrome.runtime.getManifest().version} loaded</a></li>
             `,
         );
+        var mastfoot = document.getElementById("mastfoot");
+        if (mastfoot) {
+          mastfoot.classList.remove("mastfoot-hidden");
+          window.dispatchEvent(new Event("resize"));
+          new MutationObserver(function () {
+            if (mastfoot.classList.contains("mastfoot-hidden")) {
+              mastfoot.classList.remove("mastfoot-hidden");
+              window.dispatchEvent(new Event("resize"));
+            }
+          }).observe(mastfoot, { attributeFilter: ["class"] });
+        }
       })
       .catch((err) => console.error(err));
   }
