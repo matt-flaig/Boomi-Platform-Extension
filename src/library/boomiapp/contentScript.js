@@ -64,6 +64,16 @@ let wait_for_load = setInterval(() => {
           e.preventDefault();
           chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" });
         });
+        if (mastfoot) {
+          mastfoot.classList.remove("mastfoot-hidden");
+          window.dispatchEvent(new Event("resize"));
+          new MutationObserver(function () {
+            if (mastfoot.classList.contains("mastfoot-hidden")) {
+              mastfoot.classList.remove("mastfoot-hidden");
+              window.dispatchEvent(new Event("resize"));
+            }
+          }).observe(mastfoot, { attributeFilter: ["class"] });
+        }
       })
       .catch((err) => console.error(err));
   }

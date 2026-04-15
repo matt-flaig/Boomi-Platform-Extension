@@ -11,6 +11,7 @@ $(document).ready(function () {
       if (typeof headerVisible == "undefined") {
         headerVisible = true;
       }
+      if (!x[0]) return;
       if (headerVisible == true) {
         x[0].classList.add("headerHide");
         $("#showHeaderspan").text("Show Header");
@@ -65,13 +66,10 @@ $(document).ready(function () {
 
   $(document).on("click", "#copyCompURL", function () {
     var currentId = getUrlParameter("componentIdOnFocus");
+    var processReportingEl = document.querySelector('[data-locator="link-process-reporting"]');
     var accountId =
       getUrlParameter("accountId") ||
-      document
-        .querySelector('[data-locator="link-process-reporting"]')
-        .href.split("=")
-        .pop()
-        .split(";")[0];
+      (processReportingEl && processReportingEl.href.split("=").pop().split(";")[0]);
     $("#mastfoot").append(
       '<input type="text" value="https://platform.boomi.com/AtomSphere.html#build;accountId=' +
         accountId +

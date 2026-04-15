@@ -23,6 +23,7 @@ let boomiPageLoaded = setInterval(() => {
 
     if (
       headerAdd &&
+      subHeaderContainerNav &&
       subHeaderContainerNav.style.display != "none" &&
       !subHeaderContainerNav.classList.contains("no_display")
     ) {
@@ -52,12 +53,17 @@ function onNavigationChange() {
   var urlPath = getUrlpath();
 
   // unique page titles and favicons
-  chrome.storage.sync.get(["unique_titles_and_favicons"], function (e) {
-    if (e.unique_titles_and_favicons == "on") {
-      removeAccountPrefixFromDocumentTitle();
-      changeFaviconBasedOnPage();
-    }
-  });
+  try {
+    chrome.storage.sync.get(["unique_titles_and_favicons"], function (e) {
+      if (chrome.runtime.lastError) return;
+      if (e.unique_titles_and_favicons == "on") {
+        removeAccountPrefixFromDocumentTitle();
+        changeFaviconBasedOnPage();
+      }
+    });
+  } catch (e) {
+    // Extension context invalidated (e.g. extension reloaded while page open)
+  }
 }
 
 // enhance the favicon to a high res image
@@ -77,13 +83,12 @@ document.addEventListener("visibilitychange", (event) => {
 function removeAccountPrefixFromDocumentTitle() {
   // Change Page Title to Drop Account Prefix
   setTimeout(function () {
+    var accountNameEl = document.getElementsByClassName(
+      "qm-c-inlinemenu__settings-menu-item-name",
+    )[1];
+    if (!accountNameEl) return;
     var title = document.title
-      .replace(
-        document.getElementsByClassName(
-          "qm-c-inlinemenu__settings-menu-item-name",
-        )[1].innerHTML,
-        "",
-      )
+      .replace(accountNameEl.innerHTML, "")
       .replace(/^(\s-\s)/, "");
     // replace trailing " - Boomi AtomSphere" (optional)
     //title = title.split(' -')[0];

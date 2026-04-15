@@ -1,5 +1,5 @@
 const add_dialog_listener = (dialog) => {
-  if (!dialog.querySelector(".dialogTopCenterInner .Caption").innerText)
+  if (!dialog.querySelector(".dialogTopCenterInner .Caption")?.innerText)
     return false;
 
   let rect = dialog.getBoundingClientRect();
@@ -95,6 +95,7 @@ const BoomiPlatform_Init = () => {
                         }
                         
                         // note groups
+                        if (typeof node.querySelector !== "function") return;
                         let noteForm = node.querySelector(".note-form");
                         if (!noteForm) return false;
 
