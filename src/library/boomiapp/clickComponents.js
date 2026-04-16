@@ -92,6 +92,10 @@ $(document).ready(function () {
   $(document).on("click", "#closeUpdate", function () {
     $(".BoomiUpdateOverlay").remove();
   });
+
+  $(document).on("click", "#reloadPage", function () {
+    location.reload();
+  });
 });
 
 document.arrive('[data-locator="link-description"]', { existing: true }, function (descLink) {

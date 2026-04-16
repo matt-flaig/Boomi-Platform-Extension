@@ -142,7 +142,7 @@ chrome.storage.onChanged.addListener((e) => {
                 </div>
             </div>
             <div class="button_set">
-                <div class="button_spinner_panel no_display"> <i class="font_icon icon-spinner before-animate-spin spinner"></i> </div><button id="closeUpdate" type="button" class="gwt-Button">Close</button>
+                <div class="button_spinner_panel no_display"> <i class="font_icon icon-spinner before-animate-spin spinner"></i> </div><button id="closeUpdate" type="button" class="gwt-Button">Close Message</button><button id="reloadPage" type="button" class="gwt-Button">Reload</button>
             </div>
         </div>
     </div>
