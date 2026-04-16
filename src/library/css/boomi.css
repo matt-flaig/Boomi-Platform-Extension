@@ -1,5 +1,11 @@
 /*Global*/
 
+/* SVG icon color — adapts to light/dark mode */
+.svg-foreground { fill: #333; }
+@media (prefers-color-scheme: dark) {
+    .svg-foreground { fill: #fff; }
+}
+
 .qm-c-servicenav {
     height: 2.5em !important;
 }
