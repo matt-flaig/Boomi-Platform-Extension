@@ -30,7 +30,7 @@ document.arrive(".qm-c-servicenav", function (nav) {
 
 // New UI detection (React/web-component based nav with shadow DOM)
 var openTabSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" style="width: 16px; height: 16px;">
-                      <style>.otsvg{fill:#333}@media(prefers-color-scheme:dark){.otsvg{fill:#fff}}</style>
+                      <style>.otsvg{fill:var(--bph-icon-color,#333)}</style>
                       <title>Open in new tab.</title>
                       <path class="otsvg" d="M18.7273 3.99994C18.7274 3.39745 19.2159 2.9091 19.8183 2.90918L27.9991 2.91027C28.6015 2.91035 29.0898 3.39866 29.0898 4.00103L29.0909 12.1818C29.091 12.7843 28.6027 13.2727 28.0002 13.2728C27.3977 13.2729 26.9092 12.7845 26.9091 12.1821L26.9082 5.09194L19.8181 5.091C19.2156 5.09092 18.7272 4.60244 18.7273 3.99994Z"></path>
                       <path class="otsvg" d="M28.7676 3.23261C29.1937 3.65863 29.1937 4.34936 28.7676 4.77538L18.9495 14.5936C18.5234 15.0196 17.8327 15.0196 17.4067 14.5936C16.9807 14.1675 16.9807 13.4768 17.4067 13.0508L27.2249 3.23261C27.6509 2.80658 28.3416 2.80658 28.7676 3.23261Z"></path>

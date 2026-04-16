@@ -1,10 +1,12 @@
 /*Global*/
 
-/* SVG icon color — adapts to light/dark mode */
-.svg-foreground { fill: #333; }
-@media (prefers-color-scheme: dark) {
-    .svg-foreground { fill: #fff; }
-}
+/* SVG icon color driven by Boomi's theme classes.
+   Custom properties cascade into shadow DOMs, so both old and new UI icons pick this up. */
+:root { --bph-icon-color: #333; }
+.qm-u-theme-dark { --bph-icon-color: #fff; }
+.qm-u-theme-default { --bph-icon-color: #333; }
+
+.svg-foreground { fill: var(--bph-icon-color, #333); }
 
 .qm-c-servicenav {
     height: 2.5em !important;
