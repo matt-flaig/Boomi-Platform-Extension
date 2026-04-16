@@ -27,7 +27,7 @@ function updateNotificationCheck() {
     let htmlUpdateContents = `
         <ul>
         <li>
-        <p><strong>Enhancement:</strong> Open-in-new-tab icons restored for the new React/shadow DOM navigation, with compact spacing and a blue divider</p>
+        <p><strong>Enhancement:</strong> Open-in-new-tab icons restored for the new navigation</p>
         </li>
         <li>
         <p><strong>Enhancement:</strong> Active navigation item now highlighted with a blue left-border indicator</p>
