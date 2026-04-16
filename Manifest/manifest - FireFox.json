@@ -1,8 +1,8 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Boomi Platform Enhancer",
     "description": "This extension enhances Boomi Web Platform in multiple ways to provide a more robust experience",
-    "version": "1.7.4.4",
+    "version": "1.7.4.8",
     "options_ui": {
         "page": "options.html",
         "open_in_tab": true,
@@ -14,32 +14,32 @@
         "128": "icon128.png"
     },
     "content_scripts": [
-      {
-        "matches": [
-            "https://platform.boomi.com/*"
-        ],
-        "run_at": "document_start",
-        "js": [
-          "library/inject/arrive.min.js",
-          "library/jquery/jquery-3.6.min.js",
-          "library/inject/cm/codemirror.js",
-          "library/inject/cm/mode/javascript.js",
-          "library/inject/cm/mode/xml.js",
-          "library/inject/cm/mode/sql.js",
-          "library/inject/cm/addons/closebrackets.js",
-          "library/inject/cm/addons/closetags.js",
-          "library/inject/cm/addons/xml-fold.js"
-        ]
-    },
+        {
+            "matches": [
+                "https://platform.boomi.com/*"
+            ],
+            "run_at": "document_start",
+            "js": [
+                "library/inject/arrive.min.js",
+                "library/jquery/jquery-3.6.min.js",
+                "library/inject/cm/codemirror.js",
+                "library/inject/cm/mode/javascript.js",
+                "library/inject/cm/mode/xml.js",
+                "library/inject/cm/mode/sql.js",
+                "library/inject/cm/addons/closebrackets.js",
+                "library/inject/cm/addons/closetags.js",
+                "library/inject/cm/addons/xml-fold.js"
+            ]
+        },
         {
             "matches": [
                 "https://platform.boomi.com/*"
             ],
             "run_at": "document_end",
             "css": [
-              "library/css/boomi.css",
-              "library/css/cm/codemirror.css",
-              "library/css/cm/theme/twilight.css"
+                "library/css/boomi.css",
+                "library/css/cm/codemirror.css",
+                "library/css/cm/theme/twilight.css"
             ],
             "js": [
                 "library/boomiapp/contentScript.js",
@@ -56,12 +56,16 @@
                 "library/boomiapp/filterButtons.js",
                 "library/boomiapp/quickclickComponent.js",
                 "library/boomiapp/menuOpen.js",
+                "library/boomiapp/copyDocument.js",
                 "library/boomiapp/scheduleIcons.js",
+                "library/boomiapp/downloadRename.js",
                 "library/inject/shortcut.js"
-                  ]
-                }
-              ],
-              "web_accessible_resources": [
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
                 "*.png",
                 "*.jpg",
                 "library/jquery/jquery-3.6.min.js",
@@ -84,8 +88,24 @@
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"
-              ],
-              "permissions": [
-                "storage"
-              ]
-            }
+            ],
+            "matches": [
+                "https://platform.boomi.com/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "scripts": ["background.js"]
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{5702ee8c-59e1-486e-99dd-0f49906bab7f}"
+        }
+    },
+    "permissions": [
+        "storage",
+        "downloads",
+        "webRequest"
+    ]
+}
