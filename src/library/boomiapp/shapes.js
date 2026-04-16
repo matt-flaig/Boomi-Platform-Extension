@@ -58,7 +58,7 @@ const add_endpoint_listener = (endpoint) => {
         setTimeout(() => {
           let sidepanel = [
             ...document.querySelectorAll(".shape_side_panel .form_title_label"),
-          ].find((el) => el.innerText == "Stop Shape");
+          ].find((el) => el.innerText == "Stop Step");
           sidepanel = sidepanel.closest(".shape_side_panel");
 
           document.querySelector(".glass_standard").style.display = "none";
