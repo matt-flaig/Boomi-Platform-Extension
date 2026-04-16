@@ -66,6 +66,13 @@ function addOpenTabToExMenuItemGroup(group) {
       .ex-menu-item--category { padding: 0 !important; margin: 0 !important; }
       ex-menu-item { margin: 0 !important; display: block !important; }
       :host { display: block !important; margin: 0 !important; padding: 0 !important; }
+      .bph-open-tab {
+        opacity: 0.35;
+        transition: opacity 0.15s ease;
+      }
+      .ex-menu-item--category:hover .bph-open-tab {
+        opacity: 1;
+      }
     `;
     shadowRoot.appendChild(groupStyle);
   }
@@ -108,14 +115,14 @@ function addOpenTabToExMenuItemGroup(group) {
   if (categoryDiv.querySelector(".svg-anchor")) return;
 
   categoryDiv.style.display = "flex";
-  categoryDiv.style.alignItems = "flex-start";
+  categoryDiv.style.alignItems = "center";
   exMenuItem.style.flex = "1";
 
   var anchor = document.createElement("a");
-  anchor.className = "gwt-Anchor svg-anchor qm-c-inlinemenu__descriptive-composite-menu-icon";
+  anchor.className = "gwt-Anchor svg-anchor qm-c-inlinemenu__descriptive-composite-menu-icon bph-open-tab";
   anchor.href = href;
   anchor.target = "_blank";
-  anchor.style.cssText = "padding: 4px 4px 0 8px; display: flex; align-items: flex-start; flex-shrink: 0; color: inherit; cursor: pointer; border-left: 2px solid #4a9eff;";
+  anchor.style.cssText = "padding: 0 6px; display: flex; align-items: center; flex-shrink: 0; color: inherit; cursor: pointer;";
   anchor.innerHTML = openTabSvg;
   // Platform handlers in the shadow DOM call preventDefault on clicks, killing
   // native <a> navigation. Handle it ourselves instead.
