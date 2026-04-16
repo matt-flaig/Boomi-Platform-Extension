@@ -27,10 +27,28 @@ function updateNotificationCheck() {
     let htmlUpdateContents = `
         <ul>
         <li>
-        <p><strong>Bugfix:</strong> Fixed an issue where the icon overrides stopped working in Chrome.</p>
+        <p><strong>Enhancement:</strong> Open-in-new-tab icons restored for the new React/shadow DOM navigation, with compact spacing and a blue divider</p>
         </li>
         <li>
-        <p><strong>Bugfix:</strong> Fixed an issue where note content might overflow the note area.</p>
+        <p><strong>Enhancement:</strong> Active navigation item now highlighted with a blue left-border indicator</p>
+        </li>
+        <li>
+        <p><strong>Enhancement:</strong> Footer visibility restored and persisted across navigation in the new UI</p>
+        </li>
+        <li>
+        <p><strong>Enhancement:</strong> Document Viewer modal now includes a clipboard icon button to copy raw document content directly from the header</p>
+        </li>
+        <li>
+        <p><strong>Enhancement:</strong> Downloaded documents are automatically renamed using process name, file type, and execution timestamp</p>
+        </li>
+        <li>
+        <p><strong>Enhancement:</strong> Quick access options link added next to the extension version in the footer</p>
+        </li>
+        <li>
+        <p><strong>Bugfix:</strong> Close button restored to the save options (as an alternative to Save and Close)</p>
+        </li>
+        <li>
+        <p><strong>Bugfix:</strong> Inserting a shape no longer incorrectly opens the side dialog</p>
         </li>
         </ul>
         `;
