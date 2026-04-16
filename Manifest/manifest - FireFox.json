@@ -81,6 +81,7 @@
                 "library/boomiapp/connectionOperations.js",
                 "library/boomiapp/versionNotification.js",
                 "library/boomiapp/modalButtons.js",
+                "library/boomiapp/documentViewer.js",
                 "library/inject/rasterizeHTML.min.js",
                 "library/inject/showdown.min.js",
                 "library/inject/codeflask.min.js"
