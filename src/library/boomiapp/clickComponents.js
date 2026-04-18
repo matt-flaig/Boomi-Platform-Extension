@@ -98,6 +98,102 @@ $(document).ready(function () {
   });
 });
 
+// ── Process Reporting link from atom/runtime page context menu ────────────────
+
+function _bph_slugify(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+var _bph_pending_process_name = null;
+
+document.addEventListener('click', function (e) {
+  var chevron = e.target.closest('.treeItemContent a[data-locator="link"]');
+  if (!chevron) return;
+  var label = chevron.closest('.treeItemContent').querySelector('.gwt-Label[title]');
+  _bph_pending_process_name = label ? label.getAttribute('title') : null;
+
+  setTimeout(function () {
+    var executeLink = document.querySelector('[data-locator="link-execute-process"]');
+    if (!executeLink) return;
+
+    var ul = executeLink.closest('ul.menu_item_group');
+    if (!ul || ul.querySelector('.bph-reporting-item')) return;
+
+    var processName = _bph_pending_process_name;
+    if (!processName) return;
+
+    var accountId = getUrlParameter('accountId');
+    if (!accountId) return;
+
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.className = 'gwt-Anchor list_anchor_text bph-reporting-item';
+    a.textContent = 'View in Process Reporting';
+    a.href = 'javascript:;';
+
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      localStorage.setItem('bph_reporting_process', processName);
+      window.open(
+        'https://platform.boomi.com/AtomSphere.html#reporting;accountId=' + accountId,
+        '_blank'
+      );
+    });
+
+    li.appendChild(a);
+    ul.appendChild(li);
+  }, 150);
+}, true);
+
+// ── Reporting page: auto-apply process name filter from localStorage ──────────
+
+var _bph_reporting_filter_applied = false;
+
+document.arrive('[data-locator="button-add-filter"]', { existing: true }, function (addFilterBtn) {
+  if (_bph_reporting_filter_applied) return;
+  var processName = localStorage.getItem('bph_reporting_process');
+  if (!processName) return;
+  var hash = window.location.hash;
+  if (hash.indexOf('#reporting;') === -1) return;
+
+  _bph_reporting_filter_applied = true;
+  localStorage.removeItem('bph_reporting_process');
+
+  setTimeout(function () {
+    addFilterBtn.click();
+
+    setTimeout(function () {
+      var processLink = document.querySelector('[data-locator="link-process"]');
+      if (!processLink) return;
+      processLink.click();
+
+      setTimeout(function () {
+        var filterInput = document.querySelector('.filter_input.uneditable_text');
+        if (!filterInput) return;
+        filterInput.value = processName;
+        filterInput.dispatchEvent(new Event('input', { bubbles: true }));
+        filterInput.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key: 'Enter', keyCode: 13 }));
+
+        setTimeout(function () {
+          var slug = _bph_slugify(processName);
+          var item = document.querySelector('[data-locator="item-' + slug + '"]');
+          if (item) {
+            var checkbox = item.querySelector('input[type="checkbox"]');
+            if (checkbox && !checkbox.checked) checkbox.click();
+          }
+
+          setTimeout(function () {
+            var applyBtn = document.querySelector('[data-locator="button-apply"]');
+            if (applyBtn) applyBtn.click();
+          }, 300);
+        }, 500);
+      }, 300);
+    }, 300);
+  }, 1500);
+});
+
+// ── Process monitor link on component detail panel ────────────────────────────
+
 function _bph_monitorLinkHref() {
   var currentId = getUrlParameter("componentIdOnFocus");
   if (!currentId) return null;
