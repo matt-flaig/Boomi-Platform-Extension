@@ -98,25 +98,32 @@ $(document).ready(function () {
   });
 });
 
-document.arrive('[data-locator="link-description"]', { existing: true }, function (descLink) {
-  var linksDiv = descLink.closest('.links');
-  if (!linksDiv || linksDiv.querySelector('.bph-monitor-link')) return;
-
+function _bph_monitorLinkHref() {
   var currentId = getUrlParameter("componentIdOnFocus");
-  if (!currentId) return;
-
+  if (!currentId) return null;
   var processReportingEl = document.querySelector('[data-locator="link-process-reporting"]');
   var accountId =
     getUrlParameter("accountId") ||
     (processReportingEl && processReportingEl.href.split("=").pop().split(";")[0]);
-  if (!accountId) return;
+  if (!accountId) return null;
+  return 'https://platform.boomi.com/AtomSphere.html#reporting;accountId=' + accountId + ';processes=' + currentId;
+}
+
+document.arrive('[data-locator="link-description"]', { existing: true }, function (descLink) {
+  var linksDiv = descLink.closest('.links');
+  if (!linksDiv || linksDiv.querySelector('.bph-monitor-link')) return;
 
   var link = document.createElement('a');
   link.className = 'gwt-Anchor svg-anchor bph-monitor-link';
-  link.href = 'https://platform.boomi.com/AtomSphere.html#reporting;accountId=' + accountId + ';processes=' + currentId;
+  link.href = _bph_monitorLinkHref() || '#';
   link.title = 'View in Process Reporting';
   link.target = '_blank';
   link.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="width: 24px; height: 24px;"><title>View in Process Reporting</title><path d="M22 12H18L15 21L9 3L6 12H2" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  link.addEventListener('mouseenter', function () {
+    var href = _bph_monitorLinkHref();
+    if (href) link.href = href;
+  });
 
   descLink.insertAdjacentElement('afterend', link);
 });
