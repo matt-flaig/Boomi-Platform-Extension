@@ -97,3 +97,107 @@ document.arrive('[data-locator="link-download-original-document"]', { existing: 
   formHeader.style.position = 'relative';
   formHeader.appendChild(copyBtn);
 });
+
+// ── Copy button for "View Component XML" dialog ───────────────────────────────
+
+function _bph_extractXml(htmlDiv) {
+  var clone = htmlDiv.cloneNode(true);
+  clone.querySelectorAll('br').forEach(function (br) {
+    br.parentNode.replaceChild(document.createTextNode('\n'), br);
+  });
+  return clone.textContent.replace(/\u00a0/g, ' ');
+}
+
+document.arrive('div.gwt-HTML', { existing: true }, function (htmlDiv) {
+  var content = htmlDiv.closest('.popupContent');
+  var dialog = content ? content.parentElement : (htmlDiv.closest('[role="dialog"]') || htmlDiv.parentElement);
+  if (!dialog) return;
+
+  var titleEl = dialog.querySelector('.form_title_label:not(.no_display)');
+  if (!titleEl || titleEl.textContent.trim() !== 'Component XML') return;
+
+  var container = content || dialog;
+  if (container.querySelector('.bph-copy-xml-btn')) return;
+
+  var formHeader = dialog.querySelector('.form_header');
+  if (!formHeader) return;
+
+  var copyBtn = document.createElement('button');
+  copyBtn.className = 'bph-copy-xml-btn';
+  copyBtn.type = 'button';
+  copyBtn.innerHTML = copySvg;
+  copyBtn.style.cssText = [
+    'position: absolute',
+    'bottom: 8px',
+    'right: 8px',
+    'background: none',
+    'border: none',
+    'padding: 4px 6px',
+    'cursor: pointer',
+    'color: inherit',
+    'opacity: 0.6',
+    'display: flex',
+    'align-items: center',
+    'gap: 4px',
+    'font-size: 12px',
+  ].join(';');
+
+  var tooltip = document.createElement('div');
+  tooltip.textContent = 'Copy as XML';
+  tooltip.style.cssText = [
+    'position: absolute',
+    'bottom: calc(100% + 6px)',
+    'right: 0',
+    'background: rgba(0,0,0,0.75)',
+    'color: #fff',
+    'font-size: 11px',
+    'white-space: nowrap',
+    'padding: 3px 7px',
+    'border-radius: 3px',
+    'pointer-events: none',
+    'opacity: 0',
+    'transition: opacity 0.15s',
+  ].join(';');
+  copyBtn.appendChild(tooltip);
+
+  copyBtn.addEventListener('mouseenter', function () {
+    copyBtn.style.opacity = '1';
+    tooltip.style.opacity = '1';
+  });
+  copyBtn.addEventListener('mouseleave', function () {
+    copyBtn.style.opacity = '0.6';
+    tooltip.style.opacity = '0';
+  });
+
+  copyBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    var content = _bph_extractXml(htmlDiv);
+    if (!content.trim()) return;
+
+    function onCopied() {
+      copyBtn.innerHTML = checkSvg + '<span>Copied</span>';
+      copyBtn.style.opacity = '1';
+      setTimeout(function () {
+        copyBtn.innerHTML = copySvg;
+        copyBtn.appendChild(tooltip);
+        copyBtn.style.opacity = '0.6';
+      }, 1500);
+    }
+
+    navigator.clipboard.writeText(content).then(onCopied).catch(function () {
+      var ta = document.createElement('textarea');
+      ta.value = content;
+      ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      onCopied();
+    });
+  });
+
+  formHeader.style.position = 'relative';
+  formHeader.appendChild(copyBtn);
+});
