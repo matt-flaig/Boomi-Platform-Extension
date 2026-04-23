@@ -108,20 +108,17 @@ if (window.location.pathname.indexOf('BoomiAI') !== -1) {
     var _bph_gpt_attempts = 0;
     function _bph_tryInject() {
       _bph_gpt_attempts++;
-      if (_bph_gpt_attempts > 40) { console.log('[BPH] gave up'); return; }
+      if (_bph_gpt_attempts > 40) return;
 
       var ta = document.querySelector('textarea[placeholder="How can I help you?"]');
       if (!ta) { setTimeout(_bph_tryInject, 500); return; }
 
-      // Use native setter to update React-controlled textarea
       var nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set;
       nativeSetter.call(ta, _bph_gpt_prompt);
       ta.dispatchEvent(new Event('input', { bubbles: true }));
-      console.log('[BPH] injected, value:', ta.value);
 
       setTimeout(function () {
         var sendBtn = document.querySelector('button[data-testid="boomi-gpt-chat-send-button"]');
-        console.log('[BPH] sendBtn:', !!sendBtn);
         if (sendBtn) sendBtn.click();
       }, 500);
     }
