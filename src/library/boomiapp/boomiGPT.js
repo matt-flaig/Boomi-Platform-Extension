@@ -1,30 +1,7 @@
-// ── Boomi GPT compare trigger (build page) ────────────────────────────────────
-
 function _bph_openBoomiGPT(prompt) {
   localStorage.setItem('bph_gpt_prompt', prompt);
   window.open('https://platform.boomi.com/BoomiAI.html#/chat', '_blank');
 }
-
-document.arrive('[data-locator="link-description"]', { existing: true }, function (descLink) {
-  var linksDiv = descLink.closest('.links');
-  if (!linksDiv || linksDiv.querySelector('.bph-gpt-link')) return;
-
-  var link = document.createElement('a');
-  link.className = 'gwt-Anchor svg-anchor bph-gpt-link';
-  link.href = 'javascript:;';
-  link.title = 'Compare in Boomi GPT';
-  link.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;"><title>Compare in Boomi GPT</title><path d="M12 2L13.09 8.26L19 6L14.74 10.91L21 12L14.74 13.09L19 18L13.09 15.74L12 22L10.91 15.74L5 18L9.26 13.09L3 12L9.26 10.91L5 6L10.91 8.26L12 2Z" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/></svg>';
-
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    var popup = linksDiv.closest('.gwt-HistoryPopup');
-    var prompt = popup && popup._bph_gpt_prompt;
-    if (prompt) _bph_openBoomiGPT(prompt);
-  });
-
-  var monitorLink = linksDiv.querySelector('.bph-monitor-link');
-  (monitorLink || descLink).insertAdjacentElement('afterend', link);
-});
 
 // ── Revision History: checkbox selection for compare ─────────────────────────
 
